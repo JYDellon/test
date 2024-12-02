@@ -1,0 +1,80 @@
+/* Conteneur principal */
+.devis-container {
+    text-align: left;
+    margin: 30px auto;
+    padding: 20px;
+    max-width: 600px;
+    background: linear-gradient(to right, #003f5c, #6a9cb8);
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Titre de la section Devis Rapide */
+.devis-titre {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Description du devis */
+.devis-description {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Liste des options de devis */
+.devis-options {
+    list-style-type: disc;
+    padding-left: 20px;
+    font-size: 16px;
+}
+
+.devis-options li {
+    margin-bottom: 10px;
+}
+
+/* Lien cliquable pour ouvrir les devis */
+.link {
+    color: #ffffff;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.link:hover {
+    color: #ffffff;
+}
+
+/* Conteneur des cartes de devis */
+.devis-cards-container {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Grille des cartes */
+.cards-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Style de chaque carte de devis */
+.devis-card {
+    width: 200px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #007bff, #0056b3);
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.devis-card:hover {
+    transform: scale(1.05);
+    background-color: #003f5c;
+}

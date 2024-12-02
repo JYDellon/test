@@ -1,0 +1,475 @@
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 20px;
+    font-size:1em;
+    color: #fff;
+}
+
+.contact-layout {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Partie gauche : deux sections */
+.left-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.upper-card {
+    width: 300px;
+    height: 270px;
+    align-self: flex-end;
+    margin-left: 180px;
+}
+
+.lower-card {
+    width: 300px;
+    height: 250px;
+    align-self: flex-end;
+    margin-top: -25px;
+}
+
+/* Partie centrale */
+.center-section {
+    width: 425px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Partie droite */
+.right-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Colonne pour superposer la disponibilité et les réseaux sociaux */
+    gap: 20px; /* Espacement entre les cartes */
+    align-items: flex-start; /* Aligner à gauche */
+}
+
+/* Carte Disponibilités */
+.availability-card {
+    width: 278px;
+    height: 220px;
+    align-self: flex-start;
+}
+
+/* Carte Réseaux Sociaux */
+.social-cardContact {
+    margin-top: -12px;
+    width: 280px;
+    height: 100px;
+    display: flex;
+    flex-direction: column; /* Aligner les éléments en colonne */
+    justify-content: center;
+    align-items: center;
+    
+}
+
+/* Styles communs */
+.cardContact2, .availability-card, .social-cardContact {
+    background-color: #fff;
+    /* border: 1px solid #ddd; */
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7), 0 20px 40px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cardContact1 {
+    background-color: #fff;
+    /* border: 1px solid #ddd; */
+    width: 278px;
+    height: 130px;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7), 0 20px 40px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cardContact1:hover, .cardContact2:hover, .availability-card:hover, .social-cardContact:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7), 0 30px 60px rgba(0, 0, 0, 0.7);
+    transform: translateY(-5px);
+}
+
+/* Icônes */
+.icon {
+    font-size: 1em;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.icon2 {
+    font-size: 1em;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: column; /* Passer en colonne */;
+    align-items: center; /* Centrer horizontalement */
+    margin-bottom: 25px;color: #fff;
+}
+
+.reseaux {
+    display: flex;
+    gap: 25px; /* Espacement entre les icônes */
+    justify-content: center; /* Centrer horizontalement */
+}
+
+.social-icon {
+    font-size: 1em;
+    color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+}
+
+/* Flèche pour remonter */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007BFF;
+    color: white;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.scroll-to-top:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+/* Tableau sans cadre */
+.availability-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.availability-table td {
+    padding: 8px 15px;
+    text-align: left;
+    font-size: 1em;
+    color: #333;
+}
+
+/* Ligne alternée avec couleur subtile */
+.availability-table tr:nth-child(even) {
+    background-color: #f9f9f955;
+}
+
+.availability-table tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+/* Supprimer les bordures du tableau */
+.availability-table td, 
+.availability-table tr {
+    border: none;
+}
+
+.availability-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.availability-item {
+    margin-bottom: 5px;
+}
+
+.availability-details {
+    display: flex;
+    justify-content: space-around; /* Espacement entre les jours et les horaires */
+    gap: 20px; /* Espacement entre les colonnes */
+}
+
+.days, .hours {
+    display: flex;
+    flex-direction: column; /* Aligner les éléments verticalement */
+}
+
+.availability-item {
+    display: flex;
+    justify-content: flex-start; /* Aligner le texte à gauche */
+    margin-bottom: 10px; /* Espacement entre les lignes */
+}
+
+.availability-item span {
+    font-size: 1em;
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+/* Définir l'animation pour l'apparition */
+@keyframes apparaitre {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Appliquer l'animation à chaque carte */
+.cardContact1, .cardContact2, .availability-card, .social-cardContact {
+    animation: apparaitre 0.6s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px); /* Déplacement initial */
+}
+
+/* Ajouter un délai différent pour chaque carte */
+.cardContact1 {
+    animation-delay: 0.2s;
+}
+
+.cardContact2 {
+    animation-delay: 0.3s;
+}
+
+.availability-card {
+    animation-delay: 0.4s;
+}
+
+.social-cardContact {
+    animation-delay: 0.5s;
+}
+
+/* Styles communs pour toutes les cartes */
+.cardContact1, .social-cardContact {
+    background-color: #003f5c;
+    background: linear-gradient(to right, #003f5c, #6a9cb8);
+    /* border: 1px solid #ddd; */
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7), 0 20px 40px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cardContact2 {
+    background: linear-gradient(to right, #003f5c, #6a9cb8);
+    /* border: 1px solid #ddd; */
+    width: 278px;
+    height: 110px;
+    margin-top: 0px;
+    border-radius: 10px;
+    /* padding: 10px; */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7), 0 20px 40px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cardContact {
+    background-color: #003f5c;
+    background: linear-gradient(to right, #003f5c, #6a9cb8);
+    /* border: 1px solid #ddd; */
+    width: 350px;
+    height: 300px;
+    margin-top: 0px;
+    border-radius: 10px;
+    /* padding: 10px; */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 20px 40px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.availability-card {
+    background-color: #003f5c;
+    background: linear-gradient(to right, #003f5c, #6a9cb8);
+    /* border: 1px solid #ddd; */
+    padding-top: 0px;
+    width: 278px;
+    height: 260px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7), 0 20px 40px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Réajuster les effets de survol */
+.cardContact2:hover, .availability-card:hover, .social-cardContact:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7), 0 30px 60px rgba(0, 0, 0, 0.7);
+    transform: translateY(-5px);
+}
+
+
+
+
+
+/* Carte Adresse */
+.cardContact {
+    background-color: #003f5c; /* Couleur de fond de la carte */
+    /* border: 1px solid #ddd; Bordure légère */
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7), 0 20px 40px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effet de survol pour la carte d'adresse */
+.cardContact:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7), 0 30px 60px rgba(0, 0, 0, 0.7);
+    transform: translateY(-5px);
+}
+
+
+
+.availability-icon {
+    font-size: 1em;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+
+
+.availability-card {
+    display: flex; /* Activer la mise en page flexbox */
+    flex-direction: column; /* Maintenir l'alignement vertical global */
+    justify-content: flex-start; /* Alignement vertical */
+    align-items: center; /* Centrer horizontalement */
+    width: 278px;
+    height: 230px;
+    /* border: 1px solid #ddd; */
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    background-color: #003f5c;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7), 0 20px 40px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.availability-card h3 {
+    display: flex; /* Activer flexbox */
+    align-items: center; /* Aligner verticalement */
+    gap: 10px; /* Espacement entre l'icône et le texte */
+    /* font-size: 18px;  */
+    color: #fff; /* Couleur du texte */
+    margin: 10px 0; /* Espacement autour du titre */
+}
+
+.availability-icon {
+    font-size: 1em; /* Taille de l'icône */
+    color: #fff;
+}
+
+.titreAdresse, .titreMail,.titreTelephone, .numTelephone{
+    margin-top: 9px;
+}
+
+iframe {
+    border-radius: 10px;  /* Arrondir les bords */
+    width: 300px;  /* Réduire la largeur */
+    height: 150px;  /* Réduire la hauteur */
+    border: none;  /* Supprimer la bordure si nécessaire */
+}
+
+.positionnementDeLAdresse{
+    margin-top: -10px;
+}
+
+@media screen and (max-width: 768px) {
+/* Partie droite */
+.right-section {
+    display: flex;
+    justify-content: center;
+    align-items:center
+}
+.upper-card {
+    width: 100%;
+    height: 270px;
+    display: flex;
+    justify-content: center;
+}
+.lower-card {
+    width: 
+    100%;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+}
+    }
+
+
+    @media screen and (max-width: 768px) {
+        
+
+
+    .cardContact {
+        background-color: #003f5c;
+        background: linear-gradient(to right, #003f5c, #6a9cb8);
+        /* border: 1px solid #ddd; */
+        width: 400px;
+        height: 400px;
+        margin-top: -95px;
+        border-radius: 10px;
+        /* padding: 10px; */
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7), 0 20px 40px rgba(0, 0, 0, 0.7);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+        }
+
+
+
+
+
+.formulaireContact{
+    width: 500px;
+    height: 800px;
+margin-left: -120px;
+margin-top: -6px;
+}
+
+
+
+
+
+.FormulaireDeContact{
+    background: linear-gradient(to right, #003f5c, #6a9cb8);
+display: flex;
+flex-direction: column;
+justify-content: center;
+text-align: center;
+padding: 20px;
+width: 259px;
+border-radius: 10px;
+margin-top: -10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7), 0 20px 40px rgba(0, 0, 0, 0.7);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+

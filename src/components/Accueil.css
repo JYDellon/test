@@ -1,0 +1,276 @@
+/* Conteneur principal de la page */
+.accueil-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+    padding: 20px 120px;
+    flex-wrap: wrap;
+    margin-top: 100px;
+}
+
+/* Animation pour faire glisser la carte depuis la gauche (L'Équipe) */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Animation pour faire glisser la carte depuis le bas (Les projets) */
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Animation pour faire glisser la carte depuis la droite (L'engagement) */
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Style des cartes (dimensions doublées) */
+.cardm {
+    background: linear-gradient(to right, #003f5c, #6a9cb8);
+    /* border: 2px solid #f9f9f9; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    width: 100%;
+    height: 100px;
+    min-width: 220px;
+    height: 75px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Ajout de la transition pour la couleur */
+    opacity: 0; /* Initialement invisibles */
+    animation: fadeInUp 0.6s ease-out forwards; /* Applique l'animation */
+    
+}
+
+.cardm:hover {
+    transform: translateY(-10px); /* Déplacement vers le haut de 10px */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7); /* Augmenter l'ombre pour donner de la profondeur */
+}
+
+
+
+
+/* Appliquer l'animation à la première carte (L'Équipe) */
+.cardm:nth-child(1) {
+    animation: slideInFromLeft 0.5s ease-out forwards;
+}
+
+/* Appliquer l'animation à la deuxième carte (Les projets) */
+.cardm:nth-child(2) {
+    animation: slideInFromBottom 0.5s ease-out forwards;
+}
+
+/* Appliquer l'animation à la troisième carte (L'engagement) */
+.cardm:nth-child(3) {
+    animation: slideInFromRight 0.5s ease-out forwards;
+}
+
+/* Titre des cartes */
+.cardm h2 {
+    /* border-radius: 20px 20px 0 0; */
+    margin-top: 0;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    font-size:1em;
+    margin-bottom: -35px;
+    width:104%;
+    margin: -20px 0 -35px -18px;
+    /* background-color: #4a6572; */
+    color: #f4f4f9; /* blanc cassé */
+}
+
+
+/* Media query pour les écrans larges */
+@media (min-width: 769px){
+    .cardm {
+        width: 220px;
+        height: 50px; 
+    }
+}
+
+/* Media query pour les écrans moyens */
+@media (min-width: 601px) and (max-width: 768px) {
+    .cardm {       
+        width: 460px;
+        height: 420px;
+    }
+}
+
+/* Media query pour les petits écrans */
+@media (max-width: 600px) {
+    .cardm {
+        width: 310px;
+        height: 320px;
+    }
+}
+
+h3{
+    color:#fff;
+}
+
+
+.devis-link{
+    background-color: #f4f4f900;
+    border: none;
+}
+
+
+
+
+
+
+
+
+/* Conteneur principal du carrousel */
+.carousel-container {
+    padding: 20px;
+    margin-top: 20px;
+    background: linear-gradient(to right, #003f5c, #6a9cb8);
+    border: 2px solid white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 30%; /* Largeur limitée pour un meilleur centrage */
+    max-width: 600px;
+    margin: 0 auto; /* Centrer le carrousel horizontalement */
+    height: 160px;
+
+    /* Animation */
+    animation: slideInFromBottom 0.8s ease-out; /* Durée et type d'animation */
+}
+
+
+
+/* Style des slides */
+.slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 115px; /* Hauteur fixe pour chaque slide */
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1); /* Légère transparence */
+    border-radius: 10px; /* Coins arrondis */
+}
+
+/* Contenu de chaque slide */
+.slide-content {
+    display: flex;
+    flex-direction: row; /* Alignement horizontal : image à gauche et texte à droite */
+    align-items: center;
+    justify-content: space-between; /* Espacement entre l'image et le texte */
+    text-align: left; /* Alignement du texte à gauche */
+    width: 90%; /* Prend toute la largeur du slide */
+    
+}
+
+/* Titres des slides */
+.slide-content h3 {
+    font-size: 1.2em;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+
+/* Points de navigation du carrousel */
+.slick-dots li button:before {
+    color: #ffffff; /* Couleur des points */
+}
+
+/* Flèches de navigation */
+.slick-prev, .slick-next {
+    z-index: 1;
+    font-size: 1em;
+    background: linear-gradient(to right, #003f5c, #6a9cb8);
+    border-radius: 50%;
+    color: #ffffff;
+}
+
+/* Masquer les flèches sur les petits écrans */
+@media (max-width: 600px) {
+    .slick-prev, .slick-next {
+        display: none;
+    }
+}
+
+/* Responsive: Redimensionner le contenu pour les petits écrans */
+@media (max-width: 768px) {
+    .slide {
+        height: 250px;
+    }
+
+    .slide-content h3 {
+        font-size: 1em;
+    }
+
+    .slide-content p {
+        font-size: 1em;
+    }
+}
+
+/* Style pour les images du carrousel */
+.carousel-image {
+    max-width: 45%; /* Limite la largeur de l'image à 45% pour laisser de la place au texte */
+    height: auto; /* Assurer que l'image garde ses proportions */
+    object-fit: cover; /* L'image remplit la largeur sans distorsion */
+    border-radius: 10px; /* Coins arrondis */
+    margin-right: 30px; /* Espacement entre l'image et le texte */
+    margin-left: -10px;
+    margin-top: -13px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Effet d'ombre */
+}
+
+/* Centrer les images et le contenu */
+.slide-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+
+
+
+
+
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100%); /* Départ en bas */
+        opacity: 0; /* Invisible au début */
+    }
+    100% {
+        transform: translateY(0); /* Position finale */
+        opacity: 1; /* Entièrement visible */
+    }
+}
+
+
+

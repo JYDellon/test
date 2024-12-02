@@ -1,0 +1,43 @@
+/* Style pour l'infobulle personnalisée */
+.tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.75); /* Fond sombre */
+    color: white;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 24px; /* Taille du texte plus grande */
+    max-width: 300px; /* Plus large */
+    word-wrap: break-word; /* Pour éviter que le texte ne déborde */
+    display: none;
+    z-index: 100;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Affichage de l'infobulle au survol */
+.Cardi:hover .tooltip {
+    display: block;
+}
+
+
+
+.buttons-navigation-centrees {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espacement entre les boutons */
+    margin-top: 20px;
+}
+
+.buttons-navigation-centrees button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.buttons-navigation-centrees button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}

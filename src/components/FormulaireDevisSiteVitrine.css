@@ -1,0 +1,199 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.5s ease-out;
+    overflow: hidden;
+}
+
+.modal-contentX {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background: linear-gradient(to right, #003f5c, #6a9cb8);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 70%;
+    max-width: 1000px;
+    max-height: 90%;
+    text-align: left;
+    position: relative;
+    animation: zoomIn 0.3s ease-out;
+    overflow-y: auto;
+}
+
+.service-cardD {
+    padding: 20px;
+    margin: 10px;
+    background: linear-gradient(to right, #003f5c, #6a9cb8);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    width: 200px;
+    position: relative;
+}
+
+/* FONCTIONNALITÉS INCLUSES PAR DÉFAUT (background darkorange) */
+.service-cardD.selected {
+    background-color: darkorange;
+    pointer-events: none; /* Empêche la désélection */
+}
+
+/* AU SURVOL, HORS DES FONCTIONNALITÉS DÉJÀ INCLUSES */
+.service-cardD:hover:not(.selected) {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* INFO BULLE */
+.tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+    max-width: 250px;
+    word-wrap: break-word;
+    display: none;
+    z-index: 10000; /* Au-dessus de tout */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    top: -100%; /* Place la bulle au-dessus */
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 10px;
+}
+
+/* AFFICHAGE DE L'INFO BULLE AU SURVOL */
+.service-cardD:hover .tooltip {
+    display: block;
+}
+
+/* BOUTON */
+button {
+    padding: 12px 25px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:disabled {
+    background-color: #bbb;
+    cursor: not-allowed;
+}
+
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.nav-buttons button {
+    width: 48%;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 768px) {
+    .modal-contentX {
+        width: 90%;
+        height: 90%;
+    }
+
+    .service-cardD {
+        width: 100%;
+    }
+
+    .nav-buttons {
+        flex-direction: column;
+    }
+
+    .nav-buttons button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/* Services non inclus (pas sélectionnés) */
+.service-card {
+    background: linear-gradient(to right, #003f5c, #6a9cb8); /* Fond initial */
+}
+
+/* Services sélectionnés */
+.service-card.selected {
+    background-color: darkorange; /* Fond lorsqu'il est sélectionné */
+}
+
+/* Si une fonctionnalité est déjà incluse (ex: pageAccueil, pageAPropos, etc.), fond par défaut */
+.service-card.pageAccueil,
+.service-card.pageAPropos,
+.service-card.pageContact,
+.service-card.pageServices {
+    background-color: darkorange;
+}
+
+/* INFO BULLE */
+.tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+    max-width: 250px;
+    word-wrap: break-word;
+    display: none;
+    z-index: 10000; /* Assure-toi que la bulle est au-dessus */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    top: -40px; /* Ajuste la position de la bulle pour qu'elle soit visible */
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 10px;
+}
+
+/* AFFICHAGE DE L'INFO BULLE AU SURVOL */
+.service-cardD:hover .tooltip {
+    display: block;
+}
+
+
+
+
+
+
+

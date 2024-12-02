@@ -1,0 +1,183 @@
+/* Style pour l'infobulle personnalisée */
+.tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.75); /* Fond sombre */
+    color: white;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 24px; /* Taille du texte plus grande */
+    max-width: 300px; /* Plus large */
+    word-wrap: break-word; /* Pour éviter que le texte ne déborde */
+    display: none;
+    z-index: 100;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Affichage de l'infobulle au survol */
+.Cardi:hover .tooltip {
+    display: block;
+}
+
+/* Style pour l'infobulle personnalisée (seconde version) */
+.tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.75); /* Fond sombre */
+    color: white;
+    border-radius: 5px;
+    padding: 10px; /* Réduit un peu l'espace pour plus de lisibilité */
+    font-size: 16px; /* Taille du texte plus raisonnable */
+    max-width: 250px; /* Largeur maximale plus modérée */
+    word-wrap: break-word; /* Pour éviter que le texte ne déborde */
+    display: none;
+    z-index: 100;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombre plus subtile */
+    transition: opacity 0.2s ease; /* Transition douce pour l'apparition */
+    opacity: 0; /* Initialement invisible */
+}
+
+/* Affichage de l'infobulle au survol de l'élément */
+.Cardi:hover .tooltip {
+    display: block;
+    opacity: 1; /* Rendre visible l'infobulle */
+    top: 100%; /* Placer l'infobulle juste en dessous de l'élément */
+    left: 50%; /* Centrer horizontalement */
+    transform: translateX(-50%); /* Ajustement pour un centrage parfait */
+}
+
+/* Optionnel: ajouter un petit triangle pour l'infobulle (facultatif) */
+.tooltip::after {
+    content: '';
+    position: absolute;
+    top: -10px; /* Position du triangle */
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid rgba(0, 0, 0, 0.75); /* Triangle de la même couleur que l'infobulle */
+}
+
+/* Style général pour les boutons dans le formulaire */
+button {
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Changements de couleur pour les boutons lorsqu'ils sont sélectionnés */
+button:hover {
+    background-color: darkorange;
+    color: white;
+}
+
+/* Styles pour les cartes des services */
+.Cardi {
+    padding: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    background-color: #fff;
+    position: relative;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border-radius: 8px;
+    text-align: center;
+    width: 200px;
+    height: auto;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.Cardi.selected {
+    background-color: darkorange;
+    color: white;
+}
+
+.Cardi:hover {
+    transform: scale(1.05);
+}
+
+/* Conteneur pour le modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Style du contenu du modal */
+.modal-contentX {
+    background-color: #f9f9f9;
+    padding: 20px;
+    position: relative;
+    width: 80%;
+    max-width: 900px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Styles spécifiques aux étapes du formulaire */
+.domaine-hebergement {
+    padding: 20px;
+    text-align: left;
+}
+
+/* Styles pour les boutons de navigation */
+.buttons-navigation,
+.buttons-navigation-centrees {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.buttons-navigation-centrees {
+    justify-content: center;
+}
+
+/* Style pour le titre central du formulaire */
+.titre h1 {
+    margin: 0;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Style pour l'affichage des services */
+.Listedesservices {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 10px;
+    margin-top: 60px;
+}
+
+/* Style pour les sections de l'étape 3 */
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Ajout d'espace entre les boutons sur la troisième page */
+.domaine-hebergement button {
+    margin-right: 10px; /* Ajoute de l'espace à droite des boutons */
+    margin-bottom: 10px; /* Ajoute de l'espace en bas des boutons */
+}
+
+/* Optionnel: Si tu veux que les boutons soient sur la même ligne mais avec de l'espace entre eux */
+.buttons-navigation-centrees button {
+    margin-right: 10px; /* Ajoute de l'espace entre les boutons sur la ligne */
+    margin-bottom: 10px; /* Ajoute de l'espace en bas des boutons */
+}

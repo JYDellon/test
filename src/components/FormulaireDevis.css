@@ -1,0 +1,162 @@
+/* Corps principal */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #2626d5;
+    color: #333;
+}
+
+/* En-tête */
+.header2 {
+    position: sticky;
+    top: 0;
+    background: linear-gradient(to right, #003f5c, #6a9cb8);
+    z-index: 1000;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.header2 h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+/* Conteneur principal */
+.truc4 {
+    display: flex;
+    justify-content: center;
+    margin: 2rem auto;
+    max-width: 90%;
+}
+
+/* Style des cartes */
+.card-type {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 250px;
+    height: 120px;
+    margin: 10px;
+    border: 2px solid #ddd;
+    background: linear-gradient(to right, #003f5c, #a8dadc);
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.card-type.selected {
+    background: #2a9d8f;
+    border-color: #532637;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card-type:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Texte des cartes */
+.card-type h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+/* Conteneur de plusieurs cartes */
+.truc2 {
+    width: 1000px;
+    margin-top: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+/* Style du conteneur de devis */
+.quote-summary {
+    background: #ffffff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.quote-summary #total-price {
+    font-size: 1.8rem;
+    color: #e63946;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* Boutons */
+.previous-btn, .pdf-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.previous-btn {
+    background-color: #007bff;
+}
+
+.previous-btn:hover {
+    background-color: #0056b3;
+}
+
+.pdf-btn {
+    background-color: #28a745;
+}
+
+.pdf-btn:hover {
+    background-color: #218838;
+}
+
+/* Animation d'apparition */
+.truc2 .card-type {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.truc2 .card-type:nth-child(1) { animation-delay: 0s; }
+.truc2 .card-type:nth-child(2) { animation-delay: 0.1s; }
+.truc2 .card-type:nth-child(3) { animation-delay: 0.2s; }
+.truc2 .card-type:nth-child(4) { animation-delay: 0.3s; }
+.truc2 .card-type:nth-child(5) { animation-delay: 0.4s; }
+.truc2 .card-type:nth-child(6) { animation-delay: 0.5s; }
+
+
+h1{
+    color: #fff;
+}
+
+

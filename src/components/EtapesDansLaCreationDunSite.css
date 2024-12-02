@@ -1,0 +1,241 @@
+.etapes-container {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+}
+
+.etapes-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1800px;
+    width: fit-content;
+}
+
+/* Styles des cartes d'étapes */
+.etape-card {
+    background: linear-gradient(to right, #003f5c, #6a9cb8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    width: 250px;
+    height: 50px;
+    min-width: 220px;
+    cursor: pointer;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    transform: translateY(20px);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/* Appliquer différentes animations aux cartes */
+.etape-card:nth-child(1) {
+    animation: slideUp 0.5s ease-out forwards;
+}
+
+.etape-card:nth-child(2) {
+    animation: slideLeft 0.5s ease-out forwards;
+}
+
+.etape-card:nth-child(3) {
+    animation: slideRight 0.5s ease-out forwards;
+}
+
+.etape-card:nth-child(4) {
+    animation: slideDown 0.5s ease-out forwards;
+}
+
+.etape-card:nth-child(5) {
+    animation: slideDiagonal 0.5s ease-out forwards;
+}
+
+/* Effet de survol */
+.etape-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7);
+}
+
+/* Animations */
+
+/* Glissement vers le haut */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Glissement vers le bas */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Glissement vers la gauche */
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Glissement vers la droite */
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Glissement en diagonale (haut gauche vers bas droit) */
+@keyframes slideDiagonal {
+    from {
+        opacity: 0;
+        transform: translate(-30px, -30px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+/* Conteneur des détails des étapes */
+.etapes-details-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+    width: 100%;
+}
+
+.etape-details-card {
+    background: linear-gradient(to right, #003f5c, #6a9cb8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 10px 6px rgba(0, 0, 0, 0.7);
+    width: 30%;
+    text-align: left;
+    height: 9em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    font-size: 1.2em;
+    padding-left: 50px;
+}
+
+.etape-details-card h3 {
+    color: #fff;
+    font-size: 1em;
+}
+
+.navigation-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 74.8%;
+}
+
+.prev-button,
+.next-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.prev-button img,
+.next-button img {
+    width: 1.5em;
+    padding-right: 0em;
+    padding-top: 0.4em;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 99;
+}
+
+/* Responsivité pour mobile */
+@media screen and (max-width: 768px) {
+    .etape-details-card {
+        width: 90%;
+        height: 550px;
+    }
+
+    .etape-details-card {
+        background: linear-gradient(to right, #003f5c, #6a9cb8);
+        border: 2px solid #f9f9f9;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70%;
+        z-index: 100;
+        text-align: left;
+        height: 25em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        color: white;
+        font-size: 1em;
+        text-align: justify;
+    }
+
+    .navigation-footer {
+        display: flex;
+        margin-left: -1em;
+        justify-content: space-between;
+        align-items: flex-end;
+        width: 95%;
+    }
+
+    .etape-text {
+        width: 90%;
+        text-align: justify;
+        margin-left: 3.5vw;
+    }
+
+    .etape-details-card h3 {
+        color: #fff;
+        font-size: 0.9em;
+        text-align: start;
+    }
+}
+
+span {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.1em;
+    font-style: italic;
+    color: darkorange;
+}

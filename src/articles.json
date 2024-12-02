@@ -1,0 +1,27 @@
+[
+  { "id": 1, "titre": "Le site Vitrine", "contenu": "Un site Vitrine est conçu principalement pour présenter une entreprise, une organisation, ou une activité." },
+  { "id": 2, "titre": "Présentation de l'activité", "contenu": "Un site vitrine met en avant les informations essentielles sur une entreprise, son activité et ses services." },
+  { "id": 3, "titre": "Navigation simple", "contenu": "CSS est le langage de style utilisé pour définir l'apparence des pages web. Un design responsive est essentiel." },
+  { "id": 4, "titre": "Pas de vente en ligne", "contenu": "Ce site est conçu avec une structure claire pour que les visiteurs trouvent rapidement les informations dont ils ont besoin." },
+  { "id": 5, "titre": "Accessible à tous", "contenu": "Un site vitrine est facile d'accès et fonctionne sur différents appareils, comme les ordinateurs ou smartphones." },
+  { "id": 6, "titre": "Donner une image professionnelle", "contenu": "Un site vitrine offre une présence en ligne sérieuse et soignée qui renforce la crédibilité de l'entreprise." },
+  { "id": 7, "titre": "Gagner en visibilité", "contenu": "Le site aide à attirer de nouveaux visiteurs et à accroître la notoriété de l'entreprise sur internet." },
+  { "id": 8, "titre": "Informer", "contenu": "Il permet de fournir des informations essentielles sur l'entreprise, ses services, ou ses produits." },
+  { "id": 9, "titre": "Faciliter le contact", "contenu": "Le site permet aux visiteurs de contacter facilement l'entreprise via des formulaires ou des coordonnées." },
+  { "id": 10, "titre": "Caractéristiques principales", "contenu": "Un site e-commerce permet de gérer des produits, des stocks, et des commandes de manière fluide, tout en offrant une expérience d'achat simple et sécurisée." },
+  { "id": 11, "titre": "À quoi sert un site e-commerce ?", "contenu": "Il permet aux entreprises de vendre des produits ou services en ligne, de gérer les paiements et d'automatiser les processus de commande." },
+  { "id": 12, "titre": "Contenu d’un site e-commerce basique", "contenu": "Il inclut une page d'accueil, des pages de produits, un panier d'achat, une page de paiement, ainsi qu'une interface de gestion pour le vendeur." },
+  { "id": 13, "titre": "Vente de produits ou services", "contenu": "Un site e-commerce sert principalement à vendre des produits ou services en ligne." },
+  { "id": 14, "titre": "Gestion des transactions sécurisées", "contenu": "Il permet de gérer l'ensemble des transactions commerciales de manière fluide et sécurisée." },
+  { "id": 15, "titre": "Le site personnalisé", "contenu": "Un site personnalisé est conçu sur mesure pour répondre à des besoins spécifiques, incluant des fonctionnalités uniques adaptées à ton activité, telles que des outils de gestion ou des intégrations spécifiques."},
+  { "id": 16, "titre": "Caractéristiques principales", "contenu": ""},
+  { "id": 17, "titre": "Le site Vitrine", "contenu": "Un site personnalisé est créé pour répondre spécifiquement aux besoins d'une entreprise, en incluant des fonctionnalités uniques et adaptées, comme des systèmes de gestion internes, des outils d'automatisation ou des intégrations de systèmes tiers."},
+  { "id": 18, "titre": "À quoi sert un site personnalisé ?", "contenu": "Il permet aux entreprises d'avoir une présence en ligne unique et fonctionnelle, parfaitement alignée avec leurs besoins spécifiques et leurs objectifs commerciaux."},
+  { "id": 19, "titre": "Référencement et SEO", "contenu": "Le référencement (SEO) est essentiel pour améliorer la visibilité de ton site web sur les moteurs de recherche. Nous utilisons des techniques avancées pour optimiser le contenu et la structure de ton site afin d'atteindre les meilleures positions."},
+  { "id": 20, "titre": "Stratégie SEO", "contenu": "La stratégie SEO commence par une analyse approfondie de ton marché, de tes concurrents et des mots-clés les plus pertinents pour ton activité. Nous établissons ensuite une stratégie de contenu et une feuille de route pour améliorer ton positionnement."},
+  { "id": 21, "titre": "Recherche de mots-clés", "contenu": "Nous effectuons une recherche de mots-clés détaillée pour cibler les termes les plus recherchés et pertinents, afin d'augmenter le trafic organique sur ton site."},
+  { "id": 22, "titre": "Hébergement sécurisé", "contenu": "Nous proposons un hébergement sécurisé pour garantir la performance, la sécurité et la disponibilité continue de ton site. Notre solution d'hébergement prend en charge les sauvegardes régulières, les mises à jour et la sécurité pour une tranquillité d'esprit maximale."},
+  { "id": 23, "titre": "Caractéristiques de l'hébergement", "contenu": "Notre hébergement sécurisé inclut des serveurs puissants, une gestion complète des ressources et une infrastructure robuste adaptée aux besoins de ton site."},
+  { "id": 24, "titre": "Sauvegardes régulières", "contenu": "Nous effectuons des sauvegardes régulières de ton site pour garantir une récupération rapide en cas de problème technique."}
+
+]

@@ -1,0 +1,154 @@
+/* Container principal */
+.apropos-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Paragraphe d'introduction centré */
+.paragrapheIntro-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #003f5c;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 25%;
+    height: 10em;
+    text-align: justify;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.7);
+    margin-top: 85px;
+}
+
+.paragrapheIntro {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+/* Container des chapitres */
+.chapitres-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Style des cards de chapitres */
+.chapitre-card {
+    background: linear-gradient(to right, #003f5c, #6a9cb8);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    width: 170px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    /* animation-timing-function: ease-out; */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Ajout de la transition pour la couleur */
+
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.7);
+}
+.chapitre-card:hover {
+    transform: translateY(-10px); /* Déplacement vers le haut de 10px */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7); /* Augmenter l'ombre pour donner de la profondeur */
+}
+
+/* Animations différentes pour chaque carte */
+.chapitre-card-1 {
+    animation-name: fadeInUp;
+}
+.chapitre-card-2 {
+    animation-name: fadeInDown;
+}
+.chapitre-card-3 {
+    animation-name: fadeInLeft;
+}
+.chapitre-card-4 {
+    animation-name: fadeInRight;
+}
+.chapitre-card-5 {
+    animation-name: fadeInDiagonal;
+}
+.chapitre-card-6 {
+    animation-name: fadeInCurve;
+}
+
+/* Card active */
+.chapitre-card.active {
+    background-color: #007bff;
+}
+
+/* Animations définies */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInDiagonal {
+    from {
+        opacity: 0;
+        transform: translate(-50px, 50px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes fadeInCurve {
+    from {
+        opacity: 0;
+        transform: translateX(-100px) rotate(-10deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) rotate(0deg);
+    }
+}
