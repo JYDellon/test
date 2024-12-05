@@ -199,7 +199,6 @@ nav ul {
 
 
 .menu-toggle {
-    margin-top: 40px;
     font-size: 4em;
     background: none;
     border: none;
@@ -215,12 +214,11 @@ nav ul {
 
 
     .menu-toggle {
-        margin-top: 20px;
         font-size: 4em;
         background: none;
         border: none;
         cursor: pointer;
         color: #003f5c;
-        color:darkorange;
+        color:rgb(0, 255, 38)
     }
     }
