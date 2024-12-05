@@ -14,13 +14,15 @@
 }
 .accueil-container {
     display: flex;
-    justify-content: center;
-    align-items: stretch;
     gap: 20px;
     padding: 20px 120px;
     flex-wrap: wrap;
-    margin-top: 100px;
+    margin-top: 50px;
+    justify-content:center;
+    align-items: flex-start;
+    padding: 20px 120px;
 }
+
 
 @keyframes slideInFromLeft {
     0% {
@@ -71,7 +73,6 @@
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
     opacity: 0; 
     animation: fadeInUp 0.6s ease-out forwards; 
-    margin-top: 50px;
 }
 .cardmDevis {
     background: linear-gradient(to right, rgb(97, 53, 0), darkorange);
@@ -88,7 +89,6 @@
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
     opacity: 0; 
     animation: fadeInUp 0.6s ease-out forwards; 
-    margin-top: 50px;
 
 }
 
@@ -121,38 +121,82 @@
 
 
 
-@media (min-width: 601px) and (max-width: 768px) {
-    .menu-toggle {
-        margin-top: -20px;
-        font-size: 4em;
-        background: none;
-        border: none;
-        cursor: pointer;
-        color: #003f5c;
-        color:darkorange
+@media (min-width: 601px) and (max-width: 1050px) {
+    .cardm, .cardmDevis {
+        width: 390px;
+        height: 150px;
+        margin-bottom: 40px;
+        
+
     }
-    .cardm {            
-        margin-top: -90px; 
-        width: 220px;
-        height: 75px;
+
+
+
+    .accueil-container {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 0;
+        flex-wrap: wrap;
+        margin-top: 0px;
+        justify-content: space-between;
+        align-items: flex-start;
     }
-    .cardmDevis {            
-        margin-top: 5px; 
-        width: 220px;
-        height: 75px;
-    }
+
+
+
+
+
+
 }
 
-@media (max-width: 600px) {
-    .cardm {            
-        margin-top: -90px; 
+@media (max-width: 599px) {
+    .cardm, .cardmDevis {
         width: 220px;
-        height: 75px;
+        height: 150px;
+        margin-top: 20px;
+    }
+
+
+    .accueil-container {
+        display: flex;
+        gap: 20px;
+        padding: 20px 120px;
+        flex-wrap: wrap;
+        margin-top: 50px;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 20px 120px;
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 599px) {
+    .cardm {            
+        margin-top: 0px;
+        width: 390px;
+        height: 225px;
     }
     .cardmDevis {            
-        margin-top: 5px; 
-        width: 220px;
-        height: 75px;
+        margin-top: 50px; 
+        width: 390px;
+        height: 225px;
     }
     .carousel-container {
         display: none;
@@ -186,7 +230,7 @@ h3{
     border: 2px solid white;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 800px;
+    width: 600px;
     max-width: 800px;
     margin: 0 auto;
     height: 200px;
@@ -242,11 +286,8 @@ h3{
 }
 
 @media (min-width: 600px) and (max-width: 768px) {
-    .slide {
-        height: 300px;
-    }
-    .cardm {
-        height: 75px;
+    .slide,.cardm  {
+        height: 150px;
     }
 
     .slide-content h3 {

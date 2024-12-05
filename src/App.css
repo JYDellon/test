@@ -11,12 +11,17 @@ html, body {
 
 /* Conteneur pour la carte avec le logo et le nom de la société superposé */
 .carte-container {
-  position: absolute;  /* Utilise absolute pour que la carte puisse être centrée indépendamment du reste */
-  top: 50%;            /* Centre verticalement */
-  left: 50%;           /* Centre horizontalement */
-  transform: translate(-50%, -50%);  /* Déplace la carte pour la centrer parfaitement */
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 280px;
+  height: auto;
 }
+
 
 /* Style de la carte */
 .carte {
@@ -162,7 +167,7 @@ width: auto;
   display: flex;
   align-items: center; /* Centre les éléments verticalement */
   justify-content: center; /* Centre uniquement le logo horizontalement */
-  height: 12em; /* Hauteur du header */ /* Marges latérales */
+  height: 1008m; /* Hauteur du header */ /* Marges latérales */
 }
 
 
@@ -192,32 +197,22 @@ width: auto;
       height: 50px;
       margin-top: 11px;
     }
-
-
-
-
-
-
 }
 
 .logo2{
-  width: 290px;
+  width: 150px;
   margin-left: 0px;
   margin-top: -10px;
-
 }
-
 
 .logo3{
   margin-top: 0px;
   margin-left: 0px;
-  width: 100px;
+  width: 100%;
 }
 
-
-
 html {
-  height: 150%;
+  height: 100%;
 }
  
 body {
@@ -227,16 +222,15 @@ body {
  
 footer {
   position:absolute;
-  bottom: -235px;
+  top: 865px;
   left: 0;
   width: 100%;
 }
 
-
 @media (max-width: 599px) {
   footer {
       position:absolute;
-      bottom: -435px;
+      bottom: 1000px;
       left: 0;
       width: 100%;
     }

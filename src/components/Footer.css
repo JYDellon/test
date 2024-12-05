@@ -1,4 +1,4 @@
-/* Assure que html et body prennent toute la hauteur de la fenêtre */
+
 html, body {
   height: 100%; /* Nécessaire pour que body prenne toute la hauteur */
   margin: 0; /* Supprime les marges par défaut */
@@ -94,4 +94,16 @@ body {
 
 .footer-bottom a:hover {
   color: #f4a261;
+}
+
+/* ----------------------------------------------------------------------- */
+
+/* Empêche le footer d'être transparent en mobile */
+@media screen and (max-width: 768px) {
+  .footer-container , .footer-bottom, .footer-section{
+    background: #3a3a3a; /* Couleur solide pour mobile */
+  }
+  .footer-bottom{
+    margin-top: -20px;
+  }
 }
