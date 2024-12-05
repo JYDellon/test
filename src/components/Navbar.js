@@ -46,8 +46,8 @@ function Navbar({ onLinkClick }) {
                     </li>
                     <li>
                         <Link
-                            to="/test/a-propos"
-                            className={isActiveLink('/test/a-propos') ? 'active' : ''}
+                            to="/a-propos"
+                            className={isActiveLink('/a-propos') ? 'active' : ''}
                             onClick={closeMenu}
                         >
                             A propos de
@@ -55,8 +55,8 @@ function Navbar({ onLinkClick }) {
                     </li>
                     <li>
                         <Link
-                            to="/test/nos-services"
-                            className={isActiveLink('/test/nos-services') ? 'active' : ''}
+                            to="/nos-services"
+                            className={isActiveLink('/nos-services') ? 'active' : ''}
                             onClick={closeMenu}
                         >
                             Nos solutions web
@@ -64,8 +64,8 @@ function Navbar({ onLinkClick }) {
                     </li>
                     <li>
                         <Link
-                            to="/test/portfolio"
-                            className={isActiveLink('/test/portfolio') ? 'active' : ''}
+                            to="/portfolio"
+                            className={isActiveLink('/portfolio') ? 'active' : ''}
                             onClick={closeMenu}
                         >
                             Etudes de cas
@@ -73,8 +73,8 @@ function Navbar({ onLinkClick }) {
                     </li>
                     <li>
                         <Link
-                            to="/test/contact"
-                            className={isActiveLink('/test/contact') ? 'active' : ''}
+                            to="/contact"
+                            className={isActiveLink('/contact') ? 'active' : ''}
                             onClick={closeMenu}
                         >
                             Contact
@@ -91,8 +91,8 @@ function Navbar({ onLinkClick }) {
                     </li>
                     <li>
                         <Link
-                            to="/test/rgpd"
-                            className={isActiveLink('/test/rgpd') ? 'active' : ''}
+                            to="/rgpd"
+                            className={isActiveLink('/rgpd') ? 'active' : ''}
                             onClick={closeMenu}
                         >
                             RGPD
