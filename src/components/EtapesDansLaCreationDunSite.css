@@ -9,7 +9,7 @@
     position: relative;
     margin: 0 auto;
     width: 70%;
-    margin-top: 40px;
+    margin-top: 1px;
 }
 
 /* Liste des cartes d'étapes */
@@ -129,7 +129,7 @@
 .etapes-details-container {
     display: flex;
     justify-content: center;
-    margin-top: 40px;
+    margin-top: 10px;
     width: 100%;
     opacity: 0;
     animation: fadeIn 0.5s forwards ease-in-out;
