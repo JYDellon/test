@@ -161,7 +161,7 @@ nav ul {
 }
 
 /* Menu caché par défaut sur mobile */
-@media (min-width:601px) and (max-width: 768px) {
+@media (min-width:600px) and (max-width: 768px) {
     .navbar-container {
         display: block; /* Retourne au comportement par défaut sur mobile */
     }
@@ -183,5 +183,23 @@ nav ul {
         text-align: center; /* Centre le texte */
         margin: 5px 0; /* Ajoute un espacement entre les liens */
     }
+    
+
+
 }
 
+
+@media  (min-width: 599) {
+
+
+
+.menu-toggle {
+    margin-top: 40px;
+    font-size: 4em;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #003f5c;
+    color:darkorange
+}
+}
