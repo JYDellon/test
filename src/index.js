@@ -49,7 +49,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom/client'; // Utilisation de 'react-dom/client' pour React 18 et plus
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import App from './App';
 import './index.css';
 
@@ -59,8 +59,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 // Rendre l'application dans le root
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <HashRouter>
       <App />
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>
 );
