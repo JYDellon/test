@@ -113,15 +113,16 @@ function App() {
       
       <Routes>
       
+       <Route path="/test" element={<Accueil />} />
         <Route path="/" element={<Accueil />} />
         <Route path="/test/nos-services" element={<NosServices />} />
         <Route path="/test/rgpd" element={<Rgpd />} />
         <Route path="/test/etapesCreationSite" element={<EtapesDansLaCreationDunSite />} />
         <Route path="/test/a-propos" element={<APropos />} />
-        <Route path="test//portfolio" element={<Portfolio />} />
-        <Route path="test//contact" element={<Contact />} />
-        <Route path="test//formulaire-devis" element={<Formulaire />} />
-        <Route path="test//devis" element={<Devis />} />
+        <Route path="/test/portfolio" element={<Portfolio />} />
+        <Route path="/test/contact" element={<Contact />} />
+        <Route path="/test/formulaire-devis" element={<Formulaire />} />
+        <Route path="/test/devis" element={<Devis />} />
         </Routes>
 
       <Footer />
