@@ -12,15 +12,7 @@
     margin-top: -30px;
 }
 
-/* Liste des cartes d'étapes */
-.etapes-list {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    max-width: 1800px;
-    width: fit-content;
-}
+
 
 /* Styles des cartes d'étapes */
 .etape-card {
@@ -283,4 +275,6 @@
         width: 100%;
         height: 300px;
     }
+
+    
 }

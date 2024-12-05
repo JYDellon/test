@@ -40,7 +40,7 @@
     width: 90%;
     max-width: 1200px;
     margin-top: 20px;
-    margin-bottom: 80PX;
+    margin-bottom: 80px;
 }
 
 .chapitre-card {
@@ -270,4 +270,413 @@
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.apropos-container {
+    display: flex;
+    flex-direction: column; /* Par défaut, on empile les éléments en colonne */
+    align-items: center;
+    padding: 20px;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.paragrapheIntro-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #003f5c;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 500px;
+    height: 12em;
+    max-width: 800px;
+    text-align: justify;
+    box-shadow: 5px 10px 6px rgba(0, 0, 0, 0.7);
+    background: linear-gradient(to right, #003f5c, #6a9cb8);
+    margin-top: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.chapitres-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    width: 90%;
+    max-width: 1200px;
+    margin-top: 20px;
+    margin-bottom: 80px;
+}
+
+.chapitre-card {
+    background: linear-gradient(to right, #003f5c, #6a9cb8);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    width: 250px;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0.9;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.7);
+}
+
+.chapitre-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7);
+}
+
+.chapitre-card.active {
+    background-color: #007bff;
+}
+
+.chapitre-card .detail-card {
+    display: none;
+    margin-top: 10px;
+    background: #ffffff;
+    color: #003f5c;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+    .apropos-container {
+        flex-direction: column; /* Empiler les éléments sur petits écrans */
+        justify-content: flex-start; /* Alignement en haut */
+    }
+
+    .paragrapheIntro-container {
+        width: 100%; /* Prend toute la largeur */
+        margin-top: 20px;
+        padding: 15px;
+    }
+
+    .paragrapheIntro {
+        font-size: 1em;
+    }
+
+    .chapitres-container {
+        width: 100%; /* Prend toute la largeur sur petits écrans */
+        margin-top: 10px;
+    }
+
+    .chapitre-card {
+        width: 100%; /* Prend toute la largeur du parent */
+        margin-bottom: 10px;
+    }
+
+    .chapitre-card.active .detail-card {
+        display: block; /* Affiche la carte de détail lorsque active */
+    }
+}
+
+@media (max-width: 480px) {
+    .paragrapheIntro-container {
+        padding: 10px;
+    }
+
+    .chapitre-card {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    .paragrapheIntro {
+        font-size: 0.9em;
+    }
+}
+
+
+
+
+
+/* Conteneur principal */
+.apropos-container {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 70%;
+    margin: 0 auto;
+}
+
+/* Liste des cartes de chapitres */
+.chapitres-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1800px;
+    width: fit-content;
+    position: relative;
+}
+
+/* Styles des cartes de chapitres */
+.chapitre-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #003f5c, #6a9cb8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    width: 250px;
+    height: 75px;
+    min-width: 220px;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(20px);
+    animation-fill-mode: forwards;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+/* Effet de survol */
+.chapitre-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7);
+}
+
+/* Animations d'apparition des cartes */
+.chapitre-card:nth-child(1) {
+    animation: slideUp 0.5s ease-out forwards;
+}
+
+.chapitre-card:nth-child(2) {
+    animation: slideLeft 0.6s ease-out forwards;
+}
+
+.chapitre-card:nth-child(3) {
+    animation: slideRight 0.7s ease-out forwards;
+}
+
+.chapitre-card:nth-child(4) {
+    animation: slideDown 0.8s ease-out forwards;
+}
+
+.chapitre-card:nth-child(5) {
+    animation: slideDiagonal 0.9s ease-out forwards;
+}
+
+/* Animation pour l'apparition des détails */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDiagonal {
+    from {
+        opacity: 0;
+        transform: translate(-30px, -30px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+/* Conteneur des détails */
+.chapitres-details-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+    position: relative;
+}
+
+/* Détails d'un chapitre */
+.chapitre-details-card {
+    background: linear-gradient(to right, #003f5c, #6a9cb8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 10px 6px rgba(0, 0, 0, 0.7);
+    width: 500px;
+    text-align: left;
+    color: white;
+    font-size: 1.2em;
+    position: relative;
+    z-index: 1;
+}
+
+/* Bouton pour fermer la carte de détails */
+.fermer-details {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* Affichage sur petits écrans */
+@media screen and (max-width: 768px) {
+    .apropos-container {
+        position: relative;
+    }
+
+    .chapitres-details-container {
+        position: absolute; /* Superposé aux chapitres */
+        top: 0;
+        left: 0;
+        z-index: 10;
+        margin-top: 0;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .chapitre-details-card {
+        width: 90%;
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .chapitre-details-card {
+        width: 100%;
+        height: 300px;
+    }
+
+
+    /* Liste des cartes de chapitres */
+.chapitres-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: fit-content;
+    position: relative;
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .apropos-container {
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-top: 10px; /* Rapprochement du menu */
+    }
+
+    .paragrapheIntro-container {
+        width: 100%;
+        margin-top: 20px;
+        padding: 15px;
+    }
+
+    .paragrapheIntro {
+        font-size: 1em;
+    }
+
+    .chapitres-container {
+        width: 100%;
+        margin-top: -40px;
+        gap: 10px; /* Réduit l'espace entre les cartes */
+    }
+
+    .chapitre-card {
+        width: 90%; /* Utilise 90% de la largeur pour rapprocher les cartes */
+        margin-bottom: 5px; /* Réduit l'espacement entre les cartes */
+    }
+
+    .chapitre-card.active .detail-card {
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    .paragrapheIntro-container {
+        padding: 10px;
+    }
+
+    .chapitre-card {
+        width: 100%;
+        font-size: 1rem;
+        margin-bottom: 5px; /* Réduit encore l'espacement entre les cartes */
+    }
+
+    .paragrapheIntro {
+        font-size: 0.9em;
+    }
+
+    .chapitres-container {
+        gap: 5px; /* Réduit l'espace entre les cartes */
+    }
 }
