@@ -1,0 +1,202 @@
+/* Container principal */
+.rgpd-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  width: 50%;
+  margin: 0 auto;
+}
+
+/* Styles pour les cards */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 50px;
+
+}
+
+/* Style de chaque card */
+.cardN {
+  background: linear-gradient(to right, #003f5c, #6a9cb8);
+  border-radius: 8px;
+  padding: 15px;
+  width: 250px;
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  opacity: 0; /* Initialement invisibles */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+
+}
+
+.cardN:hover {
+  transform: translateY(-10px); /* Déplacement vers le haut de 10px */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7); /* Augmenter l'ombre pour donner de la profondeur */
+}
+
+
+/* Animations différentes pour chaque card */
+.cardN:nth-child(1) {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.cardN:nth-child(2) {
+  animation: slideInLeft 0.6s ease-out forwards;
+}
+
+.cardN:nth-child(3) {
+  animation: slideInRight 0.6s ease-out forwards;
+}
+
+.cardN:nth-child(4) {
+  animation: fadeInDown 0.6s ease-out forwards;
+}
+
+.cardN:nth-child(5) {
+  animation: slideInLeft 0.6s ease-out forwards;
+}
+
+.cardN:nth-child(6) {
+  animation: rotateIn 0.6s ease-out forwards;
+}
+
+/* Animations */
+
+/* Apparition en glissant vers le haut */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Glissement depuis la gauche */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Glissement depuis la droite */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Apparition en glissant vers le bas */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Zoom avant */
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Rotation depuis le bas */
+@keyframes rotateIn {
+  from {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+/* Affichage du contenu RGPD */
+.rgpd-content {
+  width: 80%;
+  max-width: 1200px;
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.content-header {
+  text-align: center;
+}
+
+.content-body {
+  margin-top: 15px;
+  font-size: 1em;
+  text-align: justify;
+}
+
+/* Flèches de navigation */
+.navigation-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.prev-button,
+.next-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.arrow {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.prev-button:hover .arrow,
+.next-button:hover .arrow {
+  transform: scale(1.2);
+}
+
+/* Cacher les boutons de navigation inutilisables */
+.hidden {
+  visibility: hidden;
+}
+
+.modal-content1 {
+  margin-top: 50px;
+  width: 600px;
+  height: 150px;
+  padding: 20px;
+  color: white;
+  background: linear-gradient(to right, #003f5c, #6a9cb8);
+}
+

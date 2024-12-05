@@ -1,0 +1,273 @@
+.apropos-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.paragrapheIntro-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #003f5c;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 500px;
+    height: 12em;
+    max-width: 800px;
+    text-align: justify;
+    box-shadow: 5px 10px 6px rgba(0, 0, 0, 0.7);
+    background: linear-gradient(to right, #003f5c, #6a9cb8);
+
+    margin-top: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.paragrapheIntro {
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.chapitres-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    width: 90%;
+    max-width: 1200px;
+    margin-top: 20px;
+    margin-bottom: 80PX;
+}
+
+.chapitre-card {
+    background: linear-gradient(to right, #003f5c, #6a9cb8);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    width: 250px;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0.9;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.7);
+}
+
+.chapitre-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7);
+}
+
+.chapitre-card.active {
+    background-color: #007bff;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInDiagonal {
+    from {
+        opacity: 0;
+        transform: translate(-50px, 50px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes fadeInCurve {
+    from {
+        opacity: 0;
+        transform: translateX(-100px) rotate(-10deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) rotate(0deg);
+    }
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+    .paragrapheIntro-container {
+        width: 100%;
+        margin-top: 20px;
+        padding: 15px;
+    }
+
+    .paragrapheIntro {
+        font-size: 1em;
+    }
+
+    .chapitres-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .chapitre-card {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .paragrapheIntro-container {
+        padding: 10px;
+    }
+
+    .chapitre-card {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    .paragrapheIntro {
+        font-size: 0.9em;
+    }
+}
+
+
+
+
+
+
+
+/* Animation pour les boutons horizontaux */
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Appliquer l'animation aux cartes de chapitres */
+.chapitres-container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding: 10px;
+}
+
+.chapitre-card {
+    padding: 10px 20px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    opacity: 0; /* Démarre avec une opacité de 0 pour l'animation */
+    animation: slideIn 0.5s forwards; /* L'animation se déclenche à l'apparition */
+}
+
+.chapitre-card-1 {
+    animation-delay: 0.1s;
+}
+
+.chapitre-card-2 {
+    animation-delay: 0.2s;
+}
+
+.chapitre-card-3 {
+    animation-delay: 0.3s;
+}
+
+.chapitre-card-4 {
+    animation-delay: 0.4s;
+}
+
+.chapitre-card-5 {
+    animation-delay: 0.5s;
+}
+
+.chapitre-card-6 {
+    animation-delay: 0.6s;
+}
+
+.chapitre-card.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.chapitre-card:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+
+
+
+
+/* Conteneur du texte qui s'affiche */
+.paragrapheIntro-container {
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+/* Lorsque le conteneur est ouvert */
+.paragrapheIntro-container.open {
+    max-height: 500px; /* Maximum hauteur (ajustable selon le contenu) */
+    opacity: 1;
+}
+
+/* Texte du paragraphe */
+.paragrapheIntro {
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

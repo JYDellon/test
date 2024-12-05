@@ -1,0 +1,104 @@
+/* Container principal du formulaire */
+.formulaire-contact {
+  width: 1500px;
+  height: 520px;
+  margin: 0 auto;
+  padding: 20px;
+  background: linear-gradient(to right, #003f5c, #6a9cb8);
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Conteneur des deux parties : gauche et droite */
+.formulaire-inner {
+  display: flex;
+  gap: 20px;
+  
+}
+
+/* Partie gauche (Champs de texte sauf message) */
+.formulaire-champs-gauche {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Partie droite (Champ message) */
+.formulaire-champs-droit {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Texte Message, hauteur ajustée */
+.formulaire-message textarea {
+  height: 100% !important; /* Hauteur égale à celle des champs gauche */
+  resize: none;
+  background-color: rgb(225, 225, 225);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.7);
+}
+
+/* Bouton d'envoi */
+.formulaire-envoyer-btn {
+  background-color: #1976d2;
+  color: white;
+  font-weight: bold;
+  padding: 10px 16px;
+  border-radius: 8px;
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.formulaire-envoyer-btn:hover {
+  background-color: #1565c0;
+}
+
+/* Champs de texte */
+.MuiTextField-root {
+  margin-bottom: 16px;
+  border-radius: 8px;  
+  background-color: rgb(225, 225, 225);
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.7);
+  color :1565c0;
+max-width: 100%;
+}
+
+.MuiOutlinedInput-root {
+  border-radius: 8px;
+  font-size: 1rem;
+  padding: 12px;
+}
+
+.MuiOutlinedInput-notchedOutline {
+  border: 2px solid #dddddd00;
+}
+
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #1976d2;
+}
+
+.MuiInputLabel-root {
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .formulaire-contact {
+      width: 100%;
+      padding: 10px;
+  }
+
+  .formulaire-inner {
+      flex-direction: column;
+  }
+
+  .formulaire-champs-gauche, .formulaire-champs-droit {
+      flex: none;
+  }
+}
