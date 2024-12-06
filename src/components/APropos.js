@@ -121,9 +121,7 @@ function APropos() {
                         onClick={() => toggleChapitre(index)}
                     >
                         <h3>{chapitre}</h3>
-                        <span className="toggle-icon">
-                            {chapitreSelectionne === index ? '-' : '+'}
-                        </span>
+
                     </div>
                     {chapitreSelectionne === index && (
                         <div className="chapitre-toggle-details">

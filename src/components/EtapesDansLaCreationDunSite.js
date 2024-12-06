@@ -135,9 +135,7 @@ function EtapesDansLaCreationDunSite() {
                         onClick={() => toggleEtape(index)}
                     >
                         <h3>{etape}</h3>
-                        <span className="toggle-icon">
-                            {etapeSelectionnee === index ? '-' : '+'}
-                        </span>
+
                     </div>
                     {etapeSelectionnee === index && (
                         <div className="etape-toggle-details">

@@ -1,15 +1,16 @@
 /* Conteneur global */
 .portfolio-container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 20px;
-    height: 800px;
+    height: auto; /* Remplacer la hauteur fixe par 'auto' pour plus de flexibilité */
     overflow-y: auto; 
 }
 
 
 /* Conteneur des éléments portfolio (alignement horizontal) */
 .portfolio-items {
+    width: 100%;
     display: flex;
     flex-wrap: wrap; /* Permet aux éléments de se réorganiser sur les petits écrans */
     gap: 20px; /* Espacement entre les éléments */
@@ -27,6 +28,154 @@
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     margin-bottom: 40px;
+}
+
+/* Contenu texte + image en ligne */
+.portfolio-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 20px;
+    width: 100%;
+}
+
+/* Texte à gauche */
+.portfolio-text {
+    flex: 1;
+    color: white;
+    padding-right: 20px; /* Un peu d'espace entre le texte et l'image */
+}
+
+/* Image à droite */
+.portfolio-image {
+    flex: 1;
+    width: 400px;
+    max-width: 100%; /* Ajuste l'image en fonction de l'écran */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.portfolio-image:hover {
+    transform: scale(1.02);
+}
+
+/* Bouton CTA au centre */
+.portfolio-cta-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.portfolio-cta {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #007bff;
+    color: white;
+    font-size: 1.2em;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.portfolio-cta:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive design : Tablettes et plus petites tailles d'écran */
+@media (max-width: 1024px) {
+    .portfolio-content {
+        flex-direction: column;
+        align-items: center; /* Centrer les éléments */
+    }
+
+    .portfolio-image {
+        max-width: 100%; /* S'assurer que l'image occupe toute la largeur */
+    }
+
+    .portfolio-text {
+        text-align: center; /* Centrer le texte */
+        padding-right: 0;
+    }
+
+    .portfolio-cta {
+        font-size: 1em;
+    }
+}
+
+/* Responsive design : Téléphones et très petits écrans */
+@media (max-width: 800px) {
+    .portfolio-content {
+        flex-direction: column;
+    }
+
+    .portfolio-image {
+        max-width: 100%; /* S'assurer que l'image occupe toute la largeur */
+    }
+
+    .portfolio-text {
+        text-align: center; /* Centrer le texte */
+    }
+
+    .portfolio-container {
+        padding: 10px; /* Réduire le padding pour les petits écrans */
+    }
+
+    .portfolio-cta {
+        padding: 10px 20px; /* Réduire la taille du bouton */
+        font-size: 1em;
+    }
+}
+
+/* Animations pour les éléments portfolio-item */
+@keyframes slideFromBottom {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideFromRight {
+    from {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Conteneur des éléments portfolio (alignement horizontal) */
+.portfolio-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Section d'une étude de cas */
+.portfolio-item {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background: linear-gradient(to right, #003f5c, #6a9cb8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    opacity: 0;  /* Initialement transparent */
+    animation: slideFromBottom 1s ease-out forwards;  /* Animation depuis le bas */
+}
+
+/* Animation pour le second élément */
+.portfolio-item:nth-child(2) {
+    animation: slideFromRight 1s ease-out forwards;  /* Animation depuis la droite */
 }
 
 /* Contenu texte + image en ligne */
@@ -87,121 +236,6 @@
         max-width: 100%;
     }
 }
-
-
-
-
-
-
-
-
-/* Animations pour les éléments portfolio-item */
-@keyframes slideFromBottom {
-    from {
-      transform: translateY(50px);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-  
-  @keyframes slideFromRight {
-    from {
-      transform: translateX(50px);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-  
-  /* Conteneur des éléments portfolio (alignement horizontal) */
-  .portfolio-items {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-  }
-  
-  /* Section d'une étude de cas */
-  .portfolio-item {
-      width: 100%;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      background: linear-gradient(to right, #003f5c, #6a9cb8);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      margin-bottom: 40px;
-      opacity: 0;  /* Initialement transparent */
-      animation: slideFromBottom 1s ease-out forwards;  /* Animation depuis le bas */
-  }
-  
-  /* Animation pour le second élément */
-  .portfolio-item:nth-child(2) {
-      animation: slideFromRight 1s ease-out forwards;  /* Animation depuis la droite */
-  }
-  
-  /* Contenu texte + image en ligne */
-  .portfolio-content {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 20px;
-  }
-  
-  /* Texte à gauche */
-  .portfolio-text {
-      flex: 1;
-      color: white;
-  }
-  
-  /* Image à droite */
-  .portfolio-image {
-      flex: 1;
-      max-width: 400px;
-      border-radius: 8px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s;
-  }
-  
-  .portfolio-image:hover {
-      transform: scale(1.02);
-  }
-  
-  /* Bouton CTA au centre */
-  .portfolio-cta-container {
-      margin-top: 20px;
-      text-align: center;
-  }
-  
-  .portfolio-cta {
-      display: inline-block;
-      padding: 12px 25px;
-      background-color: #007bff;
-      color: white;
-      font-size: 1.2em;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-  }
-  
-  .portfolio-cta:hover {
-      background-color: #0056b3;
-  }
-  
-  /* Responsive design */
-  @media (max-width: 800px) {
-      .portfolio-content {
-          flex-direction: column;
-      }
-  
-      .portfolio-image {
-          max-width: 100%;
-      }
-  }
-  
+.portfolio-titre,.portfolio-text,.portfolio-description,.portfolio-solution{
+    color: white;
+}

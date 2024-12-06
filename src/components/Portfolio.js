@@ -10,9 +10,9 @@ function Portfolio() {
                 <section className="portfolio-item">
                     <div className="portfolio-content">
                         <div className="portfolio-text">
-                            <h2 className="portfolio-titre">
-                                Comment JR Auto a augmenté ses conversions de 50 % avec notre solution de conception web
-                            </h2>
+                            <h3 className="portfolio-titre">
+                                JR Auto
+                            </h3>
                             <p className="portfolio-description">
                                 JR Auto nous a sollicités pour réaliser leur site web afin de soutenir le démarrage de leur activité.
                             </p>
@@ -25,9 +25,11 @@ function Portfolio() {
                                 </a>
                             </div>
                         </div>
-                        <a href="https://jydellon.github.io/JRAuto/" target="_blank" rel="noopener noreferrer">
-                            <img src={JRAUTO} alt="Aperçu du site JR Auto" className="portfolio-image" />
-                        </a>
+                        <div className='imagecontainer'>
+                            <a href="https://jydellon.github.io/JRAuto/" target="_blank" rel="noopener noreferrer">
+                                <img src={JRAUTO} alt="Aperçu du site JR Auto" className="portfolio-image" />
+                            </a>
+                        </div>
                     </div>
                 </section>
                 <section className="portfolio-item">
@@ -49,9 +51,12 @@ function Portfolio() {
                                 </a>
                             </div>
                         </div>
-                        <a href="https://jydellon.github.io/JRAuto/" target="_blank" rel="noopener noreferrer">
-                            <img src={SECOND_SITE} alt="Aperçu du site JR Auto" className="portfolio-image" />
-                        </a>
+                        <div className='imagecontainer'>
+                            <a href="https://jydellon.github.io/JRAuto/" target="_blank" rel="noopener noreferrer">
+                                <img src={SECOND_SITE} alt="Aperçu du site JR Auto" className="portfolio-image" />
+                            </a>
+                        </div>
+                        
                     </div>
                 </section>
             </div>
