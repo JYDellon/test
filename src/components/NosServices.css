@@ -37,8 +37,9 @@
 /* Carte principale pour chaque service */
 .service-card {
     display: flex;
+    justify-content: center;
     align-items: center;
-    text-align: left;
+    text-align: center;
     background: linear-gradient(to right, #003f5c, #6a9cb8);
     border-radius: 10px;
     width: 470px;
@@ -285,16 +286,17 @@
 /* Contenu des cartes d'informations */
 .info-cards-container {
     margin-top: 10px;
-    display: grid; /* Utilisation du grid */
-    grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
-    grid-template-rows: repeat(2, auto); /* 2 lignes */
-    gap: 20px; /* Espace entre les cartes */
+    display: flex;
+    flex-direction: row; /* Aligner les cartes horizontalement */
+    flex-wrap: wrap; /* Permet aux cartes de passer à la ligne suivante */
+    gap: 20px; /* Espacement entre les cartes */
     padding: 10px;
     border-radius: 6px;
     animation: fadeInUp 0.5s ease-out;
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
 }
 
+/* Styles pour les cartes info-card */
 .info-card {
     padding: 10px 15px;
     background: white;
@@ -304,6 +306,28 @@
     line-height: 1.5;
     color: #003f5c;
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+    width: calc(50% - 10px); /* Chaque carte occupe 50% de la largeur, avec un espacement */
+}
+
+/* En version mobile (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    .info-cards-container {
+        flex-direction: column; /* Les cartes seront empilées verticalement sur mobile */
+        align-items: center; /* Centrer les cartes */
+    }
+
+    .info-card {
+        width: 90%; /* Les cartes occuperont 90% de la largeur sur mobile */
+        margin-bottom: 15px; /* Espacement entre les cartes */
+    }
+}
+
+/* En version très petit écran (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    .info-card {
+        width: 100%; /* Les cartes occuperont toute la largeur */
+        padding: 10px;
+    }
 }
 
 
