@@ -192,6 +192,7 @@
         margin-top: 0px;
         width: 250px;
         height: 150px;
+        margin-bottom: 0px;
     }
 
     .cardmDevis  {            
@@ -207,6 +208,7 @@
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         width: 400px;
         margin: 0 auto;
+        height: 160px;
         animation: slideInFromBottom 0.8s ease-out;
     }
 

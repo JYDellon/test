@@ -229,10 +229,9 @@ footer {
 
 @media (max-width: 599px) {
   footer {
-      position:absolute;
-      bottom: 100px;
-      left: 0;
-      width: 100%;
+    top: 725px;
+    left: 0;
+    width: 100%;
     }
   }
 
@@ -354,3 +353,10 @@ body {
     width: 90%;
   }
 }
+
+
+
+
+
+
+
