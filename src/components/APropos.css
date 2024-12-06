@@ -680,3 +680,430 @@
         gap: 5px; /* Réduit l'espace entre les cartes */
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.apropos-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.chapitres-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    width: 90%;
+    max-width: 1200px;
+    margin-top: 20px;
+    margin-bottom: 80px;
+}
+
+.chapitre-card {
+    background: linear-gradient(to right, #003f5c, #6a9cb8);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    width: 250px;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0.9;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.7);
+}
+
+.chapitre-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7);
+}
+
+.chapitre-card.active {
+    background-color: #007bff;
+}
+
+.chapitre-toggle-icon {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDiagonal {
+    from {
+        opacity: 0;
+        transform: translate(-30px, -30px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+.chapitres-details-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+    position: relative;
+}
+
+.chapitre-details-card {
+    background: linear-gradient(to right, #003f5c, #6a9cb8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 10px 6px rgba(0, 0, 0, 0.7);
+    width: 500px;
+    text-align: left;
+    color: white;
+    font-size: 1.2em;
+    position: relative;
+    z-index: 1;
+}
+
+.fermer-details {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .apropos-container {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .chapitres-container {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .chapitre-card {
+        width: 90%;
+        margin-bottom: 10px;
+    }
+
+    .chapitre-card.active .chapitre-text {
+        display: block;
+    }
+
+    .chapitre-card .chapitre-toggle-icon {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .paragrapheIntro-container {
+        padding: 10px;
+    }
+
+    .chapitre-card {
+        width: 100%;
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+
+    .paragrapheIntro {
+        font-size: 0.9em;
+    }
+
+    .chapitres-container {
+        gap: 5px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Conteneur principal */
+.apropos-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #f8f9fa00; /* Couleur de fond claire */
+    color: #003f5c; /* Couleur principale */
+}
+
+/* Conteneur d'un chapitre */
+.chapitre-toggle-container {
+    width: 100%;
+    border: 1px solid #6a9cb8;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* En-tête du chapitre */
+.chapitre-toggle-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    cursor: pointer;
+    background: linear-gradient(to right, #003f5c, #6a9cb8);
+    color: white;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+}
+
+.chapitre-toggle-header:hover {
+    background: #005f7c; /* Effet hover */
+}
+
+/* Icône toggle */
+.toggle-icon {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Contenu déroulé */
+.chapitre-toggle-details {
+    padding: 15px;
+    background: #eef3f8; /* Fond clair */
+    color: #003f5c; /* Texte sombre */
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+/* En-tête actif */
+.chapitre-toggle-header.active {
+    background: #005f7c;
+    font-weight: bold;
+}
+
+/* Mobile-Friendly Styles */
+@media screen and (max-width: 768px) {
+    .apropos-container {
+        padding: 10px;
+    }
+
+    .chapitre-toggle-header {
+        font-size: 1em;
+    }
+
+    .chapitre-toggle-details {
+        font-size: 0.9em;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Conteneur principal */
+.portfolio-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Styles pour les éléments du portfolio */
+.portfolio-items {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* Style de chaque section de portfolio */
+.portfolio-item {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border: 1px solid #6a9cb8;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+/* Animation d'apparition en glissant vers le haut */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Contenu du portfolio */
+.portfolio-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    width: 50%;
+    gap: 20px;
+}
+
+/* Section texte du portfolio */
+.portfolio-text {
+    width: 60%;
+}
+
+/* Titre du portfolio */
+.portfolio-titre {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #003f5c;
+}
+
+/* Description du portfolio */
+.portfolio-description {
+    font-size: 1em;
+    margin-top: 10px;
+    color: #555;
+}
+
+/* Solution du portfolio */
+.portfolio-solution {
+    font-size: 1em;
+    margin-top: 15px;
+    color: #003f5c;
+}
+
+/* Section d'appel à l'action */
+.portfolio-cta-container {
+    margin-top: 20px;
+}
+
+.portfolio-cta {
+    padding: 10px 20px;
+    background: linear-gradient(to right, #003f5c, #6a9cb8);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.portfolio-cta:hover {
+    background-color: #005f7c;
+}
+
+/* Image du portfolio */
+.portfolio-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile-Friendly Styles */
+@media screen and (max-width: 768px) {
+    .portfolio-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .portfolio-item {
+        flex-direction: column;
+    }
+
+    .portfolio-text {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .portfolio-image {
+        width: 80%;
+        height: auto;
+    }
+}

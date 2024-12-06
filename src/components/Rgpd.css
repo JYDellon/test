@@ -200,3 +200,92 @@
   background: linear-gradient(to right, #003f5c, #6a9cb8);
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+/* Conteneur principal */
+.rgpd-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #f8f9fa00;
+  color: #003f5c;
+}
+
+/* Conteneur d'une section */
+.rgpd-toggle-container {
+  width: 100%;
+  border: 1px solid #6a9cb8;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* En-tête de la section */
+.rgpd-toggle-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  cursor: pointer;
+  background: linear-gradient(to right, #003f5c, #6a9cb8);
+  color: white;
+  font-size: 1.2em;
+  transition: background-color 0.3s ease;
+}
+
+.rgpd-toggle-header:hover {
+  background: #005f7c;
+}
+
+/* Icône toggle */
+.toggle-icon {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+/* Contenu déroulé */
+.rgpd-toggle-details {
+  padding: 15px;
+  background: #eef3f8;
+  color: #003f5c;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+/* En-tête actif */
+.rgpd-toggle-header.active {
+  background: #005f7c;
+  font-weight: bold;
+}
+
+/* Mobile-Friendly Styles */
+@media screen and (max-width: 768px) {
+  .rgpd-container {
+    padding: 10px;
+  }
+
+  .rgpd-toggle-header {
+    font-size: 1em;
+  }
+
+  .rgpd-toggle-details {
+    font-size: 0.9em;
+  }
+}

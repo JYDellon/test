@@ -278,3 +278,89 @@
 
     
 }
+
+
+
+
+/* -------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+
+
+/* Conteneur principal */
+.etapes-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #f8f9fa00; /* Couleur de fond claire */
+    color: #003f5c; /* Couleur principale */
+}
+
+/* Conteneur d'une étape */
+.etape-toggle-container {
+    width: 100%;
+    border: 1px solid #6a9cb8;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* En-tête de l'étape */
+.etape-toggle-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    cursor: pointer;
+    background: linear-gradient(to right, #003f5c, #6a9cb8);
+    color: white;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+}
+
+.etape-toggle-header:hover {
+    background: #005f7c; /* Effet hover */
+}
+
+/* Icône toggle */
+.toggle-icon {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Contenu déroulé */
+.etape-toggle-details {
+    padding: 15px;
+    background: #eef3f8; /* Fond clair */
+    color: #003f5c; /* Texte sombre */
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+/* En-tête actif */
+.etape-toggle-header.active {
+    background: #005f7c;
+    font-weight: bold;
+}
+
+/* Mobile-Friendly Styles */
+@media screen and (max-width: 768px) {
+    .etapes-container {
+        padding: 10px;
+    }
+
+    .etape-toggle-header {
+        font-size: 1em;
+    }
+
+    .etape-toggle-details {
+        font-size: 0.9em;
+    }
+}
