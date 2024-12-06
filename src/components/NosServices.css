@@ -269,27 +269,13 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Contenu des cartes d'informations */
 .info-cards-container {
     margin-top: 10px;
     display: flex;
-    flex-direction: row; /* Aligner les cartes horizontalement */
-    flex-wrap: wrap; /* Permet aux cartes de passer à la ligne suivante */
-    gap: 20px; /* Espacement entre les cartes */
+    flex-direction: row; 
+    flex-wrap: wrap; 
+    gap: 20px; 
     padding: 10px;
     border-radius: 6px;
     animation: fadeInUp 0.5s ease-out;
@@ -306,26 +292,26 @@
     line-height: 1.5;
     color: #003f5c;
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
-    width: calc(50% - 10px); /* Chaque carte occupe 50% de la largeur, avec un espacement */
+    width: calc(50% - 10px);
 }
 
 /* En version mobile (max-width: 768px) */
 @media screen and (max-width: 768px) {
     .info-cards-container {
-        flex-direction: column; /* Les cartes seront empilées verticalement sur mobile */
-        align-items: center; /* Centrer les cartes */
+        flex-direction: column; 
+        align-items: center;
     }
 
     .info-card {
-        width: 90%; /* Les cartes occuperont 90% de la largeur sur mobile */
-        margin-bottom: 15px; /* Espacement entre les cartes */
+        width: 90%; 
+        margin-bottom: 15px;
     }
 }
 
 /* En version très petit écran (max-width: 480px) */
 @media screen and (max-width: 480px) {
     .info-card {
-        width: 100%; /* Les cartes occuperont toute la largeur */
+        width: 100%; 
         padding: 10px;
     }
 }
