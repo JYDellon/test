@@ -150,7 +150,7 @@
 
 }
 
-c {
+@media (max-width: 599px) {
     .cardm, .cardmDevis {
         width: 220px;
         height: 150px;
@@ -163,7 +163,7 @@ c {
         gap: 20px;
         padding: 20px 120px;
         flex-wrap: wrap;
-        margin-top: 50px;
+        margin-top: 0px;
         justify-content: space-between;
         align-items: flex-start;
         padding: 20px 120px;
@@ -195,7 +195,7 @@ c {
     }
 
     .cardmDevis  {            
-        margin-top: 50px; 
+        margin-top: 10px; 
     }
     .carousel-container {
         display: none;
@@ -207,7 +207,6 @@ c {
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         width: 400px;
         margin: 0 auto;
-        height: 160px;
         animation: slideInFromBottom 0.8s ease-out;
     }
 
@@ -297,7 +296,6 @@ h3{
         font-size: 1em;
     }
 }
-
 
 .carousel-image {
     width: 140px;

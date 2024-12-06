@@ -230,7 +230,7 @@ footer {
 @media (max-width: 599px) {
   footer {
       position:absolute;
-      bottom: 1000px;
+      bottom: 500px;
       left: 0;
       width: 100%;
     }
