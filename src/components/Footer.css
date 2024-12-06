@@ -18,7 +18,7 @@ body {
 
 /* Footer déjà défini, mais on s'assure qu'il reste en bas */
 .footer{
-  margin-top: auto;  /* Cela pousse le footer vers le bas */
+  margin-top: 20px;  /* Cela pousse le footer vers le bas */
   background: linear-gradient(to right, #3a3a3a, #1a1a1a);
   color: #e9e9e9;
   padding: 0 0 20px 0;

@@ -182,13 +182,7 @@ width: auto;
 
 
 
-/* Responsive design */
-@media (min-width: 600px) and (max-width: 768px) {
-  .header {
-    flex-direction: column; /* Réorganise les éléments verticalement */
-    height: auto; /* Ajuste automatiquement la hauteur */
-  }
-}
+
 
   @media (max-width: 599px) {
     .header {
@@ -222,18 +216,12 @@ body {
  
 footer {
   position:absolute;
-  top: 865px;
+  top: 830px;
   left: 0;
   width: 100%;
 }
 
-@media (max-width: 599px) {
-  footer {
-    top: 725px;
-    left: 0;
-    width: 100%;
-    }
-  }
+
 
 
 body {
@@ -354,9 +342,18 @@ body {
   }
 }
 
+/* Responsive design */
+@media (min-width: 600px) and (max-width: 768px) {
+  .header {
+    flex-direction: column; /* Réorganise les éléments verticalement */
+    height: auto; /* Ajuste automatiquement la hauteur */
+  }
+}
 
-
-
-
-
-
+@media (max-width: 599px) {
+  footer {
+    top: 830px;
+    left: 0;
+    width: 100%;
+    }
+  }
