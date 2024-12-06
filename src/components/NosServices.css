@@ -1,18 +1,40 @@
+/* Conteneur principal de Nos Services */
 .nos-services-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px; /* Limite la largeur */
+    margin: 0 auto;
+}
+
+/* Titre principal */
+.nos-services-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #003f5c;
+}
+
+/* Liste des services */
+.services-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    align-items: center;
+}
+
+/* Section de chaque service */
+.service-section {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.services-list {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    color: white;
-    margin-bottom: 20px;
-    width: 50%;
-}
-
+/* Carte principale pour chaque service */
 .service-card {
     display: flex;
     justify-content: center;
@@ -27,983 +49,218 @@
     opacity: 0;
     animation-fill-mode: forwards;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Ajout de la transition pour la couleur */
-    opacity: 0; /* Initialement invisibles */
-    animation: fadeInUp 0.6s ease-out forwards; /* Applique l'animation */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
 }
 
-.service-card:hover{
-    transform: translateY(-10px); /* Déplacement vers le haut de 10px */
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7); /* Augmenter l'ombre pour donner de la profondeur */
-}
-
-/* Animation différente pour chaque carte */
-.service-card:nth-child(1) {
-    animation: fadeIn 0.6s ease-out forwards;
-}
-.service-card:nth-child(2) {
-    animation: slideInLeft 0.6s ease-out forwards;
-}
-.service-card:nth-child(3) {
-    animation: slideInRight 0.6s ease-out forwards;
-}
-.service-card:nth-child(4) {
-    animation: slideInUp 0.6s ease-out forwards;
-}
-.service-card:nth-child(5) {
-    animation: rotateIn 0.6s ease-out forwards;
-}
-.service-card:nth-child(6) {
-    animation: zoomIn 0.6s ease-out forwards;
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7);
 }
 
 .service-card.active {
     background: #6a9cb8;
 }
 
+/* Animation spécifique à chaque carte */
+.service-card:nth-child(1) { animation: fadeIn 0.6s ease-out forwards; }
+.service-card:nth-child(2) { animation: slideInLeft 0.6s ease-out forwards; }
+.service-card:nth-child(3) { animation: slideInRight 0.6s ease-out forwards; }
+.service-card:nth-child(4) { animation: slideInUp 0.6s ease-out forwards; }
+.service-card:nth-child(5) { animation: rotateIn 0.6s ease-out forwards; }
+.service-card:nth-child(6) { animation: zoomIn 0.6s ease-out forwards; }
+
 /* Animations */
-
-/* Apparition en fondu */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* Glissement depuis la gauche */
 @keyframes slideInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
 }
 
-/* Glissement depuis la droite */
 @keyframes slideInRight {
-    from {
-        opacity: 0;
-        transform: translateX(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
 }
 
-/* Glissement depuis le bas */
 @keyframes slideInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* Rotation depuis le bas */
 @keyframes rotateIn {
-    from {
-        opacity: 0;
-        transform: rotate(-90deg) scale(0.8);
-    }
-    to {
-        opacity: 1;
-        transform: rotate(0deg) scale(1);
-    }
+    from { opacity: 0; transform: rotate(-90deg) scale(0.8); }
+    to { opacity: 1; transform: rotate(0deg) scale(1); }
 }
 
-/* Zoom avant */
 @keyframes zoomIn {
-    from {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
 }
 
-.content-container {
+/* Détails de chaque service */
+.service-details {
+    margin-top: 10px;
+    padding: 20px;
+    background: #eef3f800;
+    border-radius: 8px;
+    animation: fadeInDown 0.5s ease-out;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Section de détail avec titre */
+.detail-section {
+    margin-bottom: 15px;
+}
+
+.detail-title {
     display: flex;
     justify-content: space-between;
-    text-align: center;
-    width: 80%;
-}
-
-.sub-cards-left {
-    width: 320px;
-}
-
-.sub-card {
-    padding: 15px;
-    background-color: #003f5c;
-    color: white;
-    margin: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.sub-card.active {
-    background-color: #6a9cb8;
-}
-
-.sub-cards-right {
-    width: 100%;
-    display: flex;
-    justify-content: center;
     align-items: center;
-}
-
-.sub-card-details,
-.sub-card-detailsecommerce {
-    padding: 20px;
-    background-color: #6a9cb8;
-    margin-top: 20px;
-    /* border-radius: 8px;
-    box-shadow: 0px 7px 15px rgba(0, 0, 0, 0.1); */
-}
-
-.sub-card-details h4,
-.sub-card-detailsecommerce h4 {
-    font-size: 22px;
-    color: #ffffff;
-}
-
-.info-cards-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    width: 850px;
-    gap: 15px;
-}
-
-.info-card {
     padding: 15px;
-    background-color: #003f5c;
-    border-radius: 8px;
-    box-shadow: 0px 7px 15px rgba(0, 0, 0, 0.7);
+    background: linear-gradient(to right, #003f5c, #6a9cb8);
     color: white;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    width: 400px;
-    min-width: 400px;
-}
-
-.info-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-.info-card strong {
-    color: #ffffff;
-    font-size: 18px;
-}
-
-.deviser {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.devis-button {
-    padding: 15px 30px;
-    font-size: 18px;
-    background-color: #003f5c;
-    color: white;
-    border: none;
+    font-size: 1.1em;
+    border-radius: 10px;
     cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.devis-button:hover {
-    background-color: #6a9cb8;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* NosServices.css */
-
-/* Styles généraux */
-.nos-services-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-}
-
-
-.service-card {
-    background-color: #f0f0f0;
-    padding: 10px 20px;
-    margin: -5px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.service-card.active {
-    background-color: #4caf50;
-    color: white;
-}
-
-.content-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-}
-
-.sub-cards-right {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-top: 20px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
     margin: 0 auto;
 }
-.sub-cards-left {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+
+.detail-title:hover {
+    background: #005f7c;
+    transform: translateY(-3px);
 }
 
-.soustitre{
-    display: flex;
-    justify-content: space-evenly;
+.detail-title.active {
+    background: #005f7c;
+    font-weight: bold;
 }
 
-.sub-card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #a63674;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 275px;
-}
-
-.sub-card.active {
-    background-color: #af7c4c;
-    color: white;
-}
-
-.sub-card-details {
-    background: linear-gradient(to right, #003f5c, #6a9cb8);
-    border-radius: 10px;
-    margin-top: -15px;
-    width: 860px;
-}
-.sub{
-    padding: 15px;
-}
-.sub h4{
-    color: white;
-}
-
+/* Contenu des cartes d'informations */
 .info-cards-container {
-margin: 0 auto;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
     gap: 10px;
-  
+    padding: 10px;
+    border-radius: 6px;
+    animation: fadeInUp 0.5s ease-out;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
 }
 
 .info-card {
-    background-color: #fafafa0a;
-    padding: 15px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
+    padding: 10px 15px;
+    background: white;
+    border: 1px solid #6a9cb8;
+    border-radius: 6px;
+    font-size: 1em;
+    line-height: 1.5;
+    color: #003f5c;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Styles responsives */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Styles Mobile-Friendly */
 @media screen and (max-width: 768px) {
+    .nos-services-container {
+        padding: 10px;
+        width: 100%;
+    }
+
+    .services-list {
+        width: 100%;
+        justify-content: space-evenly;
+    }
+
+    .service-card {
+        width: 100%;
+        height: 80px;
+        font-size: 0.9em;
+        margin: 5px 0;
+    }
+
+    .service-card.active {
+        background: #005f7c;
+    }
+
     .content-container {
         flex-direction: column;
-        align-items: center;
+        width: 100%;
     }
 
     .sub-cards-left, .sub-cards-right {
-        width: 90%;
+        width: 100%;
     }
-    .sub-card-details {
-        background: linear-gradient(to right, #003f5c, #6a9cb8);
-        border-radius: 5px;
-        width: 450px;
+
+    .info-cards-container {
         display: flex;
-        justify-content: center;
         flex-direction: column;
         align-items: center;
-        margin: 0 auto;
-    }
-    
-    .sub{
-        padding: 15px;
         width: 100%;
-
+        padding: 15px;
     }
 
-    .service-card {
-        font-size: 16px;
-        padding: 5px 5px;
+    .info-card {
+        width: 90%;
+        margin-bottom: 15px;
+        font-size: 0.9em;
+        padding: 12px;
+    }
+
+    .sub-card-details {
+        width: 100%;
+        padding: 20px;
+        margin-top: 15px;
     }
 
     .deviser {
-        text-align: center;
-    }
-    
-   
-
-    .info-cards-container {
-display: flex;
-flex-direction: column;
-justify-content:center ;
-align-items: center;
-width: 100%;
-}
-}
-
-@media   (max-width: 768px){
-    .soustitre{
-        display: flex;
-        justify-content: space-evenly;
         flex-direction: column;
+        margin-top: 30px;
     }
-}
 
-
-
-
-
-
-
-
-
-@media screen and (max-width: 480px) {
-    .service-card {
-        font-size: 14px;
-        padding: 6px 12px;
+    .devis-button {
+        width: 100%;
+        padding: 12px;
+        font-size: 1em;
     }
 
     .sub-card {
-        font-size: 14px;
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+/* Styles pour très petits écrans */
+@media screen and (max-width: 480px) {
+    .service-card {
+        width: 100%;
         padding: 8px;
     }
 
     .info-card {
-        padding: 12px;
-    }
-    .info-cards-container {
-        display: flex;
-        flex-direction: column;
-        justify-content:center ;
-        align-items: center;
-        width: 100%;
-        }
-
-}
-
-
-
-.info-card {
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.info-card strong {
-    font-weight: bold;
-}
-
-.sub-card-details h4 {
-    margin-bottom: 15px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Conteneur principal */
-.nos-services-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
-    background-color: #f8f9fa00; /* Fond transparent */
-    color: #003f5c; /* Texte principal */
-}
-
-/* Liste des services */
-.services-list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 100%;
-}
-
-/* Carte principale pour chaque service */
-.service-card {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    background: linear-gradient(to right, #003f5c, #6a9cb8);
-    color: white;
-    font-size: 1.2em;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.service-card:hover {
-    background: #005f7c; /* Effet hover */
-    transform: translateY(-5px); /* Légère élévation */
-}
-
-.service-card.active {
-    background: #005f7c; /* Couleur différente pour les toggles actifs */
-}
-
-/* Conteneur des détails de chaque service */
-.service-details {
-    margin-top: 10px;
-    padding: 20px;
-    background: #eef3f800; /* Fond clair */
-    border-radius: 8px;
-    animation: fadeInDown 0.5s ease-out;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Conteneur des sous-catégories */
-.detail-section {
-    margin-bottom: 15px;
-}
-
-/* Titre des sous-catégories */
-.detail-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    background: linear-gradient(to right, #003f5c, #6a9cb8);
-    color: white;
-    font-size: 1.1em;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
-    margin: 0 auto;
-}
-
-.detail-title:hover {
-    background: #005f7c; /* Effet hover */
-    transform: translateY(-3px); /* Légère élévation */
-}
-
-.detail-title.active {
-    background: #005f7c; /* Couleur différente pour les toggles actifs */
-    font-weight: bold;
-}
-
-/* Contenu des cartes d'informations */
-.info-cards-container {
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px;
-    border-radius: 6px;
-    animation: fadeInUp 0.5s ease-out;
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
-}
-
-.info-card {
-    padding: 10px 15px;
-    background: white;
-    border: 1px solid #6a9cb8;
-    border-radius: 6px;
-    font-size: 1em;
-    line-height: 1.5;
-    color: #003f5c; /* Texte principal */
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Animation d'apparition en descendant */
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Animation d'apparition en montant */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Mobile-Friendly Styles */
-@media screen and (max-width: 768px) {
-    .nos-services-container {
         padding: 10px;
     }
 
-    .service-card {
-        font-size: 1em;
+    .sub-card-details, .sub-card-detailsecommerce {
+        padding: 15px;
     }
 
-    .detail-title {
-        font-size: 0.9em;
-    }
-
-    .info-card {
-        font-size: 0.9em;
-        padding: 8px 12px;
-    }
-}
-
-/* Conteneur principal */
-.portfolio-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-/* Styles pour les éléments du portfolio */
-.portfolio-items {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-}
-
-/* Style de chaque section de portfolio */
-.portfolio-item {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    border: 1px solid #6a9cb8;
-    border-radius: 8px;
-    overflow: hidden;
-    background: #fff;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    animation: fadeInUp 1s ease-out forwards;
-}
-
-/* Animation d'apparition en glissant vers le haut */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Contenu du portfolio */
-.portfolio-content {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    width: 50%;
-    gap: 20px;
-}
-
-/* Section texte du portfolio */
-.portfolio-text {
-    width: 60%;
-}
-
-/* Titre du portfolio */
-.portfolio-titre {
-    font-size: 1.8em;
-    font-weight: bold;
-    color: #003f5c;
-}
-
-/* Description du portfolio */
-.portfolio-description {
-    font-size: 1em;
-    margin-top: 10px;
-    color: #555;
-}
-
-/* Solution du portfolio */
-.portfolio-solution {
-    font-size: 1em;
-    margin-top: 15px;
-    color: #003f5c;
-}
-
-/* Section d'appel à l'action */
-.portfolio-cta-container {
-    margin-top: 20px;
-}
-
-.portfolio-cta {
-    padding: 10px 20px;
-    background: linear-gradient(to right, #003f5c, #6a9cb8);
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.portfolio-cta:hover {
-    background-color: #005f7c;
-}
-
-/* Image du portfolio */
-.portfolio-image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Mobile-Friendly Styles */
-@media screen and (max-width: 768px) {
-    .portfolio-content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .portfolio-item {
-        flex-direction: column;
-    }
-
-    .portfolio-text {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .portfolio-image {
-        width: 80%;
-        height: auto;
-    }
-}
-
-/* Style pour les cartes de service et sous-catégorie */
-.portfolio-card {
-    cursor: pointer;
-    padding: 10px;
-    font-weight: bold;
-    color: #003f5c;
-    background: #f0f5f9;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.portfolio-card:hover {
-    background: #e1e8f0;
-}
-
-.portfolio-card.active {
-    background: #003f5c;
-    color: white;
-}
-
-
-
-
-/* Détails du service */
-.service-details {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-top: 10px;
-}
-
-/* Section de détail */
-.detail-section {
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Titre de sous-catégorie */
-.detail-title {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #d5dadd;
-    cursor: pointer;
-    transition: color 0.3s;
-}
-
-.detail-title:hover {
-    color: hsl(210, 8%, 95%);
-}
-
-/* Carte d'information - Utilisation du grid pour 2 colonnes */
-.info-cards-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Crée 2 colonnes */
-    gap: 20px; /* Espacement entre les cartes */
-    margin-top: 10px;
-}
-
-/* Carte d'information */
-.info-card {
-    padding: 10px;
-    background: white;
-    border: 1px solid #003f5c;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Sur les petits écrans (mobile) */
-@media screen and (max-width: 768px) {
-    .info-cards-container {
-        
-        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Conteneur principal */
-.nos-services-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
-    background-color: #f8f9fa00; /* Fond transparent */
-    color: #003f5c; /* Texte principal */
-    text-align: center; /* Centrage horizontal du texte */
-}
-
-/* Liste des services */
-.services-list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 100%;
-}
-
-/* Carte principale pour chaque service */
-.service-card {
-    margin: 0 auto;
-    display: flex;
-    justify-content: center; /* Centrer le contenu de la carte */
-    align-items: center;
-    padding: 15px;
-    background: linear-gradient(to right, #003f5c, #6a9cb8);
-    color: white;
-    font-size: 1.2em;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Centrer le texte dans la carte */
-}
-
-.service-card:hover {
-    background: #005f7c; /* Effet hover */
-    transform: translateY(-5px); /* Légère élévation */
-}
-
-.service-card.active {
-    background: #005f7c; /* Couleur différente pour les toggles actifs */
-}
-
-/* Conteneur des détails de chaque service */
-.service-details {
-    margin-top: 10px;
-    padding: 20px;
-    background: #eef3f800; /* Fond clair */
-    border-radius: 8px;
-    animation: fadeInDown 0.5s ease-out;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Centrer le texte des détails */
-}
-
-/* Conteneur des sous-catégories */
-.detail-section {
-    margin-bottom: 15px;
-}
-
-/* Titre des sous-catégories */
-.detail-title {
-    font-size: 0.9em;
-    display: flex;
-    justify-content: center; /* Centrer horizontalement le titre */
-    align-items: center;
-    padding: 15px;
-    background: linear-gradient(to right, #003f5c, #6a9cb8);
-    color: white;
-    font-size: 1.1em;
-    border-radius: 6px;margin: 0 auto;
-    cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Centrer le texte dans le titre */
-}
-
-.detail-title:hover {
-    background: #005f7c; /* Effet hover */
-    transform: translateY(-3px); /* Légère élévation */
-}
-
-.detail-title.active {
-    background: #005f7c; /* Couleur différente pour les toggles actifs */
-    font-weight: bold;
-}
-
-/* Contenu des cartes d'informations */
-.info-cards-container {
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 10px;
-    border-radius: 6px;
-    animation: fadeInUp 0.5s ease-out;
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Centrer le contenu des cartes */
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Crée 2 colonnes */
-    gap: 20px; /* Espacement entre les cartes */
-    margin-top: 10px;
-}
-
-.info-card {
-    padding: 10px 15px;
-    background: white;
-    border: 1px solid #6a9cb8;
-    border-radius: 6px;
-    font-size: 1em;
-    line-height: 1.5;
-    color: #003f5c; /* Texte principal */
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
-    text-align: justify;
-
-}
-
-/* Animation d'apparition en descendant */
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Animation d'apparition en montant */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Mobile-Friendly Styles */
-@media screen and (max-width: 950px) {
-    .nos-services-container {
-        padding: 10px;
-    }
-
-    .service-card {
-        font-size: 1em;
-    }
-
-  
-
-    .info-card {
-        font-size: 0.9em;
-        padding: 8px 12px;
-        
-    }
-
-    /* Si besoin, tu peux aussi centrer les éléments sur mobile */
-    .info-cards-container {
-        margin: 0 auto;
-        display: flex;
-        flex-wrap: wrap;
-        text-align: center;
-        align-items: center;
+    .devis-button {
+        font-size: 16px;
     }
 }
