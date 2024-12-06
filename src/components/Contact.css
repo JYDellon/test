@@ -10,6 +10,7 @@
 .contact-container {
     padding: 20px;
     background: linear-gradient(to right, #003f5c, #6a9cb8);
+    height: 100vh;
 }
 
 /* Aligner les boutons en haut */
@@ -916,6 +917,8 @@ iframe {
 @media (max-width: 1000px) {
   .contact-container {
       padding: 1rem;
+      
+    height: 100vh;
   }
 
   .form-header {
@@ -956,8 +959,112 @@ iframe {
   }
 }
 
+
+
+
+/* Responsiveness pour les petits écrans */
+@media (min-width: 768px) and (max-width: 999px){
+  .contact-container {
+      padding: 1rem;
+      
+    height: 165vh;
+  }
+
+  .form-header {
+      flex-direction: column;
+      gap: 1rem;
+  }
+
+  .form-button {
+      width: 100%;
+      padding: 1rem;
+  }
+
+  .contact-layout {
+      flex-direction: column;
+      gap: 1.5rem;
+  }
+
+  .left-section, .center-section, .right-section {
+      width: 100%;
+      margin-bottom: 1rem;
+  }
+
+  .availability-card, .phone-card, .mail-card, .social-cardContact {
+      width: 100%; /* Les cartes prennent toute la largeur */
+  }
+
+  .social-icon {
+      font-size: 1.2rem;
+      margin: 0 0.3rem;
+  }
+
+  .scroll-to-top {
+      font-size: 1.2rem;
+  }
+
+  iframe {
+      height: 300px; /* Ajuster la hauteur de la carte sur petits écrans */
+  }
+}
+
+
+
+
+/* Responsiveness pour les petits écrans */
+@media (min-width: 400px) and (max-width: 767px){
+  .contact-container {
+      padding: 1rem;
+      
+    height: 170vh;
+  }
+
+  .form-header {
+      flex-direction: column;
+      gap: 1rem;
+  }
+
+  .form-button {
+      width: 100%;
+      padding: 1rem;
+  }
+
+  .contact-layout {
+      flex-direction: column;
+      gap: 1.5rem;
+  }
+
+  .left-section, .center-section, .right-section {
+      width: 100%;
+      margin-bottom: 1rem;
+  }
+
+  .availability-card, .phone-card, .mail-card, .social-cardContact {
+      width: 100%; /* Les cartes prennent toute la largeur */
+  }
+
+  .social-icon {
+      font-size: 1.2rem;
+      margin: 0 0.3rem;
+  }
+
+  .scroll-to-top {
+      font-size: 1.2rem;
+  }
+
+  iframe {
+      height: 300px; /* Ajuster la hauteur de la carte sur petits écrans */
+  }
+}
+
+
+
+
+
+
 /* Responsiveness pour les écrans très petits (téléphones) */
 @media (max-width: 480px) {
+  
   .form-button {
       padding: 0.8rem 1.5rem;
   }
@@ -982,3 +1089,14 @@ iframe {
       margin-bottom: 1rem;
   }
 }
+
+
+
+
+
+
+
+
+
+
+

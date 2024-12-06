@@ -102,6 +102,7 @@ function FormulaireContact() {
   };
 
   return (
+    <div className='containerFormulaire'>
     <Box component="form" ref={form} onSubmit={envoyerEmail} className="formulaire-contact">
       <div className="formulaire-inner">
         {/* Partie gauche avec les champs */}
@@ -131,6 +132,7 @@ function FormulaireContact() {
         </div>
       </div>
     </Box>
+    </div>
   );
 }
 

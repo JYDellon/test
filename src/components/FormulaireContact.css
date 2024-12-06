@@ -4,10 +4,16 @@
   padding: 0;
 }
 
+.containerFormulaire{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Container principal du formulaire */
 .formulaire-contact {
   width: 1500px;
-  height: 520px;
+  height: 100vh;
   margin: 0 auto;
   padding: 20px;
   background: linear-gradient(to right, #003f5c, #6a9cb8);
@@ -107,5 +113,184 @@ max-width: 100%;
 
   .formulaire-champs-gauche, .formulaire-champs-droit {
       flex: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Centrage du formulaire sur l'écran */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background: #f5f5f5; /* Couleur de fond du corps */
+}
+
+/* Formulaire principal */
+.formulaire-contact {
+  width: 90%; /* Largeur par défaut pour s'adapter aux petits écrans */
+  max-width: 800px; /* Limite la largeur sur les grands écrans */
+  min-width: 350px;
+  padding: 20px;
+  background: linear-gradient(to right, #003f5c, #6a9cb8);
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: all 0.3s ease;
+  height: 80vh;
+}
+
+/* Conteneur interne pour aligner les deux parties */
+.formulaire-inner {
+  display: flex;
+  flex-wrap: wrap; /* Permet de passer les colonnes sur plusieurs lignes sur petits écrans */
+  gap: 20px;
+}
+
+/* Partie gauche (champs de texte sauf message) */
+.formulaire-champs-gauche, 
+.formulaire-champs-droit {
+  flex: 1; /* Les deux parties prennent une largeur égale */
+  min-width: 300px; /* Assure un minimum de largeur pour chaque partie */
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Texte Message */
+.formulaire-message textarea {
+  height: 100% !important; /* Hauteur du champ ajustée */
+  resize: none;
+  background-color: rgb(225, 225, 225);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Bouton d'envoi */
+.formulaire-envoyer-btn {
+  background-color: #1976d2;
+  color: white;
+  font-weight: bold;
+  padding: 10px 16px;
+  border-radius: 8px;
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  align-self: flex-end; /* Aligne le bouton à droite */
+}
+
+.formulaire-envoyer-btn:hover {
+  background-color: #1565c0;
+}
+
+/* Champs de texte */
+.MuiTextField-root {
+  margin-bottom: 16px;
+  border-radius: 8px;
+  background-color: rgb(225, 225, 225);
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+}
+
+.MuiOutlinedInput-root {
+  border-radius: 8px;
+  font-size: 1rem;
+  padding: 12px;
+}
+
+.MuiOutlinedInput-notchedOutline {
+  border: 2px solid transparent;
+}
+
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #1976d2;
+}
+
+.MuiInputLabel-root {
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .formulaire-contact {
+    width: 95%; /* Réduction de la largeur pour petits écrans */
+    padding: 15px;
+  }
+
+  .formulaire-inner {
+    flex-direction: column; /* Les parties gauche et droite se superposent */
+  }
+
+  .formulaire-champs-gauche, .formulaire-champs-droit {
+    flex: none; /* Désactive la largeur égale pour laisser chaque partie occuper toute la largeur */
+    min-width: unset; /* Supprime la largeur minimale */
+  }
+
+
+  
+}
+
+
+
+
+
+/* Centrage du formulaire sur l'écran */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background: #f5f5f5; /* Couleur de fond du corps */
+}
+
+/* Formulaire principal */
+.formulaire-contact {
+  width: 90%; /* Largeur adaptative */
+  max-width: 800px; /* Limite la largeur sur les grands écrans */
+  min-width: 350px; /* Assure une largeur minimale sur les petits écrans */
+  padding: 20px;
+  background: linear-gradient(to right, #003f5c, #6a9cb8);
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: all 0.3s ease;
+  height: auto; /* Laisser la hauteur s'adapter au contenu */
+  position: relative; /* Nécessaire pour centrer les enfants si nécessaire */
+  overflow: hidden; /* Empêcher le débordement */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .formulaire-contact {
+    width: 90%;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 20px;
+    background: linear-gradient(to right, #003f5c, #6a9cb8);
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
   }
 }
