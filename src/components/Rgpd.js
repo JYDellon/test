@@ -340,9 +340,7 @@ function Rgpd() {
                         onClick={() => toggleSection(index)}
                     >
                         <h3>{section}</h3>
-                        <span className="toggle-icon">
-                            {sectionSelectionnee === index ? '-' : '+'}
-                        </span>
+                        
                     </div>
                     {sectionSelectionnee === index && (
                         <div className="rgpd-toggle-details">

@@ -1449,7 +1449,6 @@ const NosServices = () => {
 
     return (
         <div className="nos-services-container">
-            <h2 className="nos-services-title">Nos Services</h2>
             <div className="services-list">
                 {services.map((service, serviceIndex) => (
                     <div key={serviceIndex} className="service-section">

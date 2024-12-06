@@ -37,14 +37,15 @@
 /* Carte principale pour chaque service */
 .service-card {
     display: flex;
-    justify-content: center;
     align-items: center;
-    text-align: center;
+    text-align: left;
     background: linear-gradient(to right, #003f5c, #6a9cb8);
     border-radius: 10px;
-    width: 250px;
-    height: 75px;
+    width: 470px;
+    height: 50px;
     padding: 10px;
+    color: white;
+    font-size: 1.2em;
     cursor: pointer;
     opacity: 0;
     animation-fill-mode: forwards;
@@ -264,3 +265,50 @@
         font-size: 16px;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Contenu des cartes d'informations */
+.info-cards-container {
+    margin-top: 10px;
+    display: grid; /* Utilisation du grid */
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
+    grid-template-rows: repeat(2, auto); /* 2 lignes */
+    gap: 20px; /* Espace entre les cartes */
+    padding: 10px;
+    border-radius: 6px;
+    animation: fadeInUp 0.5s ease-out;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.info-card {
+    padding: 10px 15px;
+    background: white;
+    border: 1px solid #6a9cb8;
+    border-radius: 6px;
+    font-size: 1em;
+    line-height: 1.5;
+    color: #003f5c;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+
+
