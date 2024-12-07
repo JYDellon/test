@@ -322,11 +322,10 @@ html, body {
 
 
 .portfolio-container {
-    max-width: 1200px; /* Largeur maximale */
+    max-width: 1800px; /* Largeur maximale */
     width: 100%; /* Largeur fluide */
     margin: 0 auto;
     padding: 20px;
     position: relative; /* Conserve le positionnement */
     z-index: 1; /* Inférieur à celui de la Navbar */
-    overflow-y: auto;
 }

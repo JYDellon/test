@@ -315,6 +315,7 @@ body {
   transition: background 0.5s ease-in-out;
 }
 
+
 /* Conteneur principal */
 .rgpd-container {
   display: flex;
@@ -424,3 +425,141 @@ body {
   }
 
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* Conteneur principal pour le fond d'écran */
+.background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Derrière tous les autres éléments */
+  overflow: hidden; /* Empêche le débordement */
+}
+
+/* Images de fond */
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover; /* Remplit toute la zone visible */
+  background-position: center; /* Centre l'image */
+  background-attachment: fixed; /* Fixe l'image par rapport à l'écran */
+  transition: opacity 1s ease-in-out; /* Transition fluide entre les fonds */
+  opacity: 0; /* Fond masqué par défaut */
+}
+
+/* Fond actuellement visible */
+.background.current {
+  opacity: 1; /* Rend le fond visible */
+}
+
+/* Fond suivant en transition */
+.background.next {
+  opacity: 1;
+  z-index: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Conteneur de l'application */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Conteneur du fond avec gestion de la transition */
+.background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: opacity 1s ease-in-out;
+  opacity: 0;
+}
+
+.background.current {
+  opacity: 1;
+}
+
+.background.next {
+  opacity: 1;
+}
+
+/* Responsivité avec media queries */
+@media (max-width: 768px) {
+  .background {
+    background-size: contain;
+  }
+}
+
+@media (max-width: 480px) {
+  .background {
+    background-size: auto 100%;
+  }
+}
+
+/* Style du Header */
+.header {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.MiseEnPage02 img {
+  max-width: 100px;
+  height: auto;
+}
