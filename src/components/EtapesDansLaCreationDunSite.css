@@ -297,7 +297,7 @@
     width: 100%;
     max-width: 500px;
     margin: 0 auto;
-    background-color: #f8f9fa00; /* Couleur de fond claire */
+    background-color: #0672de00; /* Couleur de fond claire */
     color: #003f5c; /* Couleur principale */
 }
 
@@ -379,13 +379,24 @@
     justify-content: flex-start;
     align-items: center;
     padding: 20px;
-    width: 90%; /* Largeur relative */
+    width: 800px; /* Largeur relative */
     max-width: 800px; /* Limite maximale */
+    height: 450px;
     margin: 0 auto;
-    background-color: #f9f9f900;
+    background-color: #ff0000;
     color: #003f5c;
     font-family: Arial, sans-serif;
   }
+
+
+
+
+
+
+
+
+
+  
   
   /* Conteneur d'une étape */
   .etape-toggle-container {
