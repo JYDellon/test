@@ -294,3 +294,146 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Conteneur principal */
+.rgpd-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Conteneur de chaque toggle */
+.rgpd-toggle-container {
+  width: 100%;
+  margin-bottom: 10px;
+  border: 1px solid #6a9cb8;
+  border-radius: 5px;
+  background: white;
+  overflow: hidden;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.rgpd-toggle-container:hover {
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* En-tête */
+.rgpd-toggle-header {
+  background: linear-gradient(to right, #003f5c, #6a9cb8);
+  color: white;
+  padding: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: 1.2em;
+}
+
+.rgpd-toggle-header.active {
+  background: #005f7c;
+  font-weight: bold;
+}
+
+.rgpd-toggle-header:hover {
+  background: #004e6b;
+}
+
+/* Animations */
+.rgpd-toggle-details {
+  max-height: 0; /* Masque le contenu */
+  opacity: 0;
+  padding: 0 15px;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease, padding 0.5s ease;
+}
+
+.rgpd-toggle-details.show {
+  max-height: 200px; /* Définit une hauteur suffisante pour afficher le contenu */
+  opacity: 1;
+  padding: 15px;
+}
+
+.rgpd-toggle-details.hide {
+  max-height: 0;
+  opacity: 0;
+  padding: 0 15px;
+}
+
+/* Animation du texte */
+.rgpd-toggle-details.show p {
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Animations pour le montage */
+@keyframes appearSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rgpd-toggle-container {
+  opacity: 0; /* Invisibles au départ */
+  transform: translateY(30px); /* Position initiale pour l'animation */
+  animation: appearSlideIn 0.5s ease-out forwards;
+}
+
+.rgpd-toggle-container.animation-1 {
+  animation-delay: 0.2s; /* Premier toggle */
+}
+
+.rgpd-toggle-container.animation-2 {
+  animation-delay: 0.4s; /* Deuxième toggle */
+}
+
+.rgpd-toggle-container.animation-3 {
+  animation-delay: 0.6s; /* Troisième toggle */
+}
+
+.rgpd-toggle-container.animation-4 {
+  animation-delay: 0.8s; /* Quatrième toggle */
+}
+
+.rgpd-toggle-container.animation-5 {
+  animation-delay: 1s; /* Cinquième toggle */
+}

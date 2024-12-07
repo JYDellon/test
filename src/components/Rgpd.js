@@ -303,7 +303,151 @@
 
 
 
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
+// import './Rgpd.css';
+
+// function Rgpd() {
+//     const sections = [
+//         "1. Introduction à la protection des données",
+//         "2. Quelles données collectons-nous ?",
+//         "3. Comment utilisons-nous vos données ?",
+//         "4. Vos droits concernant vos données",
+//         "5. Contactez-nous",
+//     ];
+
+//     const sectionsDetails = [
+//         "La protection des données personnelles est essentielle pour garantir la confidentialité et la sécurité des informations des utilisateurs. Ce document vous explique comment nous collectons, utilisons et protégeons vos données.",
+//         "Nous collectons des données personnelles lorsque vous utilisez nos services, telles que votre nom, adresse e-mail, adresse IP, et autres informations nécessaires pour vous fournir nos services.",
+//         "Nous utilisons vos données pour personnaliser votre expérience, vous fournir un service de qualité et répondre à vos demandes. Vos données sont également utilisées à des fins de marketing si vous avez consenti.",
+//         "Vous avez le droit d'accéder, de modifier, de supprimer, ou de limiter l'utilisation de vos données personnelles. Vous pouvez également vous opposer à leur traitement ou demander une portabilité des données.",
+//         "Si vous avez des questions concernant le traitement de vos données ou souhaitez exercer vos droits, n'hésitez pas à nous contacter via notre formulaire ou à l'adresse email de notre support.",
+//     ];
+
+//     const [sectionSelectionnee, setSectionSelectionnee] = useState(null);
+
+//     const toggleSection = (index) => {
+//         setSectionSelectionnee(sectionSelectionnee === index ? null : index);
+//     };
+
+//     return (
+//         <div className="rgpd-container">
+//             {sections.map((section, index) => (
+//                 <div key={index} className="rgpd-toggle-container">
+//                     <div
+//                         className={`rgpd-toggle-header ${
+//                             sectionSelectionnee === index ? 'active' : ''
+//                         }`}
+//                         onClick={() => toggleSection(index)}
+//                     >
+//                         <h3>{section}</h3>
+                        
+//                     </div>
+//                     {sectionSelectionnee === index && (
+//                         <div className="rgpd-toggle-details">
+//                             <p>{sectionsDetails[index]}</p>
+//                         </div>
+//                     )}
+//                 </div>
+//             ))}
+//         </div>
+//     );
+// }
+
+// export default Rgpd;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState } from 'react';
+// import './Rgpd.css';
+
+// function Rgpd() {
+//     const sections = [
+//         "1. Introduction à la protection des données",
+//         "2. Quelles données collectons-nous ?",
+//         "3. Comment utilisons-nous vos données ?",
+//         "4. Vos droits concernant vos données",
+//         "5. Contactez-nous",
+//     ];
+
+//     const sectionsDetails = [
+//         "La protection des données personnelles est essentielle pour garantir la confidentialité et la sécurité des informations des utilisateurs. Ce document vous explique comment nous collectons, utilisons et protégeons vos données.",
+//         "Nous collectons des données personnelles lorsque vous utilisez nos services, telles que votre nom, adresse e-mail, adresse IP, et autres informations nécessaires pour vous fournir nos services.",
+//         "Nous utilisons vos données pour personnaliser votre expérience, vous fournir un service de qualité et répondre à vos demandes. Vos données sont également utilisées à des fins de marketing si vous avez consenti.",
+//         "Vous avez le droit d'accéder, de modifier, de supprimer, ou de limiter l'utilisation de vos données personnelles. Vous pouvez également vous opposer à leur traitement ou demander une portabilité des données.",
+//         "Si vous avez des questions concernant le traitement de vos données ou souhaitez exercer vos droits, n'hésitez pas à nous contacter via notre formulaire ou à l'adresse email de notre support.",
+//     ];
+
+//     const [sectionSelectionnee, setSectionSelectionnee] = useState(null);
+
+//     const toggleSection = (index) => {
+//         setSectionSelectionnee(sectionSelectionnee === index ? null : index);
+//     };
+
+//     return (
+//         <div className="rgpd-container">
+//             {sections.map((section, index) => (
+//                 <div key={index} className="rgpd-toggle-container">
+//                     {/* En-tête */}
+//                     <div
+//                         className={`rgpd-toggle-header ${
+//                             sectionSelectionnee === index ? 'active' : ''
+//                         }`}
+//                         onClick={() => toggleSection(index)}
+//                     >
+//                         <h3>{section}</h3>
+//                     </div>
+
+//                     {/* Détails avec animation */}
+//                     <div
+//                         className={`rgpd-toggle-details ${
+//                             sectionSelectionnee === index ? 'show' : 'hide'
+//                         }`}
+//                     >
+//                         <p>{sectionsDetails[index]}</p>
+//                     </div>
+//                 </div>
+//             ))}
+//         </div>
+//     );
+// }
+
+// export default Rgpd;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import React, { useState, useEffect } from 'react';
 import './Rgpd.css';
 
 function Rgpd() {
@@ -324,15 +468,27 @@ function Rgpd() {
     ];
 
     const [sectionSelectionnee, setSectionSelectionnee] = useState(null);
+    const [isMounted, setIsMounted] = useState(false);
 
     const toggleSection = (index) => {
         setSectionSelectionnee(sectionSelectionnee === index ? null : index);
     };
 
+    useEffect(() => {
+        // Déclenche les animations au montage
+        setIsMounted(true);
+    }, []);
+
     return (
         <div className="rgpd-container">
             {sections.map((section, index) => (
-                <div key={index} className="rgpd-toggle-container">
+                <div
+                    key={index}
+                    className={`rgpd-toggle-container animation-${index + 1} ${
+                        isMounted ? '' : 'hidden'
+                    }`}
+                >
+                    {/* En-tête */}
                     <div
                         className={`rgpd-toggle-header ${
                             sectionSelectionnee === index ? 'active' : ''
@@ -340,13 +496,16 @@ function Rgpd() {
                         onClick={() => toggleSection(index)}
                     >
                         <h3>{section}</h3>
-                        
                     </div>
-                    {sectionSelectionnee === index && (
-                        <div className="rgpd-toggle-details">
-                            <p>{sectionsDetails[index]}</p>
-                        </div>
-                    )}
+
+                    {/* Détails avec animation */}
+                    <div
+                        className={`rgpd-toggle-details ${
+                            sectionSelectionnee === index ? 'show' : 'hide'
+                        }`}
+                    >
+                        <p>{sectionsDetails[index]}</p>
+                    </div>
                 </div>
             ))}
         </div>

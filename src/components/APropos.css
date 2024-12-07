@@ -1136,3 +1136,324 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Conteneur principal */
+.apropos-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    color: #003f5c;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Conteneur d'un chapitre */
+  .chapitre-toggle-container {
+    width: 100%;
+    border: 1px solid #6a9cb8;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* En-tête du toggle - Partie cliquable */
+  .chapitre-toggle-header {
+    padding: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: #e0f0ff;
+    border-bottom: 1px solid #6a9cb8;
+  }
+  
+  .chapitre-toggle-header.active {
+    background-color: #003f5c;
+    color: #fff;
+  }
+  
+  /* Contenu d'un chapitre déroulé */
+  .chapitre-toggle-details {
+    padding: 15px;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+    border-top: 1px solid #6a9cb8;
+    background-color: #f0f8ff;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  /* Effets de survol */
+  .chapitre-toggle-header:hover {
+    background-color: #b0dff0;
+  }
+  
+
+
+  
+  /* Styles pour mobile */
+  @media (max-width: 768px) {
+    .apropos-container {
+      padding: 15px;
+    }
+  
+    .chapitre-toggle-container {
+      width: 80%;
+    }
+  
+    .chapitre-toggle-header,
+    .chapitre-toggle-details {
+      font-size: 14px;
+    }
+  }
+
+
+
+
+
+  
+  @media (max-width: 480px) {
+    .chapitre-toggle-header {
+      font-size: 1em;
+    }
+  
+    .chapitre-toggle-details {
+      font-size: 14px;
+    }
+    .chapitre-toggle-container {
+        width: 80%;
+      }
+  }
+  
+
+
+
+
+  /* Conteneur principal */
+.apropos-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+}
+
+/* Animation depuis la gauche */
+@keyframes entrerGauche {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Animation depuis la droite */
+@keyframes entrerDroite {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Conteneur du toggle avec l'animation */
+.chapitre-toggle-container {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+}
+
+/* Si l'index est pair, appliquer l'animation de gauche */
+.chapitre-toggle-container.gauche {
+    animation-name: entrerGauche;
+}
+
+/* Si l'index est impair, appliquer l'animation de droite */
+.chapitre-toggle-container.droite {
+    animation-name: entrerDroite;
+}
+
+/* Détails du toggle sans animation */
+.chapitre-toggle-details {
+    padding: 10px 15px;
+    background-color: #fafafa;
+    border-top: 1px solid #ddd;
+    transition: none;
+}
+
+
+
+
+/* Conteneur principal */
+.apropos-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+}
+
+/* Animation depuis la gauche */
+@keyframes entrerGauche {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Animation depuis la droite */
+@keyframes entrerDroite {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Conteneur du toggle avec l'animation */
+.chapitre-toggle-container {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+}
+
+/* Si l'index est pair, appliquer l'animation de gauche */
+.chapitre-toggle-container.gauche {
+    animation-name: entrerGauche;
+}
+
+/* Si l'index est impair, appliquer l'animation de droite */
+.chapitre-toggle-container.droite {
+    animation-name: entrerDroite;
+}
+
+/* Application dynamique du délai */
+.chapitre-toggle-container:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.chapitre-toggle-container:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.chapitre-toggle-container:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+.chapitre-toggle-container:nth-child(4) {
+    animation-delay: 0.7s;
+}
+
+.chapitre-toggle-container:nth-child(5) {
+    animation-delay: 0.9s;
+}
+
+.chapitre-toggle-container:nth-child(6) {
+    animation-delay: 1.1s;
+}
+
+/* Détails du toggle sans animation */
+.chapitre-toggle-details {
+    padding: 10px 15px;
+    background-color: #fafafa;
+    border-top: 1px solid #ddd;
+    transition: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Conteneur principal */
+.apropos-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Conteneur principal pour chaque toggle */
+  .chapitre-toggle-container {
+    cursor: pointer;
+    margin: 10px 0;
+    width: auto;
+    border: 1px solid #003f5c;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  /* Header avec un style simple */
+  .chapitre-toggle-header {
+    background-color: #003f5c;
+    color: white;
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
+    text-align: center;
+  }
+  
+  /* Détails avec animation */
+  .chapitre-toggle-details {
+    overflow: hidden;
+    padding: 0 10px;
+    opacity: 0;
+    max-height: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+  }
+  
+  /* Animation pour l'état ouvert */
+  .chapitre-toggle-details.show {
+    opacity: 1;
+    max-height: 100px; /* Ajuster selon la taille du contenu */
+  }
+  
+  /* Animation pour l'état fermé */
+  .chapitre-toggle-details.hide {
+    opacity: 0;
+    max-height: 0;
+  }
+  
