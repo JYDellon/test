@@ -1,7 +1,6 @@
 
 /* Conteneur principal de la Navbar */
 .navbar-container {
-    width: 100%;
     margin: 0 auto;
     padding: 10px 20px;
     position: relative;
@@ -11,6 +10,7 @@
 .navbar-header {
     display: none;
     justify-content: right;padding-right: 1.5em;
+    width: 100px;
 }
 
 /* Bouton hamburger */
@@ -30,15 +30,16 @@
 
 /* Menu principal */
 .navbar-menu {
+    width: 100%;
+    /* min-width: 80%; */
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
-    transition: max-height 0.3s ease-out;
+    /* transition: max-height 0.3s ease-out; */
     overflow: hidden;
-    max-height: 500px; /* Largeur par défaut pour les grands écrans */
     display: flex;
     justify-content: center; /* Centre les liens de navigation */
-    flex-wrap: wrap;
+
 }
 
 .navbar-menu.open {
@@ -126,7 +127,6 @@ nav ul li a.active {
 
 /* Conteneur principal de la Navbar */
 .navbar-container {
-    width: 90%;
     margin: 0 auto;
     padding: 10px 20px;
     position: relative;
@@ -222,3 +222,6 @@ nav ul {
         color:darkorange;
     }
     }
+
+
+    

@@ -364,3 +364,107 @@
         font-size: 0.9em;
     }
 }
+
+
+
+
+
+
+
+
+/* Conteneur principal */
+.etapes-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    width: 90%; /* Largeur relative */
+    max-width: 800px; /* Limite maximale */
+    margin: 0 auto;
+    background-color: #f9f9f900;
+    color: #003f5c;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Conteneur d'une étape */
+  .etape-toggle-container {
+    width: 100%; /* Toujours occuper toute la largeur du parent */
+    border: 1px solid #6a9cb8;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+  }
+  
+  .etape-toggle-container:hover {
+    transform: scale(1.01);
+  }
+  
+  /* En-tête d'une étape */
+  .etape-toggle-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    cursor: pointer;
+    background: linear-gradient(to right, #003f5c, #6a9cb8);
+    color: #ffffff;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+  }
+  
+  .etape-toggle-header:hover {
+    background: #005f7c;
+  }
+  
+  /* Détails d'une étape */
+  .etape-toggle-details {
+    padding: 15px;
+    background: #eef3f8;
+    color: #003f5c;
+    font-size: 1em;
+    line-height: 1.5;
+  }
+  
+  /* En-tête active */
+  .etape-toggle-header.active {
+    background: #005f7c;
+    font-weight: bold;
+  }
+  
+  /* Responsiveness */
+  @media screen and (max-width: 768px) {
+    .etapes-container {
+      padding: 10px;
+      width: 90%; /* Réduire davantage la largeur sur les petits écrans */
+    }
+  
+    .etape-toggle-header {
+      font-size: 1em;
+      padding: 12px;
+    }
+  
+    .etape-toggle-details {
+      font-size: 0.9em;
+      padding: 10px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .etapes-container {
+      padding: 5px;
+      width: 80%; /* Utilise tout l'espace d sponible */
+    }
+  
+    .etape-toggle-header {
+      font-size: 0.9em;
+    }
+  
+    .etape-toggle-details {
+      font-size: 0.8em;
+    }
+  }
+  

@@ -19,7 +19,7 @@ import logo1 from './assets/images/logo05.1.png';
 import logo2 from './assets/images/Sans titre-1.1.png';
 import logo3 from './assets/images/Sans titre-2.1.png';
 
-// Importation des fonds
+// Importation des fonds 
 import fondAccueil from './assets/images/fondecran/fond12.jpg';
 import fondAPropos from './assets/images/fondecran/fond12.jpg';
 import fondServices from './assets/images/fondecran/fond12.jpg';

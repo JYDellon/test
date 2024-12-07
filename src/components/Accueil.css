@@ -1,3 +1,31 @@
+
+/* Réinitialiser tous les marges par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Assurez-vous que le body et le html n'ont pas de marges par défaut */
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  /* Fixer la hauteur du header */
+  .header {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px; /* Hauteur fixe */
+    width: 100%;
+  }
+  
+
 * {
   margin: 0;
   padding: 0;

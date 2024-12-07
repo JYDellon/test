@@ -1,3 +1,21 @@
+
+/* Réinitialiser tous les marges par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .portfolio-item {
+    margin-top: 0; /* Supprime les marges éventuelles au sommet */
+}
+  /* Assurez-vous que le body et le html n'ont pas de marges par défaut */
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+
 /* Conteneur global */
 .portfolio-container {
     max-width: 1400px;
@@ -127,10 +145,17 @@
     }
 }
 
+
+
+.portfolio-container {
+    border: 3px solid green; /* Pour voir le conteneur */
+}
+
+
 /* Animations pour les éléments portfolio-item */
 @keyframes slideFromBottom {
     from {
-        transform: translateY(50px);
+        transform: translateY(50px); /* Transforme uniquement */
         opacity: 0;
     }
     to {
@@ -138,6 +163,16 @@
         opacity: 1;
     }
 }
+
+.portfolio-item {
+    animation: slideFromBottom 1s ease-out forwards;
+    margin-top: 0; /* Assurez-vous que les marges n'affectent pas */
+}
+
+
+
+
+
 
 @keyframes slideFromRight {
     from {
@@ -238,4 +273,36 @@
 }
 .portfolio-titre,.portfolio-text,.portfolio-description,.portfolio-solution{
     color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.portfolio-container {height:600px;
+    position: relative; /* Assure que rien ne déborde */
+    top: 0; /* Annule tout déplacement potentiel */
+    max-width: 100%; /* Ajusté pour éviter tout débordement */
+    overflow-x: hidden; /* Empêche horizontalement */
+    margin: 0 auto;
+    position: relative;
+}
+html, body {
+    overflow-x: hidden; /* Empêche tout débordement horizontal */
+}
+
+header {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 1000; /* S'assurer qu'il est visible correctement */
+    width: 100%; /* Ne déborde pas horizontalement */
 }
