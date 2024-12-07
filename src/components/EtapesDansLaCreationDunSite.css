@@ -436,10 +436,10 @@
   }
   
   /* Responsiveness */
-  @media screen and (max-width: 768px) {
+  @media screen and   (max-width: 768px) {
     .etapes-container {
       padding: 10px;
-      width: 90%; /* Réduire davantage la largeur sur les petits écrans */
+      width: 60%; /* Réduire davantage la largeur sur les petits écrans */
     }
   
     .etape-toggle-header {
@@ -453,11 +453,8 @@
     }
   }
   
-  @media screen and (max-width: 480px) {
-    .etapes-container {
-      padding: 5px;
-      width: 80%; /* Utilise tout l'espace d sponible */
-    }
+  @media screen and  (max-width: 359px) {
+
   
     .etape-toggle-header {
       font-size: 0.9em;

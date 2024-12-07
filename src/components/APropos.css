@@ -933,7 +933,7 @@
 
 /* Conteneur d'un chapitre */
 .chapitre-toggle-container {
-    width: 90%;
+    width: 70%;
     border: 1px solid #6a9cb8;
     border-radius: 8px;
     margin-bottom: 15px;
@@ -984,20 +984,6 @@
 @media screen and (max-width: 768px) {
     .apropos-container {
         padding: 10px;
-    }
-
-    .chapitre-toggle-header {
-        font-size: 1em;
-    }
-
-    .chapitre-toggle-details {
-        font-size: 0.9em;
-    }
-}
-
-
-
-
 
 
 
@@ -1134,4 +1120,19 @@
         height: auto;
     }
 }
+
+
+    }
+
+    .chapitre-toggle-header {
+        font-size: 1em;
+        
+    }
+
+    .chapitre-toggle-details {
+        font-size: 0.9em;
+    }
+}
+
+
 
