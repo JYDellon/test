@@ -1809,10 +1809,7 @@ const NosServices = () => {
 
   return (
     <>
-      {/* Navbar en haut */}
-      <div className="navbar">
-        <h1>Nos Services</h1>
-      </div>
+
 
       {/* Menu déroulant avec scrollbar juste sous la navbar */}
       <div className="toggle-container">
