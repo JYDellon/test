@@ -292,7 +292,23 @@
 
 
 
+@media screen and (max-width: 450px) {
+  .rgpd-container {
+    padding: 10px;
+  }
 
+  .rgpd-toggle-header {
+    font-size: 1em;
+  }
+
+  .rgpd-toggle-details {
+    font-size: 0.9em;
+  }
+
+  .chapitre-toggle-container{
+    width: 68%;
+  }
+}
 
 
 
@@ -319,6 +335,7 @@
 
 /* Conteneur de chaque toggle */
 .rgpd-toggle-container {
+  
   width: 100%;
   margin-bottom: 10px;
   border: 1px solid #6a9cb8;

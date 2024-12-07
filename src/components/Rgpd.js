@@ -452,11 +452,11 @@ import './Rgpd.css';
 
 function Rgpd() {
     const sections = [
-        "1. Introduction à la protection des données",
-        "2. Quelles données collectons-nous ?",
-        "3. Comment utilisons-nous vos données ?",
-        "4. Vos droits concernant vos données",
-        "5. Contactez-nous",
+        "Introduction à la protection des données",
+        "Quelles données collectons-nous ?",
+        "Comment utilisons-nous vos données ?",
+        "Vos droits concernant vos données",
+        "Contactez-nous",
     ];
 
     const sectionsDetails = [
