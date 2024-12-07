@@ -1,3 +1,81 @@
+/* Réinitialisation générale des marges et paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Suppression des marges par défaut pour le body */
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Évite les débordements horizontaux */
+  }
+  
+  /* Conteneur principal pour garantir un espacement uniforme */
+  .app-container {
+    margin: 0; /* Supprime les marges automatiques */
+    padding: 0; /* Supprime les paddings automatiques */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Gère le contenu minimum pour remplir l'écran */
+  }
+  
+  /* Pour toutes les sections ou pages */
+  section, main, .page-content {
+    margin: 0;
+    padding: 20px; /* Ajout de padding contrôlé */
+    width: 100%;
+    display: block;
+    flex-grow: 1; /* Permet de remplir l'espace disponible */
+  }
+  
+  /* Suppression des styles de margin non désirés pour les h1, h2, p */
+  h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Ajout d'un espacement cohérent pour les titres */
+  h1 {
+    margin-bottom: 20px; /* Espacement uniquement vers le bas */
+  }
+  
+  p {
+    margin-bottom: 10px; /* Uniformise les espaces entre paragraphes */
+  }
+  
+  /* Réinitialisation spécifique pour les liens */
+  a {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Header */
+  .header {
+    margin: 0; /* Pas de marge automatique */
+    padding: 0; /* Réinitialisation */
+    width: 100%;
+  }
+  
+  
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    width: 100%;
+    overflow-x: hidden; /* Éviter le débordement horizontal */
+  }
+
+
+
 /* Réinitialiser tous les marges par défaut */
 * {
     margin: 0;
@@ -13,6 +91,17 @@
     height: 100%;
   }
   
+
+
+
+
+
+
+
+
+
+
+
   /* Fixer la hauteur du header */
   .header {
     position: relative;
@@ -1411,9 +1500,11 @@
 
 /* Conteneur principal */
 .apropos-container {
-    padding: 20px;
+    padding: 10px;
     max-width: 800px;
-    margin: 0 auto;
+    margin: -15px auto;
+    height: 500px;
+    background-color: yellow;
   }
   
   /* Conteneur principal pour chaque toggle */
