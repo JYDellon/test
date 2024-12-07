@@ -21,7 +21,7 @@
     max-width: 1400px;
     margin: 0 auto;
     padding: 20px;
-    height: auto; /* Remplacer la hauteur fixe par 'auto' pour plus de flexibilité */
+    height: 600px; /* Remplacer la hauteur fixe par 'auto' pour plus de flexibilité */
     overflow-y: auto; 
 }
 
@@ -303,3 +303,15 @@ header {
     z-index: 1000; /* S'assurer qu'il est visible correctement */
     width: 100%; /* Ne déborde pas horizontalement */
 }
+
+
+
+
+
+
+
+
+
+
+
+
