@@ -381,9 +381,9 @@
     padding: 20px;
     width: 800px; /* Largeur relative */
     max-width: 800px; /* Limite maximale */
-    height: 450px;
+    height: 455px;
     margin: 0 auto;
-    background-color: #ff0000;
+    background-color: #00ff7b00;
     color: #003f5c;
     font-family: Arial, sans-serif;
   }
