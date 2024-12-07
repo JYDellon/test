@@ -147,11 +147,6 @@
 
 
 
-.portfolio-container {
-    border: 3px solid green; /* Pour voir le conteneur */
-}
-
-
 /* Animations pour les éléments portfolio-item */
 @keyframes slideFromBottom {
     from {
@@ -287,7 +282,9 @@
 
 
 
-.portfolio-container {height:600px;
+.portfolio-container {
+    width: 1500px;
+    margin: 0 auto;
     position: relative; /* Assure que rien ne déborde */
     top: 0; /* Annule tout déplacement potentiel */
     max-width: 100%; /* Ajusté pour éviter tout débordement */
@@ -306,150 +303,3 @@ header {
     z-index: 1000; /* S'assurer qu'il est visible correctement */
     width: 100%; /* Ne déborde pas horizontalement */
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Conteneur principal */
-.portfolio-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-/* Styles pour les éléments du portfolio */
-.portfolio-items {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-}
-
-/* Style de chaque section de portfolio */
-.portfolio-item {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    border: 1px solid #6a9cb8;
-    border-radius: 8px;
-    overflow: hidden;
-    background: #fff;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    animation: fadeInUp 1s ease-out forwards;
-}
-
-/* Animation d'apparition en glissant vers le haut */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Contenu du portfolio */
-.portfolio-content {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    width: 50%;
-    gap: 20px;
-}
-
-/* Section texte du portfolio */
-.portfolio-text {
-    width: 60%;
-}
-
-/* Titre du portfolio */
-.portfolio-titre {
-    font-size: 1.8em;
-    font-weight: bold;
-    color: #003f5c;
-}
-
-/* Description du portfolio */
-.portfolio-description {
-    font-size: 1em;
-    margin-top: 10px;
-    color: #555;
-}
-
-/* Solution du portfolio */
-.portfolio-solution {
-    font-size: 1em;
-    margin-top: 15px;
-    color: #003f5c;
-}
-
-/* Section d'appel à l'action */
-.portfolio-cta-container {
-    margin-top: 20px;
-}
-
-.portfolio-cta {
-    padding: 10px 20px;
-    background: linear-gradient(to right, #003f5c, #6a9cb8);
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.portfolio-cta:hover {
-    background-color: #005f7c;
-}
-
-/* Image du portfolio */
-.portfolio-image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Mobile-Friendly Styles */
-@media screen and (max-width: 768px) {
-    .portfolio-content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .portfolio-item {
-        flex-direction: column;
-    }
-
-    .portfolio-text {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .portfolio-image {
-        width: 80%;
-        height: auto;
-    }
-}
-

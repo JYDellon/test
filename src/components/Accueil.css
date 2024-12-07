@@ -178,11 +178,15 @@
 
 }
 
+
+
+
 @media (max-width: 599px) {
     .cardm, .cardmDevis {
         width: 220px;
         height: 150px;
         margin-top: 20px;
+        margin: 0 auto;
     }
 
 
@@ -196,26 +200,6 @@
         align-items: flex-start;
         padding: 20px 120px;
     }
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media (max-width: 599px) {
     .cardm, .cardmDevis  {            
         margin-top: 0px;
         width: 250px;

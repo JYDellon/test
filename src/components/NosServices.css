@@ -111,7 +111,26 @@
     flex-direction: column;
     gap: 20px;
     width: 100%;
-    align-items: center;
+    align-items: center;    .service-card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: linear-gradient(to right, #003f5c, #6a9cb8);
+        border-radius: 10px;
+        width: 80%;
+        height: 75px;
+        padding: 10px;
+        color: white;
+        font-size: 1.2em;
+        cursor: pointer;
+        opacity: 0;
+        animation-fill-mode: forwards;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+        opacity: 0;
+        animation: fadeInUp 0.6s ease-out forwards;
+    }
 }
 
 /* Section de chaque service */
@@ -607,6 +626,100 @@
 
 
 
+/* Réinitialisation générale des marges et paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+  
+/* Suppression des marges par défaut pour le body */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; 
+}
+
+/* Conteneur avec scrollbar indépendante */
+.toggle-container {
+  height: 550px;
+  overflow-y: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Ajoute un espace uniforme entre chaque toggle */
+}
+
+/* Cartes principales pour chaque service */
+.service-card,
+.detail-card {
+  cursor: pointer;
+  padding: 5px;   
+}
+  
+.service-card:hover,
+.detail-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7);
+}
+  
+/* Changement de couleur en état actif */
+.service-card.active,
+.detail-card.active {
+  background: #6a9cb8;
+}
+
+/* Sections de détails pour chaque sous-titre */
+.service-details {
+  margin-top: 10px;
+  padding: 20px;
+  border-radius: 8px;
+  animation: fadeInDown 0.5s ease-out;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Apparence similaire pour les sous-toggles */
+.detail-card {
+  background: linear-gradient(to right, #003f5c, #6a9cb8);
+  font-size: 1em;
+  padding: 8px 10px;
+  color: white;
+  border-radius: 8px;
+  margin: 5px 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  background-color: tomato;
+}
+  
+.detail-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Contenu interne pour chaque sous-menu */
+.info-cards-container {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Espacement entre chaque info-card */
+  padding: 10px;
+  border-radius: 6px;
+  animation: fadeInUp 0.5s ease-out;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.info-card {
+  padding: 10px 15px;
+  background: white;
+  border: 1px solid #6a9cb8;
+  border-radius: 6px;
+  font-size: 1em;
+  color: #003f5c;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+}
 
 
 
@@ -614,3 +727,31 @@
 
 
 
+
+
+
+
+.service-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(to right, #003f5c, #6a9cb8);
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+  font-size: 1.2em;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  animation: fadeInUp 0.6s ease-out forwards;
+  margin-bottom: 10px; /* Ajoute un espace entre les cartes */
+}
+
+.service-details {
+  margin-top: 10px; /* Ajoute un espace entre la carte principale et les détails */
+}
+
+.info-card {
+  margin-top: 10px; /* Ajoute un espace entre chaque carte d'information */
+}
