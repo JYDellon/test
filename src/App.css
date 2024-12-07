@@ -211,7 +211,7 @@ width: auto;
 /* Pour s'assurer que le header reste propre */
 .header {
   position: relative;
-  z-index: 10;
+  z-index: 10000;
   width: 100%;
 }
 
