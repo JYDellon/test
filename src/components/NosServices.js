@@ -1811,7 +1811,6 @@ const NosServices = () => {
     <>
 
 
-      {/* Menu déroulant avec scrollbar juste sous la navbar */}
       <div className="toggle-container">
         {services.map((service, serviceIndex) => (
           <div key={serviceIndex} className="service-section">

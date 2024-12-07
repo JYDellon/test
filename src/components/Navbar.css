@@ -1,5 +1,13 @@
+/* Évite de réinitialiser tout avec * */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Garder uniquement si nécessaire */
+}
 
-/* Conteneur principal de la Navbar */
 .navbar-container {
     margin: 0 auto;
     padding: 10px 20px;
@@ -15,7 +23,7 @@
 }
 
 /* Bouton hamburger */
-.menu-toggle {
+.menu-tiggle {
     font-size: 4em;
     background: none;
     border: none;
@@ -25,6 +33,8 @@
     margin: 0 auto;
 
 }
+
+
 
 .miseEnPage{
     width: 100%;
@@ -107,7 +117,7 @@ nav ul li a {
     transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s, border-color 0.2s;
     /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); */
     margin: 5px;
-    width: 160px;
+    width: 170px;
     height: 50px;
     display: flex;
     justify-content: center;
@@ -119,7 +129,7 @@ nav ul li a {
 nav ul li a:hover {
     color: #003f5c;
     font-weight: bold;
-    filter: brightness(1.3); /* Augmente la luminosité à 130% */
+    filter: brightness(1.1); /* Augmente la luminosité à 130% */
 }
 
 /* Lien actif */
@@ -168,9 +178,7 @@ nav ul {
 
 /* Menu caché par défaut sur mobile */
 @media (min-width:600px) and (max-width: 768px) {
-    .navbar-container {
-        display: block; /* Retourne au comportement par défaut sur mobile */
-    }
+ 
     .navbar-menu {
         flex-direction: column; /* Colonne pour les petits écrans */
         justify-content: space-evenly; /* Espace égal entre les éléments */
@@ -200,7 +208,7 @@ nav ul {
 
 
 
-.menu-toggle {
+.menu-tiggle {
     font-size: 4em;
     background: none;
     border: none;
@@ -216,7 +224,7 @@ nav ul {
 
 
 
-    .menu-toggle {
+    .menu-tiggle {
         font-size: 4em;
         background: none;
         border: none;
@@ -271,7 +279,7 @@ nav ul {
 }
 
 /* Bouton hamburger */
-.menu-toggle {
+.menu-tiggle {
     font-size: 2.5em;
     background: none;
     border: none;
@@ -389,7 +397,7 @@ nav ul li a:hover {
 
 
 /* Bouton hamburger */
-.menu-toggle {
+.menu-tiggle {
     font-size: 4em;
     background: none;
     border: none;
@@ -411,3 +419,25 @@ nav ul li a:hover {
     background: linear-gradient(to right, #003f5c, #6a9cb8);
     z-index: 998; /* Moins que le menu */
 }
+
+.navbar-container {
+    position: relative; /* Pour isoler les effets */
+    z-index: 1000; /* Assurez que la barre de navigation est toujours visible */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

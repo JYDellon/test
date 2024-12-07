@@ -13,12 +13,18 @@ function Portfolio() {
                             <h3 className="portfolio-titre">
                                 JR Auto
                             </h3>
-                            <p className="portfolio-description">
+                            <div className="portfolio-description">
+                               
                                 JR Auto nous a sollicités pour réaliser leur site web afin de soutenir le démarrage de leur activité.
-                            </p>
-                            <p className="portfolio-solution">
+                                
+                            </div>
+                            <div className="portfolio-description">
+                               
                                 Le défi était de créer un site vitrine en seulement une semaine. Nous avons redéfini le design du site avec une expérience utilisateur UX/UI de qualité...
-                            </p>
+                               
+                            </div>
+                            
+                            
                             <div className="portfolio-cta-container">
                                 <a href="https://jydellon.github.io/JRAuto/" target="_blank" rel="noopener noreferrer" className="portfolio-cta">
                                     Visiter le site
