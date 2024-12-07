@@ -181,7 +181,7 @@
 @media screen and (max-width: 768px) {
     .nos-services-container {
         padding: 10px;
-        width: 100%;
+        width: 65%;
     }
 
     .services-list {
@@ -250,7 +250,7 @@
 /* Styles pour très petits écrans */
 @media screen and (max-width: 480px) {
     .service-card {
-        width: 100%;
+        width: 95%;
         padding: 8px;
     }
 
