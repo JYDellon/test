@@ -101,7 +101,7 @@
 }
 
 /* ======= Responsivité ======= */
-@media (min-width: 768px) {
+@media (min-width: 1060px) {
     .navbar-menu {
         position: static;
         max-height: none;

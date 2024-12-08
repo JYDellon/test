@@ -3,11 +3,11 @@ import './EtapesDansLaCreationDunSite.css';
 
 function EtapesDansLaCreationDunSite() {
     const etapes = [
-        "1. Compréhension de vos besoins",
-        "2. Proposition et maquette",
-        "3. Développement et intégration",
-        "4. Livraison",
-        "5. Suivi",
+        "Compréhension de vos besoins",
+        "Proposition et maquette",
+        "Développement et intégration",
+        "Livraison",
+        "Suivi",
     ];
 
     const etapesDetails = [
@@ -28,13 +28,19 @@ function EtapesDansLaCreationDunSite() {
         <div className="etapes-container">
             {etapes.map((etape, index) => (
                 <div key={index} className="etape-toggle-container">
+                    
                     <div
                         className={`etape-toggle-header ${
                             etapeSelectionnee === index ? 'active' : ''
                         }`}
                         onClick={() => toggleEtape(index)}
                     >
-                        <h3>{etape}</h3>
+                        
+                        
+                        <div>
+                            <h3>{etape}</h3>
+                        </div>
+                        
                     </div>
                     {etapeSelectionnee === index && (
                         <div className="etape-toggle-details">
