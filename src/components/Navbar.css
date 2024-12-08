@@ -44,13 +44,17 @@
     top: 60px; /* Ajustez en fonction de la hauteur de votre header */
     left: 0;
     margin: 0 auto;
-    width: 710.5px;
+    width: 1080px;
     max-height: 0;
     overflow: hidden;
     background-color: rgb(255, 255, 255);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+    background:#a7b2ac;
+    border:1px solid #003f5c;
     transition: max-height 0.4s ease-in-out;
     z-index: 998;
+    border-radius: 50px;
+
 }
 
 /* Menu ouvert */
@@ -80,17 +84,20 @@
     font-weight: bold;
     transition: background-color 0.3s ease, color 0.3s ease;
     text-align: center;
-    width: 100%;
+    border-radius: 50px;
+    width: 180px;
 }
 
 .navbar-menu ul li a.active {
     background-color: #6a9cb8;
     color: white;
+    border-radius: 50px;
 }
 
 .navbar-menu ul li a:hover {
     background-color: #003f5c;
     color: white;
+    border-radius: 50px;
 }
 
 /* ======= Responsivité ======= */
@@ -158,7 +165,7 @@
 .modal-content {
     background: white;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 50px;
     width: 80%;
     max-width: 500px;
     text-align: center;
@@ -188,16 +195,20 @@
     color: #003f5c;
     font-weight: bold;
     transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 50px;
 }
 
 .modal-menu ul li a.active {
     background-color: #6a9cb8;
     color: white;
+    border-radius: 50px;
 }
 
 .modal-menu ul li a:hover {
     background-color: #003f5c;
     color: white;
+    border-radius: 50px;
+
 }
 
 
