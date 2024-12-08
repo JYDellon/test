@@ -1,107 +1,111 @@
+
+
+
+
+
+
 // import React, { useState } from 'react';
 // import { Link, useLocation } from 'react-router-dom';
 // import './Navbar.css';
 
 // function Navbar({ onLinkClick }) {
-//     const location = useLocation();
-//     const [isMenuOpen, setIsMenuOpen] = useState(false);
+//   const location = useLocation();
+//   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-//     const isActiveLink = (path) => location.pathname === path;
+//   const isActiveLink = (path) => location.pathname === path;
 
-//     const toggleMenu = () => {
-//         setIsMenuOpen((prev) => !prev);
-//     };
+//   const toggleMenu = () => {
+//     setIsMenuOpen((prev) => !prev);
+//   };
 
-//     const closeMenu = () => {
-//         setIsMenuOpen(false);
-//         if (onLinkClick) {
-//             onLinkClick();
-//         }
-//     };
+//   const closeMenu = () => {
+//     setIsMenuOpen(false);
+//     if (onLinkClick) {
+//       onLinkClick();
+//     }
+//   };
 
-//     return (
-//         <div className="navbar-container">
-//             <div className='miseEnPage'>
-//                 <div className="navbar-header">
-//                     <button
-//                         className="menu-toggle"
-//                         onClick={toggleMenu}
-//                         aria-label="Toggle menu"
-//                     >
-//                         ☰
-//                     </button>
-//                 </div>
-//             </div>
-               
-//             <nav className={`navbar-menu ${isMenuOpen ? 'open' : ''}`}>
-//                 <ul>
-//                     <li>
-//                         <Link
-//                             to="/"
-//                             className={isActiveLink('/') ? 'active' : ''}
-//                             onClick={closeMenu}
-//                         >
-//                             Accueil
-//                         </Link>
-//                     </li>
-//                     <li>
-//                         <Link
-//                             to="/a-propos"
-//                             className={isActiveLink('/a-propos') ? 'active' : ''}
-//                             onClick={closeMenu}
-//                         >
-//                             A propos de
-//                         </Link>
-//                     </li>
-//                     <li>
-//                         <Link
-//                             to="/nos-services"
-//                             className={isActiveLink('/nos-services') ? 'active' : ''}
-//                             onClick={closeMenu}
-//                         >
-//                             Nos solutions web
-//                         </Link>
-//                     </li>
-//                     <li>
-//                         <Link
-//                             to="/portfolio"
-//                             className={isActiveLink('/portfolio') ? 'active' : ''}
-//                             onClick={closeMenu}
-//                         >
-//                             Etudes de cas
-//                         </Link>
-//                     </li>
-//                     <li>
-//                         <Link
-//                             to="/contact"
-//                             className={isActiveLink('/contact') ? 'active' : ''}
-//                             onClick={closeMenu}
-//                         >
-//                             Contact
-//                         </Link>
-//                     </li>
-//                     <li>
-//                         {/* <Link
-//                             to="/devis"
-//                             className={isActiveLink('/devis') ? 'active' : ''}
-//                             onClick={closeMenu}
-//                         >
-//                             Devis
-//                         </Link> */}
-//                     </li>
-//                     <li>
-//                         <Link
-//                             to="/rgpd"
-//                             className={isActiveLink('/rgpd') ? 'active' : ''}
-//                             onClick={closeMenu}
-//                         >
-//                             RGPD
-//                         </Link>
-//                     </li>
-//                 </ul>
-//             </nav>
+//   return (
+//     <div className="navbar-container">
+//       {/* Fond d'écran overlay qui s'affiche lorsque le menu est ouvert */}
+//       {isMenuOpen && (
+//         <div className="overlay" onClick={closeMenu}></div>
+//       )}
+
+//       {/* Menu Burger */}
+//       <div className="miseEnPage">
+//         <div className="navbar-header">
+//           <button
+//             className="menu-toggle"
+//             onClick={toggleMenu}
+//             aria-label="Toggle menu"
+//           >
+//             ☰
+//           </button>
 //         </div>
-//     );
+//       </div>
+
+//       {/* Menu déroulant */}
+//       <nav className={`navbar-menu ${isMenuOpen ? 'open' : ''}`}>
+//         <ul>
+//           <li>
+//             <Link
+//               to="/"
+//               className={isActiveLink('/') ? 'active' : ''}
+//               onClick={closeMenu}
+//             >
+//               Accueil
+//             </Link>
+//           </li>
+//           <li>
+//             <Link
+//               to="/a-propos"
+//               className={isActiveLink('/a-propos') ? 'active' : ''}
+//               onClick={closeMenu}
+//             >
+//               A propos de
+//             </Link>
+//           </li>
+//           <li>
+//             <Link
+//               to="/nos-services"
+//               className={isActiveLink('/nos-services') ? 'active' : ''}
+//               onClick={closeMenu}
+//             >
+//               Nos solutions web
+//             </Link>
+//           </li>
+//           <li>
+//             <Link
+//               to="/portfolio"
+//               className={isActiveLink('/portfolio') ? 'active' : ''}
+//               onClick={closeMenu}
+//             >
+//               Etudes de cas
+//             </Link>
+//           </li>
+//           <li>
+//             <Link
+//               to="/contact"
+//               className={isActiveLink('/contact') ? 'active' : ''}
+//               onClick={closeMenu}
+//             >
+//               Contact
+//             </Link>
+//           </li>
+//           <li>
+//             <Link
+//               to="/rgpd"
+//               className={isActiveLink('/rgpd') ? 'active' : ''}
+//               onClick={closeMenu}
+//             >
+//               RGPD
+//             </Link>
+//           </li>
+//         </ul>
+//       </nav>
+//     </div>
+//   );
 // }
 
 // export default Navbar;
@@ -121,104 +125,567 @@
 
 
 
+// import React, { useState } from 'react';
+// import { Link, useLocation } from 'react-router-dom';
+// import './Navbar.css';
+
+// function Navbar({ onLinkClick }) {
+//   const location = useLocation();
+//   const [isMenuOpen, setIsMenuOpen] = useState(false);
+//   const [isModalOpen, setIsModalOpen] = useState(false);
+
+//   const isActiveLink = (path) => location.pathname === path;
+
+//   const toggleMenu = () => {
+//     setIsMenuOpen((prev) => !prev);
+//   };
+
+//   const closeMenu = () => {
+//     setIsMenuOpen(false);
+//     if (onLinkClick) {
+//       onLinkClick();
+//     }
+//   };
+
+//   const openModal = () => {
+//     setIsModalOpen(true);
+//   };
+
+//   const closeModal = () => {
+//     setIsModalOpen(false);
+//   };
+
+//   return (
+//     <div className="navbar-container">
+//       {/* Fond d'écran overlay qui s'affiche lorsque le menu est ouvert */}
+//       {isMenuOpen && (
+//         <div className="overlay" onClick={closeMenu}></div>
+//       )}
+
+//       {/* Menu Burger */}
+//       <div className="miseEnPage">
+//         <div className="navbar-header">
+//           <button
+//             className="menu-toggle"
+//             onClick={openModal}
+//             aria-label="Toggle menu"
+//           >
+//             ☰
+//           </button>
+//         </div>
+//       </div>
+
+//       {/* Modale pour les petits écrans */}
+//       {isModalOpen && (
+//         <div className="modal">
+//           <div className="modal-content">
+//             <button className="close-button" onClick={closeModal}>
+//               ×
+//             </button>
+//             <nav className="modal-menu">
+//               <ul>
+//                 <li>
+//                   <Link
+//                     to="/"
+//                     className={isActiveLink('/') ? 'active' : ''}
+//                     onClick={closeModal}
+//                   >
+//                     Accueil
+//                   </Link>
+//                 </li>
+//                 <li>
+//                   <Link
+//                     to="/a-propos"
+//                     className={isActiveLink('/a-propos') ? 'active' : ''}
+//                     onClick={closeModal}
+//                   >
+//                     A propos de
+//                   </Link>
+//                 </li>
+//                 <li>
+//                   <Link
+//                     to="/nos-services"
+//                     className={isActiveLink('/nos-services') ? 'active' : ''}
+//                     onClick={closeModal}
+//                   >
+//                     Nos solutions web
+//                   </Link>
+//                 </li>
+//                 <li>
+//                   <Link
+//                     to="/portfolio"
+//                     className={isActiveLink('/portfolio') ? 'active' : ''}
+//                     onClick={closeModal}
+//                   >
+//                     Etudes de cas
+//                   </Link>
+//                 </li>
+//                 <li>
+//                   <Link
+//                     to="/contact"
+//                     className={isActiveLink('/contact') ? 'active' : ''}
+//                     onClick={closeModal}
+//                   >
+//                     Contact
+//                   </Link>
+//                 </li>
+//                 <li>
+//                   <Link
+//                     to="/rgpd"
+//                     className={isActiveLink('/rgpd') ? 'active' : ''}
+//                     onClick={closeModal}
+//                   >
+//                     RGPD
+//                   </Link>
+//                 </li>
+//               </ul>
+//             </nav>
+//           </div>
+//         </div>
+//       )}
+
+//       {/* Menu déroulant (restant inchangé) */}
+//       <nav className={`navbar-menu ${isMenuOpen ? 'open' : ''}`}>
+//         <ul>
+//           <li>
+//             <Link
+//               to="/"
+//               className={isActiveLink('/') ? 'active' : ''}
+//               onClick={closeMenu}
+//             >
+//               Accueil
+//             </Link>
+//           </li>
+//           <li>
+//             <Link
+//               to="/a-propos"
+//               className={isActiveLink('/a-propos') ? 'active' : ''}
+//               onClick={closeMenu}
+//             >
+//               A propos de
+//             </Link>
+//           </li>
+//           <li>
+//             <Link
+//               to="/nos-services"
+//               className={isActiveLink('/nos-services') ? 'active' : ''}
+//               onClick={closeMenu}
+//             >
+//               Nos solutions web
+//             </Link>
+//           </li>
+//           <li>
+//             <Link
+//               to="/portfolio"
+//               className={isActiveLink('/portfolio') ? 'active' : ''}
+//               onClick={closeMenu}
+//             >
+//               Etudes de cas
+//             </Link>
+//           </li>
+//           <li>
+//             <Link
+//               to="/contact"
+//               className={isActiveLink('/contact') ? 'active' : ''}
+//               onClick={closeMenu}
+//             >
+//               Contact
+//             </Link>
+//           </li>
+//           <li>
+//             <Link
+//               to="/rgpd"
+//               className={isActiveLink('/rgpd') ? 'active' : ''}
+//               onClick={closeMenu}
+//             >
+//               RGPD
+//             </Link>
+//           </li>
+//         </ul>
+//       </nav>
+//     </div>
+//   );
+// }
+
+// export default Navbar;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState } from 'react';
+// import { Link, useLocation } from 'react-router-dom';
+// import './Navbar.css';
+
+// function Navbar({ onLinkClick }) {
+//   const location = useLocation();
+//   const [isMenuOpen, setIsMenuOpen] = useState(false);
+//   const [isModalOpen, setIsModalOpen] = useState(false);
+
+//   const isActiveLink = (path) => location.pathname === path;
+
+//   const toggleMenu = () => {
+//     setIsMenuOpen((prev) => !prev);
+//   };
+
+//   const closeMenu = () => {
+//     setIsMenuOpen(false);
+//     if (onLinkClick) {
+//       onLinkClick();
+//     }
+//   };
+
+//   const openModal = () => {
+//     setIsModalOpen(true);
+//   };
+
+//   const closeModal = () => {
+//     setIsModalOpen(false);
+//   };
+
+//   return (
+//     <div className="navbar-container">
+//       {/* Menu Burger */}
+//       <div className="miseEnPage">
+//         <div className="navbar-header">
+//           <button
+//             className="menu-toggle"
+//             onClick={openModal}
+//             aria-label="Toggle menu"
+//           >
+//             ☰
+//           </button>
+//         </div>
+//       </div>
+
+//       {/* Modale pour les petits écrans */}
+//       {isModalOpen && (
+//         <div className="modal">
+//           <div className="modal-content">
+//             <button className="close-button" onClick={closeModal}>
+//               ×
+//             </button>
+//             <nav className="modal-menu">
+//               <ul>
+//                 <li>
+//                   <Link
+//                     to="/"
+//                     className={isActiveLink('/') ? 'active' : ''}
+//                     onClick={closeModal}
+//                   >
+//                     Accueil
+//                   </Link>
+//                 </li>
+//                 <li>
+//                   <Link
+//                     to="/a-propos"
+//                     className={isActiveLink('/a-propos') ? 'active' : ''}
+//                     onClick={closeModal}
+//                   >
+//                     A propos de
+//                   </Link>
+//                 </li>
+//                 <li>
+//                   <Link
+//                     to="/nos-services"
+//                     className={isActiveLink('/nos-services') ? 'active' : ''}
+//                     onClick={closeModal}
+//                   >
+//                     Nos solutions web
+//                   </Link>
+//                 </li>
+//                 <li>
+//                   <Link
+//                     to="/portfolio"
+//                     className={isActiveLink('/portfolio') ? 'active' : ''}
+//                     onClick={closeModal}
+//                   >
+//                     Etudes de cas
+//                   </Link>
+//                 </li>
+//                 <li>
+//                   <Link
+//                     to="/contact"
+//                     className={isActiveLink('/contact') ? 'active' : ''}
+//                     onClick={closeModal}
+//                   >
+//                     Contact
+//                   </Link>
+//                 </li>
+//                 <li>
+//                   <Link
+//                     to="/rgpd"
+//                     className={isActiveLink('/rgpd') ? 'active' : ''}
+//                     onClick={closeModal}
+//                   >
+//                     RGPD
+//                   </Link>
+//                 </li>
+//               </ul>
+//             </nav>
+//           </div>
+//         </div>
+//       )}
+
+//       {/* Menu déroulant (restant inchangé) */}
+//       <nav className={`navbar-menu ${isMenuOpen ? 'open' : ''}`}>
+//         <ul>
+//           <li>
+//             <Link
+//               to="/"
+//               className={isActiveLink('/') ? 'active' : ''}
+//               onClick={closeMenu}
+//             >
+//               Accueil
+//             </Link>
+//           </li>
+//           <li>
+//             <Link
+//               to="/a-propos"
+//               className={isActiveLink('/a-propos') ? 'active' : ''}
+//               onClick={closeMenu}
+//             >
+//               A propos de
+//             </Link>
+//           </li>
+//           <li>
+//             <Link
+//               to="/nos-services"
+//               className={isActiveLink('/nos-services') ? 'active' : ''}
+//               onClick={closeMenu}
+//             >
+//               Nos solutions web
+//             </Link>
+//           </li>
+//           <li>
+//             <Link
+//               to="/portfolio"
+//               className={isActiveLink('/portfolio') ? 'active' : ''}
+//               onClick={closeMenu}
+//             >
+//               Etudes de cas
+//             </Link>
+//           </li>
+//           <li>
+//             <Link
+//               to="/contact"
+//               className={isActiveLink('/contact') ? 'active' : ''}
+//               onClick={closeMenu}
+//             >
+//               Contact
+//             </Link>
+//           </li>
+//           <li>
+//             <Link
+//               to="/rgpd"
+//               className={isActiveLink('/rgpd') ? 'active' : ''}
+//               onClick={closeMenu}
+//             >
+//               RGPD
+//             </Link>
+//           </li>
+//         </ul>
+//       </nav>
+//     </div>
+//   );
+// }
+
+// export default Navbar;
+
+
+
+
+
+
+
+
+
+
+
+
+
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
 
 function Navbar({ onLinkClick }) {
-    const location = useLocation();
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const isActiveLink = (path) => location.pathname === path;
+  const isActiveLink = (path) => location.pathname === path;
 
-    const toggleMenu = () => {
-        setIsMenuOpen((prev) => !prev);
-    };
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
 
-    const closeMenu = () => {
-        setIsMenuOpen(false);
-        if (onLinkClick) {
-            onLinkClick();
-        }
-    };
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+    if (onLinkClick) {
+      onLinkClick();
+    }
+  };
 
-    return (
-        <div className="navbar-container">
-            {/* Overlay qui s'affiche lorsque le menu est ouvert */}
-            {isMenuOpen && <div className="overlay" onClick={closeMenu}></div>}
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
 
-            <div className='miseEnPage'>
-                <div className="navbar-header">
-                    <button
-                        className="menu-toggle"
-                        onClick={toggleMenu}
-                        aria-label="Toggle menu"
-                    >
-                        ☰
-                    </button>
-                </div>
-            </div>
-               
-            <nav className={`navbar-menu ${isMenuOpen ? 'open' : ''}`}>
-                <ul>
-                    <li>
-                        <Link
-                            to="/"
-                            className={isActiveLink('/') ? 'active' : ''}
-                            onClick={closeMenu}
-                        >
-                            Accueil
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            to="/a-propos"
-                            className={isActiveLink('/a-propos') ? 'active' : ''}
-                            onClick={closeMenu}
-                        >
-                            A propos de
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            to="/nos-services"
-                            className={isActiveLink('/nos-services') ? 'active' : ''}
-                            onClick={closeMenu}
-                        >
-                            Nos solutions web
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            to="/portfolio"
-                            className={isActiveLink('/portfolio') ? 'active' : ''}
-                            onClick={closeMenu}
-                        >
-                            Etudes de cas
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            to="/contact"
-                            className={isActiveLink('/contact') ? 'active' : ''}
-                            onClick={closeMenu}
-                        >
-                            Contact
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            to="/rgpd"
-                            className={isActiveLink('/rgpd') ? 'active' : ''}
-                            onClick={closeMenu}
-                        >
-                            RGPD
-                        </Link>
-                    </li>
-                </ul>
-            </nav>
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  return (
+    <div className="navbar-container">
+      {/* Menu Burger */}
+      <div className="miseEnPage">
+        <div className="navbar-header">
+          <button
+            className="menu-toggle"
+            onClick={openModal}
+            aria-label="Toggle menu"
+          >
+            ☰
+          </button>
         </div>
-    );
+      </div>
+
+      {/* Modale pour les petits écrans */}
+      {isModalOpen && (
+        <div className="modal" onClick={closeModal}>
+          <div className="modal-content">
+            <nav className="modal-menu">
+              <ul>
+                <li>
+                  <Link
+                    to="/"
+                    className={isActiveLink('/') ? 'active' : ''}
+                    onClick={closeModal}
+                  >
+                    Accueil
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/a-propos"
+                    className={isActiveLink('/a-propos') ? 'active' : ''}
+                    onClick={closeModal}
+                  >
+                    A propos de
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/nos-services"
+                    className={isActiveLink('/nos-services') ? 'active' : ''}
+                    onClick={closeModal}
+                  >
+                    Nos solutions web
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/portfolio"
+                    className={isActiveLink('/portfolio') ? 'active' : ''}
+                    onClick={closeModal}
+                  >
+                    Etudes de cas
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/contact"
+                    className={isActiveLink('/contact') ? 'active' : ''}
+                    onClick={closeModal}
+                  >
+                    Contact
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/rgpd"
+                    className={isActiveLink('/rgpd') ? 'active' : ''}
+                    onClick={closeModal}
+                  >
+                    RGPD
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      )}
+
+      {/* Menu déroulant (restant inchangé) */}
+      <nav className={`navbar-menu ${isMenuOpen ? 'open' : ''}`}>
+        <ul>
+          <li>
+            <Link
+              to="/"
+              className={isActiveLink('/') ? 'active' : ''}
+              onClick={closeMenu}
+            >
+              Accueil
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/a-propos"
+              className={isActiveLink('/a-propos') ? 'active' : ''}
+              onClick={closeMenu}
+            >
+              A propos de
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/nos-services"
+              className={isActiveLink('/nos-services') ? 'active' : ''}
+              onClick={closeMenu}
+            >
+              Nos solutions web
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/portfolio"
+              className={isActiveLink('/portfolio') ? 'active' : ''}
+              onClick={closeMenu}
+            >
+              Etudes de cas
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/contact"
+              className={isActiveLink('/contact') ? 'active' : ''}
+              onClick={closeMenu}
+            >
+              Contact
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/rgpd"
+              className={isActiveLink('/rgpd') ? 'active' : ''}
+              onClick={closeMenu}
+            >
+              RGPD
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  );
 }
 
 export default Navbar;
