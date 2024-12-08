@@ -43,7 +43,7 @@ a {
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
-  height: 490px;
+  height: 400px;
   width: 600px;
   overflow-y: auto; /* Empêche le contenu interne de pousser les éléments voisins */
   position: relative; /* Important pour la gestion de l'espace */
