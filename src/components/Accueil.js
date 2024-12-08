@@ -32,7 +32,7 @@ function Accueil() {
                 </div>
 
                 <div className=" cardmDevis" onClick={() => navigate('/devis')}>
-                    <h2>GRATUIT</h2> <h2> DEVIS</h2> <h2> DE </h2> <h2>DEMANDE</h2>
+                    <h2>DEMANDE</h2><h2> DE </h2><h2> DEVIS</h2><h2>GRATUIT</h2>   
                 </div>
             </div>
 

@@ -91,7 +91,6 @@
         opacity: 1;
     }
 }
-
 .cardm {
     background: linear-gradient(to right, #003f5c, #6a9cb8);
     display: flex;
@@ -109,7 +108,25 @@
     opacity: 0; 
     animation: fadeInUp 0.6s ease-out forwards; 
 }
-.cardmDevis {
+
+/* Animation de montée avec translation et rotation */
+@keyframes slideAndRotateIn {
+    0% {
+      transform: translateX(100%) rotateY(720deg); /* Commence hors de l'écran avec rotation */
+      opacity: 0;
+    }
+    50% {
+      transform: translateX(-10%) rotateY(180deg); /* En cours de mouvement et rotation */
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(0) rotateY(0); /* Position finale avec rotation finale */
+      opacity: 1;
+    }
+  }
+  
+  /* CardMDevis Style */
+  .cardmDevis {
     background: linear-gradient(to right, rgb(97, 53, 0), darkorange);
     display: flex;
     flex-direction: column;
@@ -121,11 +138,21 @@
     width: 225px;
     height: 225px;
     cursor: pointer;
+    opacity: 0;
+    animation: slideAndRotateIn 3s ease-out forwards; /* Animation appliquée ici */
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
-    opacity: 0; 
-    animation: fadeInUp 0.6s ease-out forwards; 
-
+  }
+  
+.cardm:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7);
 }
+
+.cardmDevis:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7);
+}
+
 
 .cardm:hover {
     transform: translateY(-10px); 
