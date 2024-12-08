@@ -8,7 +8,7 @@
 
 //     const isActiveLink = (path) => location.pathname === path;
 
-//     const tiggleMenu = () => {
+//     const toggleMenu = () => {
 //         setIsMenuOpen((prev) => !prev);
 //     };
 
@@ -24,9 +24,9 @@
 //             <div className='miseEnPage'>
 //                 <div className="navbar-header">
 //                     <button
-//                         className="menu-tiggle"
-//                         onClick={tiggleMenu}
-//                         aria-label="tiggle menu"
+//                         className="menu-toggle"
+//                         onClick={toggleMenu}
+//                         aria-label="Toggle menu"
 //                     >
 //                         ☰
 //                     </button>
@@ -131,7 +131,7 @@ function Navbar({ onLinkClick }) {
 
     const isActiveLink = (path) => location.pathname === path;
 
-    const tiggleMenu = () => {
+    const toggleMenu = () => {
         setIsMenuOpen((prev) => !prev);
     };
 
@@ -150,9 +150,9 @@ function Navbar({ onLinkClick }) {
             <div className='miseEnPage'>
                 <div className="navbar-header">
                     <button
-                        className="menu-tiggle"
-                        onClick={tiggleMenu}
-                        aria-label="tiggle menu"
+                        className="menu-toggle"
+                        onClick={toggleMenu}
+                        aria-label="Toggle menu"
                     >
                         ☰
                     </button>
