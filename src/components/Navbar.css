@@ -1,25 +1,41 @@
-/* Évite de réinitialiser tout avec * */
+
+
+
+
+
+
+
+
+
+
+
+/* Réinitialiser uniquement le nécessaire */
 body, html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     width: 100%;
     height: 100%;
-    overflow-x: hidden; /* Garder uniquement si nécessaire */
+    overflow-x: hidden; 
 }
 
+/* Conteneur de la Navbar */
 .navbar-container {
     margin: 0 auto;
     padding: 10px 20px;
     position: relative;
-
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 1000; /* Assurez que la barre reste visible */
 }
 
 /* Header pour le bouton hamburger */
 .navbar-header {
     display: none;
-    justify-content: right;padding-right: 1.5em;
-    width: 100px;
+    justify-content: flex-end;
+    padding: 0 1.5em;
+    width: 100%;
 }
 
 /* Bouton hamburger */
@@ -28,80 +44,57 @@ body, html {
     background: none;
     border: none;
     cursor: pointer;
-    color:darkorange;
-    text-align: center;
-    margin: 0 auto;
-
-}
-
-
-
-.miseEnPage{
-    width: 100%;
+    color: darkorange;
+    z-index: 10000; /* Toujours visible au-dessus de tout */
 }
 
 /* Menu principal */
 .navbar-menu {
-    width: 100%;
-    /* min-width: 80%; */
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-wrap: wrap;
-    /* transition: max-height 0.3s ease-out; */
+    transition: max-height 0.3s ease-out;
     overflow: hidden;
-    display: flex;
-    justify-content: center; /* Centre les liens de navigation */
-
+    gap: 10px;
 }
 
+/* Effets sur le menu avec état ouvert */
 .navbar-menu.open {
-    max-height: 1000px; /* Largeur augmentée lorsque le menu est ouvert */
+    max-height: 1000px;
 }
 
+/* Liens de navigation */
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
     padding: 0;
     margin: 0;
-    flex-wrap: wrap;
+    gap: 10px;
 }
 
-/* Menu caché par défaut sur mobile */
-@media (max-width: 768px) {
-    .navbar-header {
-        margin-top: 40px;
-        display: flex;
-        justify-content: center;
-        width: 100%;        
-    }
-
-    .navbar-menu {
-        display: block;
-        max-height: 0;
-        transition: max-height 0.3s ease-in;
-    }
-
-    .navbar-menu.open {
-        max-height: 500px; /* Affiche le menu déroulant sur mobile */
-    }
-
-    nav ul {
-        flex-direction: column; /* Colonnes pour les petits écrans */
-        justify-content: flex-start;
-        align-items: center;
-    }
-
-    nav ul li a {
-        width: 100%; /* Chaque lien occupe la largeur du conteneur */
-        text-align: center;
-        margin: 5px 0;
-        display: flex;
-    }
-}
-
-/* Liens du menu */
 nav ul li a {
+    text-decoration: none;
+    font-size: 1em;
+    color: #003f5c;
+    text-align: center;
+    transition: all 0.3s ease;
+    padding: 0 10px;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    background-image: url('file:///D:/Martinique/mon-portfolio/src/assets/images/boutons.png');
+    background-size: cover;
+    background-position: center;
+
+
+
+
+
+
+
+
+
     background-image: url('file:///D:/Martinique/mon-portfolio/src/assets/images/boutons.png');
     background-size: cover;
     background-position: center;
@@ -125,232 +118,32 @@ nav ul li a {
     flex-direction: column;
 }
 
-/* Effet de survol */
+/* Effets de survol */
 nav ul li a:hover {
     color: #003f5c;
-    font-weight: bold;
-    filter: brightness(1.1); /* Augmente la luminosité à 130% */
+    filter: brightness(1.2);
 }
 
 /* Lien actif */
 nav ul li a.active {
-    filter: brightness(1.3); /* Augmente la luminosité à 130% */    
+    filter: brightness(1.3);
 }
 
-/* Conteneur principal de la Navbar */
-.navbar-container {
-    margin: 0 auto;
-    padding: 10px 20px;
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly; /* Centre la navbar horizontalement */
-    align-items: center; /* Centre les éléments verticalement */
-}
-
-
-
-/* Menu caché par défaut sur mobile */
-
-
-
-
-/* Menu principal */
-.navbar-menu {
-    display: flex;
-    justify-content: center; /* Centre les liens horizontalement */
-    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
-    transition: max-height 0.3s ease-out;
-    overflow: hidden;
-    gap: 10px; /* Ajoute de l'espace entre les éléments */
-}
-
-/* Liens du menu */
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center; /* Centre les liens dans la liste */
-    flex-wrap: wrap; /* Permet aux liens de passer à une nouvelle ligne */
-    padding: 0;
-    margin: 0;
-    gap: 10px; /* Ajoute de l'espace entre les liens */
-}
-
-/* Menu caché par défaut sur mobile */
-@media (min-width:600px) and (max-width: 768px) {
- 
-    .navbar-menu {
-        flex-direction: column; /* Colonne pour les petits écrans */
-        justify-content: space-evenly; /* Espace égal entre les éléments */
-        align-items: center; /* Centre les éléments dans la colonne */
-        gap: 15px; /* Ajoute de l'espace entre les éléments */
-    }
-
-    nav ul {
-        flex-direction: column; /* Aligne les liens verticalement */
-        justify-content: center; /* Centre les liens */
-        align-items: center; /* Centre les éléments dans la colonne */
-    }
-
-    nav ul li a {
-        width: auto; /* Ajuste la largeur automatiquement */
-        text-align: center; /* Centre le texte */
-        margin: 5px 0; /* Ajoute un espacement entre les liens */
-    }
-    
-
-
-}
-
-
-@media  (min-width: 599) {
-
-
-
-
-.menu-tiggle {
-    font-size: 4em;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #003f5c;
-    color:darkorange;
-    
-}
-}
-
-@media  (max-width: 400px) {
-
-
-
-
-    .menu-tiggle {
-        font-size: 4em;
-        background: none;
-        border: none;
-        cursor: pointer;
-        color: #003f5c;
-        color:darkorange;
-    }
-    }
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /* Conteneur principal de la Navbar */
-.navbar-container {
-    margin: 0 auto;
-    position: relative;
-    width: 100%;
-    padding: 10px 20px;
-}
-
-/* Header pour le bouton hamburger */
-.navbar-header {
-    display: none; /* Par défaut, caché */
-    justify-content: flex-end;
-    padding: 0 1.5em;
-    width: 100%;
-}
-
-/* Bouton hamburger */
-.menu-tiggle {
-    font-size: 2.5em;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: darkorange;
-    border-radius: 50%;
-}
-
-/* Menu principal - sur mobile uniquement */
-.navbar-menu {
-    display: none; /* Par défaut, le menu est caché sur mobile */
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: max-height 0.3s ease-out;
-    max-height: 0;
-    overflow: hidden;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 999;
-    width: 100%;
-}
-
-/* Menu ouvert sur mobile */
-.navbar-menu.open {
-    max-height: 500px;
-}
-
-/* Sur les grands écrans, le menu est toujours visible */
-@media (min-width: 768px) {
-    /* Masquer le hamburger */
-    .navbar-header {
-        display: none;
-    }
-
-    /* Afficher le menu en mode horizontal */
-    .navbar-menu {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-items: center;
-        position: static;
-        max-height: none;
-        overflow: visible;
-    }
-
-    /* Afficher les liens en ligne */
-    nav ul {
-        display: flex;
-        justify-content: space-evenly;
-        padding: 0;
-        margin: 0;
-        gap: 10px;
-    }
-
-    nav ul li a {
-        font-size: 1em;
-        padding: 10px 15px;
-    }
-}
-
-/* Afficher le bouton hamburger uniquement sur les petits écrans */
+/* Effets spécifiques sur mobile */
 @media (max-width: 768px) {
     .navbar-header {
         display: flex;
+        justify-content: center;
     }
 
-    /* Menu dynamique visible avec une animation */
     .navbar-menu {
-        display: flex;
+        display: block;
+        max-height: 0;
+        transition: max-height 0.3s ease-in;
+    }
+
+    .navbar-menu.open {
+        max-height: 500px;
     }
 
     nav ul {
@@ -365,51 +158,28 @@ nav ul {
     }
 }
 
-/* Liens du menu avec des effets */
-nav ul li a {
-    text-decoration: none;
-    font-size: 1em;
-    color: rgb(18, 43, 165);
-    text-align: center;
-    transition: all 0.2s ease;
+/* Pour les écrans entre 600px et 768px */
+@media (min-width: 600px) and (max-width: 768px) {
+    .navbar-menu {
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
 }
 
-/* Effet de survol */
-nav ul li a:hover {
-    color: #003f5c;
-    filter: brightness(1.2);
+/* État global et amélioration pour les plus petits écrans */
+@media (max-width: 400px) {
+    .menu-tiggle {
+        font-size: 3.5em;
+    }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Bouton hamburger */
-.menu-tiggle {
-    font-size: 4em;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: darkorange;
-    text-align: center;
-    margin: 0 auto;
-    position: relative; /* Assure la position correcte */
-    z-index: 10000; /* Assure que l'icône reste au-dessus de l'overlay */
-}
-
-/* Overlay */
+/* Overlay pour le menu */
 .overlay {
     position: fixed;
     top: 0;
@@ -417,27 +187,7 @@ nav ul li a:hover {
     width: 100%;
     height: 100%;
     background: linear-gradient(to right, #003f5c, #6a9cb8);
-    z-index: 998; /* Moins que le menu */
+    z-index: 998;
 }
-
-.navbar-container {
-    position: relative; /* Pour isoler les effets */
-    z-index: 1000; /* Assurez que la barre de navigation est toujours visible */
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
