@@ -498,6 +498,7 @@
     padding: 0;padding: 20px;
     position: relative;
   transform: none; /* Évite les comportements imprévus */
+  margin: 0 auto;
   }
 
 
