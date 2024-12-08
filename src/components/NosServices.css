@@ -1,6 +1,6 @@
 /* ========== Réinitialisation Générale ========== */
+
 * {
-/* Évite de réinitialiser tout avec * */
 body, html {
   margin: 0;
   padding: 0;
@@ -18,19 +18,6 @@ html, body {
   overflow-x: hidden; /* Évite les débordements horizontaux */
 }
 
-/* ========== Conteneurs Généraux ========== */
-/* .app-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  padding: 0;
-}
-
-section, main {
-  flex-grow: 1;
-  padding: 20px;
-  width: 100%;
-} */
 
 /* ========== Textes et Titres ========== */
 h1 {
@@ -56,7 +43,7 @@ a {
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
-  /* height: 590px; */
+  height: 590px;
   width: 600px;
   overflow-y: auto; /* Empêche le contenu interne de pousser les éléments voisins */
   position: relative; /* Important pour la gestion de l'espace */

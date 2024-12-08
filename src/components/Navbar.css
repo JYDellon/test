@@ -43,10 +43,11 @@
     position: absolute;
     top: 60px; /* Ajustez en fonction de la hauteur de votre header */
     left: 0;
-    width: 100%;
+    margin: 0 auto;
+    width: 710.5px;
     max-height: 0;
     overflow: hidden;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: max-height 0.4s ease-in-out;
     z-index: 998;
