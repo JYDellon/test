@@ -22,7 +22,7 @@ body, html {
     max-width: 1400px;
     margin: 0 auto;
     padding: 20px;
-    height: 600px; /* Remplacer la hauteur fixe par 'auto' pour plus de flexibilité */
+    height: auto; /* Remplacer la hauteur fixe par 'auto' pour plus de flexibilité */
     overflow-y: auto; 
 }
 
