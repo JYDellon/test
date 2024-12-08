@@ -157,11 +157,17 @@
 
 
 @media (min-width: 601px) and (max-width: 1050px) {
-    .cardm, .cardmDevis {
+    .cardm{
         width: 390px;
         height: 150px;
         margin-bottom: 40px;
-        
+
+    }
+    .cardmDevis {
+        width: 225px;
+        height: 225px;
+        margin-bottom: 40px;
+        border-radius: 50%;
 
     }
 
@@ -189,11 +195,18 @@
 
 
 @media (max-width: 599px) {
-    .cardm, .cardmDevis {
+    .cardm{
         width: 220px;
         height: 150px;
         margin-top: 20px;
         margin: 0 auto;
+    }
+    .cardmDevis {
+        width: 225px;
+        height: 225px;
+        margin-top: 20px;
+        margin: 0 auto;
+        border-radius: 50px;
     }
 
 
@@ -207,15 +220,18 @@
         align-items: flex-start;
         padding: 20px 120px;
     }
-    .cardm, .cardmDevis  {            
+    .cardm {            
         margin-top: 0px;
-        width: 250px;
+        width: 220px;
         height: 150px;
         margin-bottom: 0px;
     }
 
     .cardmDevis  {            
         margin-top: 10px; 
+        border-radius: 50%;
+        width: 225px;
+        height: 225px;
     }
     .carousel-container {
         display: none;

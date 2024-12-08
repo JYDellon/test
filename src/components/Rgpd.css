@@ -6,8 +6,7 @@
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  max-width: 420px;
-  /* -------------------------------------------------------------------------------------------------------- */
+  /* max-width: 420px;------------------------------------------------------------------------------------------------------------------- */
   margin: 0 auto;
 }
 
@@ -266,7 +265,7 @@
 /* Contenu déroulé */
 .rgpd-toggle-details {
   padding: 15px;
-  background: #eef3f8;
+  background: #f8eef4;
   color: #003f5c;
   font-size: 1em;
   line-height: 1.5;
@@ -323,16 +322,17 @@
 /* Conteneur de chaque toggle */
 .rgpd-toggle-container {
   
-  width: 420px;
-  height: 50px;
+  width: 100%;
   margin-bottom: 10px;
   border: 1px solid #6a9cb8;
   border-radius: 5px;
-  background: white;
+  background: white;  
+  border-radius: 30px;
   overflow: hidden;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
-  border-radius: 50px;
+  transition: box-shadow 0.3s ease; 
+  border-radius: 30px;
+
 }
 
 .rgpd-toggle-container:hover {
@@ -345,10 +345,9 @@
   color: white;
   padding: 15px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease;  border-radius: 30px;
+
   font-size: 1.2em;
-  display: flex;
-  justify-content: center;
 }
 
 .rgpd-toggle-header.active {

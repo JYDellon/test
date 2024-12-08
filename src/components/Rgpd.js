@@ -55,7 +55,7 @@ function Rgpd() {
                             sectionSelectionnee === index ? 'show' : 'hide'
                         }`}
                     >
-                        <p>{sectionsDetails[index]}</p>
+                        <p  className="texte" >{sectionsDetails[index]}</p>
                     </div>
                 </div>
             ))}

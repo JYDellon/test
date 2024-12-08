@@ -271,7 +271,7 @@ function APropos() {
                             chapitreSelectionne === index ? 'show' : 'hide'
                         }`}
                     >
-                        <p>{chapitresDetails[index]}</p>
+                        <p className="texte">{chapitresDetails[index]}</p>
                     </div>
                 </div>
             ))}

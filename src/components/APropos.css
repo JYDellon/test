@@ -41,7 +41,7 @@
     margin: 10px 0;
     width: 100%;
     border: 1px solid var(--couleur-secondaire);
-    border-radius: 50px;
+    border-radius: 30px;
     box-shadow: var(--box-shadow);
     transition: transform var(--transition);
     background-color: rgb(255, 255, 255);
