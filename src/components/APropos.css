@@ -31,7 +31,6 @@
     margin: 0 auto;
     color: var(--couleur-primaire);
     height: 420px;
-    background-color: var(--hover-bg);
   }
   
   /* Chapitre Toggle Container commun */

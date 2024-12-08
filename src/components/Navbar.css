@@ -12,7 +12,7 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
-    z-index: 1000;
+    z-index: 1000;;
 }
 
 /* Header pour le bouton hamburger */

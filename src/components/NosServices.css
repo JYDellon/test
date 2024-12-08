@@ -1,644 +1,107 @@
-/* Réinitialisation générale des marges et paddings */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Suppression des marges par défaut pour le body */
-  html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden; /* Évite les débordements horizontaux */
-  }
-  
-  /* Conteneur principal pour garantir un espacement uniforme */
-  .app-container {
-    margin: 0; /* Supprime les marges automatiques */
-    padding: 0; /* Supprime les paddings automatiques */
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Gère le contenu minimum pour remplir l'écran */
-  }
-  
-  /* Pour toutes les sections ou pages */
-  section, main, .page-content {
-    margin: 0;
-    padding: 20px; /* Ajout de padding contrôlé */
-    width: 100%;
-    display: block;
-    flex-grow: 1; /* Permet de remplir l'espace disponible */
-  }
-  
-  /* Suppression des styles de margin non désirés pour les h1, h2, p */
-  h1, h2, h3, h4, h5, h6, p {
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Ajout d'un espacement cohérent pour les titres */
-  h1 {
-    margin-bottom: 20px; /* Espacement uniquement vers le bas */
-  }
-  
-  p {
-    margin-bottom: 10px; /* Uniformise les espaces entre paragraphes */
-  }
-  
-  /* Réinitialisation spécifique pour les liens */
-  a {
-    text-decoration: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Header */
-  .header {
-    margin: 0; /* Pas de marge automatique */
-    padding: 0; /* Réinitialisation */
-    width: 100%;
-  }
-  
-  
-  
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  html, body {
-    width: 100%;
-    overflow-x: hidden; /* Éviter le débordement horizontal */
-  }
-
-
-
-
-
-
-
-
-
-
-  
-
-
-/* Conteneur principal de Nos Services */
-.nos-services-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    width: 100%;
-    max-width: 1200px; /* Limite la largeur */
-    margin: 0 auto;
-}
-
-/* Titre principal */
-.nos-services-title {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #003f5c;
-}
-
-/* Liste des services */
-.services-list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 100%;
-    align-items: center;    .service-card {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        background: linear-gradient(to right, #003f5c, #6a9cb8);
-        border-radius: 10px;
-        width: 80%;
-        height: 75px;
-        padding: 10px;
-        color: white;
-        font-size: 1.2em;
-        cursor: pointer;
-        opacity: 0;
-        animation-fill-mode: forwards;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
-        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
-        opacity: 0;
-        animation: fadeInUp 0.6s ease-out forwards;
-    }
-}
-
-/* Section de chaque service */
-.service-section {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Carte principale pour chaque service */
-.service-card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background: linear-gradient(to right, #003f5c, #6a9cb8);
-    border-radius: 10px;
-    width: 470px;
-    height: 50px;
-    padding: 10px;
-    color: white;
-    font-size: 1.2em;
-    cursor: pointer;
-    opacity: 0;
-    animation-fill-mode: forwards;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
-    opacity: 0;
-    animation: fadeInUp 0.6s ease-out forwards;
-}
-
-.service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7);
-}
-
-.service-card.active {
-    background: #6a9cb8;
-}
-
-/* Animation spécifique à chaque carte */
-.service-card:nth-child(1) { animation: fadeIn 0.6s ease-out forwards; }
-.service-card:nth-child(2) { animation: slideInLeft 0.6s ease-out forwards; }
-.service-card:nth-child(3) { animation: slideInRight 0.6s ease-out forwards; }
-.service-card:nth-child(4) { animation: slideInUp 0.6s ease-out forwards; }
-.service-card:nth-child(5) { animation: rotateIn 0.6s ease-out forwards; }
-.service-card:nth-child(6) { animation: zoomIn 0.6s ease-out forwards; }
-
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideInLeft {
-    from { opacity: 0; transform: translateX(-30px); }
-    to { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes slideInRight {
-    from { opacity: 0; transform: translateX(30px); }
-    to { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes slideInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes rotateIn {
-    from { opacity: 0; transform: rotate(-90deg) scale(0.8); }
-    to { opacity: 1; transform: rotate(0deg) scale(1); }
-}
-
-@keyframes zoomIn {
-    from { opacity: 0; transform: scale(0.8); }
-    to { opacity: 1; transform: scale(1); }
-}
-
-/* Détails de chaque service */
-.service-details {
-    margin-top: 10px;
-    padding: 20px;
-    background: #eef3f800;
-    border-radius: 8px;
-    animation: fadeInDown 0.5s ease-out;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Section de détail avec titre */
-.detail-section {
-    margin-bottom: 15px;
-}
-
-.detail-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    background: linear-gradient(to right, #005c00, #6a9cb8);
-    color: white;
-    font-size: 1.1em;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
-    margin: 0 auto;
-}
-
-.detail-title:hover {
-    background: #005f7c;
-    transform: translateY(-3px);
-}
-
-.detail-title.active {
-    background: #005f7c;
-    font-weight: bold;
-}
-
-/* Contenu des cartes d'informations */
-.info-cards-container {
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px;
-    border-radius: 6px;
-    animation: fadeInUp 0.5s ease-out;
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
-}
-
-.info-card {
-    padding: 10px 15px;
-    background: white;
-    border: 1px solid #6a9cb8;
-    border-radius: 6px;
-    font-size: 1em;
-    line-height: 1.5;
-    color: #003f5c;
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
-}
-
-@keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Styles Mobile-Friendly */
-@media screen and (max-width: 768px) {
-    .nos-services-container {
-        padding: 10px;
-        width: 65%;
-    }
-
-    .services-list {
-        width: 100%;
-        justify-content: space-evenly;
-    }
-
-    .service-card {
-        width: 100%;
-        height: 80px;
-        font-size: 0.9em;
-        margin: 5px 0;
-    }
-
-    .service-card.active {
-        background: #005f7c;
-    }
-
-    .content-container {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .sub-cards-left, .sub-cards-right {
-        width: 100%;
-    }
-
-    .info-cards-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        padding: 15px;
-    }
-
-    .info-card {
-        width: 90%;
-        margin-bottom: 15px;
-        font-size: 0.9em;
-        padding: 12px;
-    }
-
-    .sub-card-details {
-        width: 90%;
-        padding: 20px;
-        margin-top: 15px;
-    }
-
-    .deviser {
-        flex-direction: column;
-        margin-top: 30px;
-    }
-
-    .devis-button {
-        width: 100%;
-        padding: 12px;
-        font-size: 1em;
-    }
-
-    .sub-card {
-        width: 100%;
-        margin: 10px 0;
-    }
-}
-
-/* Styles pour très petits écrans */
-@media screen and (max-width: 480px) {
-    .service-card {
-        width: 75%;
-        padding: 8px;
-    }
-
-    .info-card {
-        padding: 10px;
-    }
-
-    .sub-card-details, .sub-card-detailsecommerce {
-        padding: 15px;
-    }
-
-    .devis-button {
-        font-size: 16px;
-    }
-}
-
-
-
-/* Contenu des cartes d'informations */
-.info-cards-container {
-    margin-top: 10px;
-    display: flex;
-    flex-direction: row; 
-    flex-wrap: wrap; 
-    gap: 20px; 
-    padding: 10px;
-    border-radius: 6px;
-    animation: fadeInUp 0.5s ease-out;
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Styles pour les cartes info-card */
-.info-card {
-    padding: 10px 15px;
-    background: white;
-    border: 1px solid #6a9cb8;
-    border-radius: 6px;
-    font-size: 1em;
-    line-height: 1.5;
-    color: #003f5c;
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
-    width: 100%;
-}
-
-/* En version mobile (max-width: 768px) */
-@media screen and (max-width: 768px) {
-
-
-    .info-card {
-        width: 90%; 
-        margin-bottom: 15px;
-    }   
-}
-
-/* En version très petit écran (max-width: 480px) */
-@media screen and (max-width: 480px) {
-    .info-card {
-        width:75%; 
-        padding: 10px;
-    }
-    .service-card {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        background: linear-gradient(to right, #003f5c, #6a9cb8);
-        border-radius: 10px;
-        width: 80%;
-        height: 50px;
-        padding: 10px;
-        color: white;
-        font-size: 1.2em;
-        cursor: pointer;
-        opacity: 0;
-        animation-fill-mode: forwards;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
-        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
-        opacity: 0;
-        animation: fadeInUp 0.6s ease-out forwards;
-    }
-    
-    
-}
- 
-
-  .service-card {
-    cursor: pointer;
-    font-weight: bold;
-  }
-  
-  .detail-card {
-    cursor: pointer;
-    padding: 5px;
-  }
-  
-  .info-cards-container {
-    padding-left: 15px;
-  }
-  
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-/* Réinitialisation générale des marges et paddings */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Suppression des marges par défaut pour le body */
-  html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden; 
-  }
-  
-
-  
-  /* Conteneur avec scrollbar indépendante */
-  .toggle-container {
-    height: 550px;
-    overflow-y: auto;
-    padding: 10px;
-  }
-  
-  /* Cartes principales pour chaque service */
-  .service-card,
-  .detail-card {
-        cursor: pointer;
-        padding: 5px;   
-  }
-  
-  .service-card:hover,
-  .detail-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7);
-  }
-  
-  /* Changement de couleur en état actif */
-  .service-card.active,
-  .detail-card.active {
-    background: #6a9cb8;
-  }
-  
-  /* Sections de détails pour chaque sous-titre */
-  .service-details {
-    margin-top: 10px;
-    padding: 20px;
-    border-radius: 8px;
-    animation: fadeInDown 0.5s ease-out;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Animation globale */
-  @keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  
-  /* Apparence similaire pour les sous-toggles */
-  .detail-card {
-    background: linear-gradient(to right, #003f5c, #6a9cb8);
-    font-size: 1em;
-    padding: 8px 10px;
-    color: white;
-    border-radius: 8px;
-    margin: 5px 0;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    background-color: tomato;
-  }
-  
-  .detail-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
-  }
-  
-  /* Contenu interne pour chaque sous-menu */
-  .info-cards-container {
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px;
-    border-radius: 6px;
-    animation: fadeInUp 0.5s ease-out;
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .info-card {
-    padding: 10px 15px;
-    background: white;
-    border: 1px solid #6a9cb8;
-    border-radius: 6px;
-    font-size: 1em;
-    color: #003f5c;
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-
-
-
-
-
-
-/* Réinitialisation générale des marges et paddings */
+/* ========== Réinitialisation Générale ========== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-  
-/* Suppression des marges par défaut pour le body */
+
 html, body {
-  margin: 0;
-  padding: 0;
   width: 100%;
   height: 100%;
-  overflow-x: hidden; 
+  overflow-x: hidden; /* Évite les débordements horizontaux */
 }
 
-/* Conteneur avec scrollbar indépendante */
-.toggle-container {
-  height: 510px;
-  overflow-y: auto;
-  padding: 5px;
+/* ========== Conteneurs Généraux ========== */
+/* .app-container {
   display: flex;
   flex-direction: column;
-  gap: 10px; /* Ajoute un espace uniforme entre chaque toggle */
-  margin-top: -15px;
-
+  min-height: 100vh;
+  padding: 0;
 }
 
-/* Cartes principales pour chaque service */
-.service-card,
-.detail-card {
+section, main {
+  flex-grow: 1;
+  padding: 20px;
+  width: 100%;
+} */
+
+/* ========== Textes et Titres ========== */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #003f5c;
+  text-align: center;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ========== Nos Services ========== */
+.toggle-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.services-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+
+
+/* ========== Carte de Service Principale ========== */
+
+
+.service-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #003f5c, #6a9cb8);
+  border-radius: 10px;
+  width: 470px;
+  height: 50px;
+  padding: 10px;
+  color: white;
+  font-size: 1.2em;
   cursor: pointer;
-  padding: 5px;   
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  animation: fadeInUp 0.6s ease-out forwards;
+  margin: 0 auto;
+  margin-top: 20px;
 }
-  
-.service-card:hover,
-.detail-card:hover {
-  transform: translateY(-5px);
+
+.service-card:hover {
+  transform: translateY(-10px);
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7);
 }
-  
-/* Changement de couleur en état actif */
-.service-card.active,
-.detail-card.active {
+
+.service-card.active {
   background: #6a9cb8;
 }
 
-/* Sections de détails pour chaque sous-titre */
+/* ========== Section Détails ========== */
 .service-details {
   margin-top: 10px;
   padding: 20px;
   border-radius: 8px;
-  animation: fadeInDown 0.5s ease-out;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  animation: fadeInDown 0.5s ease-out;
 }
 
-/* Apparence similaire pour les sous-toggles */
+/* ========== Détails des Sous-Toggles ========== */
 .detail-card {
   background: linear-gradient(to right, #003f5c, #6a9cb8);
   font-size: 1em;
@@ -646,27 +109,31 @@ html, body {
   color: white;
   border-radius: 8px;
   margin: 5px 0;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  background-color: tomato;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-  
+
 .detail-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
 }
 
-/* Contenu interne pour chaque sous-menu */
+.detail-card.active {
+  background: #005f7c;
+  font-weight: bold;
+}
+
+/* ========== Contenu des Cartes d'Informations ========== */
 .info-cards-container {
   margin-top: 10px;
   display: flex;
   flex-direction: column;
-  gap: 10px; /* Espacement entre chaque info-card */
+  gap: 10px;
   padding: 10px;
   border-radius: 6px;
-  animation: fadeInUp 0.5s ease-out;
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 0.5s ease-out;
 }
 
 .info-card {
@@ -675,31 +142,57 @@ html, body {
   border: 1px solid #6a9cb8;
   border-radius: 6px;
   font-size: 1em;
+  line-height: 1.5;
   color: #003f5c;
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
 }
 
-.service-card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background: linear-gradient(to right, #003f5c, #6a9cb8);
-  border-radius: 10px;
-  padding: 10px;
-  color: white;
-  font-size: 1.2em;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
-  animation: fadeInUp 0.6s ease-out forwards;
-  margin-bottom: 10px; /* Ajoute un espace entre les cartes */
+/* ========== Animations ========== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.service-details {
-  margin-top: 10px; /* Ajoute un espace entre la carte principale et les détails */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.info-card {
-  margin-top: 10px; /* Ajoute un espace entre chaque carte d'information */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========== Responsive ========== */
+@media screen and (max-width: 768px) {
+  .service-card {
+    width: 100%;
+    height: 60px;
+    font-size: 1em;
+  }
+
+  .info-cards-container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .info-card {
+    font-size: 0.9em;
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .service-card {
+    width: 80%;
+    height: 50px;
+    font-size: 0.9em;  
+
+  }
+
+  .info-card {
+    width: 75%;
+    padding: 10px;
+  }
 }
