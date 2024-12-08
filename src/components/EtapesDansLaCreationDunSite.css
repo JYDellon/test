@@ -1,590 +1,176 @@
-/* Réinitialisation générale des marges et paddings */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Suppression des marges par défaut pour le body */
-  html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden; /* Évite les débordements horizontaux */
-  }
-  
-  /* Conteneur principal pour garantir un espacement uniforme */
-  .app-container {
-    margin: 0; /* Supprime les marges automatiques */
-    padding: 0; /* Supprime les paddings automatiques */
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Gère le contenu minimum pour remplir l'écran */
-  }
-  
-  /* Pour toutes les sections ou pages */
-  section, main, .page-content {
-    margin: 0;
-    padding: 20px; /* Ajout de padding contrôlé */
-    width: 100%;
-    display: block;
-    flex-grow: 1; /* Permet de remplir l'espace disponible */
-  }
-  
-  /* Suppression des styles de margin non désirés pour les h1, h2, p */
-  h1, h2, h3, h4, h5, h6, p {
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Ajout d'un espacement cohérent pour les titres */
-  h1 {
-    margin-bottom: 20px; /* Espacement uniquement vers le bas */
-  }
-  
-  p {
-    margin-bottom: 10px; /* Uniformise les espaces entre paragraphes */
-  }
-  
-  /* Réinitialisation spécifique pour les liens */
-  a {
-    text-decoration: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Header */
-  .header {
-    margin: 0; /* Pas de marge automatique */
-    padding: 0; /* Réinitialisation */
-    width: 100%;
-  }
-  
-  
-  
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  html, body {
-    width: 100%;
-    overflow-x: hidden; /* Éviter le débordement horizontal */
-  }
-
-
-
-/* Réinitialiser tous les marges par défaut */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Assurez-vous que le body et le html n'ont pas de marges par défaut */
-  html,
-  body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-  }
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Conteneur principal */
 .etapes-container {
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    position: relative;
-    margin: 0 auto;
-    width: 70%;
-    margin-top: -30px;
-    z-index: 1;
-}
-
-
-
-/* Styles des cartes d'étapes */
-.etape-card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(to right, #003f5c, #6a9cb8);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
-    text-align: center;
-    width: 250px;
-    height: 75px;
-    min-width: 220px;
-    cursor: pointer;
-    opacity: 0;
-    transform: translateY(20px);
-    animation-fill-mode: forwards;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, opacity 0.5s ease-in-out;
-}
-
-/* Animations d'apparition des cartes */
-.etape-card:nth-child(1) {
-    animation: slideUp 0.5s ease-out forwards;
-}
-
-.etape-card:nth-child(2) {
-    animation: slideLeft 0.6s ease-out forwards;
-}
-
-.etape-card:nth-child(3) {
-    animation: slideRight 0.7s ease-out forwards;
-}
-
-.etape-card:nth-child(4) {
-    animation: slideDown 0.8s ease-out forwards;
-}
-
-.etape-card:nth-child(5) {
-    animation: slideDiagonal 0.9s ease-out forwards;
-}
-
-/* Effet de survol */
-.etape-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7);
-}
-
-/* Animations d'apparition progressive */
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes slideLeft {
-    from {
-        opacity: 0;
-        transform: translateX(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideRight {
-    from {
-        opacity: 0;
-        transform: translateX(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes slideDiagonal {
-    from {
-        opacity: 0;
-        transform: translate(-30px, -30px);
-    }
-    to {
-        opacity: 1;
-        transform: translate(0, 0);
-    }
-}
-
-/* Conteneur des détails */
-.etapes-details-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
     width: 100%;
-    opacity: 0;
-    animation: fadeIn 0.5s forwards ease-in-out;
-}
-
-/* Effet de glissement doux pour l'apparition des détails */
-.etape-details-card {
-    background: linear-gradient(to right, #003f5c, #6a9cb8);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 5px 10px 6px rgba(0, 0, 0, 0.7);
-    width: 500px;
-    text-align: left;
-    height: 9em;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    color: white;
-    font-size: 1.2em;
-    transform: translateY(20px);
-    opacity: 0;
-    animation: slideInDetails 0.5s ease-out forwards;
-}
-
-/* Animation pour faire glisser les détails (depuis le haut) */
-@keyframes slideInDetails {
-    from {
-        opacity: 0;
-        transform: translateY(-20px); /* Glissement depuis le haut */
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Animation pour faire disparaitre les détails (vers le haut) */
-@keyframes slideOutDetails {
-    from {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    to {
-        opacity: 0;
-        transform: translateY(-20px); /* Glissement vers le haut */
-    }
-}
-
-/* Animation fade-in globale */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-/* Conteneur principal */
-.etapes-container {
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    width: 70%;
+    max-width: 800px;
     margin: 0 auto;
-}
-
-/* Liste des cartes d'étapes */
-.etapes-list {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    max-width: 1800px;
-    width: fit-content;
-    position: relative;
-}
-
-/* Conteneur des détails */
-.etapes-details-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-top: 20px; /* En dessous des étapes sur grand écran */
-    position: relative;
-}
-
-/* Détails d'une étape */
-.etape-details-card {
-    background: linear-gradient(to right, #003f5c, #6a9cb8);
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 5px 10px 6px rgba(0, 0, 0, 0.7);
-    width: 500px;
-    text-align: left;
-    color: white;
-    font-size: 1.2em;
-    position: relative;
-    z-index: 1;
+    font-family: Arial, sans-serif;
+    background-color: #fd030304;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Bouton pour fermer la carte de détails */
-.fermer-details {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.5em;
-    cursor: pointer;
-}
-
-/* Affichage sur petits écrans */
-@media screen and (max-width: 768px) {
-    .etapes-container {
-        position: relative;
-    }
-
-    .etapes-details-container {
-        position: absolute; /* Superposé aux étapes */
-        top: 0;
-        left: 0;
-        z-index: 10;
-        margin-top: 0;
-        width: 100%;
-        justify-content: center;
-    }
-
-    .etape-details-card {
-        width: 90%;
-        height: 300px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .etape-details-card {
-    width: 300px;
-        height: 300px;
-    }
-
-    
-}
-
-
-
-
-/* -------------------------------------------------------------------------------------------------------------------------------------- */
-
-
-
-
-/* Conteneur principal */
-.etapes-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 20px;
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
-    background-color: #0672de00; /* Couleur de fond claire */
-    color: #003f5c; /* Couleur principale */
-}
-
-/* Conteneur d'une étape */
+/* Conteneur pour chaque étape */
 .etape-toggle-container {
-    border: 1px solid #6a9cb8;
-    border-radius: 50px;
-    margin-bottom: 15px;
-    overflow: hidden;
-    background: #fff;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* En-tête de l'étape */
-.etape-toggle-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    cursor: pointer;
-    background: linear-gradient(to right, #003f5c, #6a9cb8);
-    color: white;
-    font-size: 1.2em;
-    transition: background-color 0.3s ease;
-}
-
-.etape-toggle-header:hover {
-    background: #005f7c; /* Effet hover */
-}
-
-/* Icône toggle */
-.toggle-icon {
-    font-size: 1.5em;
-    font-weight: bold;
-}
-
-/* Contenu déroulé */
-.etape-toggle-details {
-    padding: 15px;
-    background: #eef3f8; /* Fond clair */
-    color: #003f5c; /* Texte sombre */
-    font-size: 1em;
-    line-height: 1.5;
-}
-
-/* En-tête actif */
-.etape-toggle-header.active {
-    background: #005f7c;
-    font-weight: bold;
-}
-
-/* Mobile-Friendly Styles */
-@media screen and (max-width: 768px) {
-    .etapes-container {
-        padding: 10px;
-    }
-
-    .etape-toggle-header {
-        font-size: 1em;
-    }
-
-    .etape-toggle-details {
-        font-size: 0.9em;
-    }
-}
-
-
-
-
-
-
-
-
-/* Conteneur principal */
-.etapes-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    
-    width: 800px; /* Largeur relative */
-    max-width: 800px; /* Limite maximale */
-    height: 400px;
+    width: 420px;
     margin: 0 auto;
-    background-color: #00ff7b00;
-    color: #003f5c;
-    font-family: Arial, sans-serif; 
-    margin: 0; /* Réinitialiser marges involontaires */
-    padding: 0;padding: 20px;
-    position: relative;
-  transform: none; /* Évite les comportements imprévus */
-  margin: 0 auto;
-  }
-
-
-
-
-
-
-
-
-
-  
-  
-  /* Conteneur d'une étape */
-  .etape-toggle-container {
-    width: 420px; /* Toujours occuper toute la largeur du parent */
-    border: 1px solid #6a9cb8;
-    border-radius: 50px;
     margin-bottom: 15px;
-    overflow: hidden;
-    background: #ffffff;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease;
-  }
-  
-  .etape-toggle-container:hover {
-    transform: scale(1.01);
-  }
-  
-  /* En-tête d'une étape */
-  .etape-toggle-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    cursor: pointer;
-    background: linear-gradient(to right, #003f5c, #6a9cb8);
-    color: #ffffff;
-    font-size: 1.2em;
-    transition: background-color 0.3s ease;
-  }
-  
-  .etape-toggle-header:hover {
-    background: #005f7c;
-  }
-  
-  /* Détails d'une étape */
-  .etape-toggle-details {
-    padding: 15px;
-    background: #eef3f8;
-    color: #003f5c;
-    font-size: 1em;
-    line-height: 1.5;
-  }
-  
-  /* En-tête active */
-  .etape-toggle-header.active {
-    background: #005f7c;
-    font-weight: bold;
-  }
-  
-  /* Responsiveness */
-  @media screen and   (max-width: 768px) {
-    .etapes-container {
-      padding: 10px;
-      width: 60%; /* Réduire davantage la largeur sur les petits écrans */
-    }
-  
-    .etape-toggle-header {
-      font-size: 1em;
-      padding: 12px;
-    }
-  
-    .etape-toggle-details {
-      font-size: 0.9em;
-      padding: 10px;
-    }
-  }
-  
-  @media screen and  (max-width: 359px) {
+    border: 1px solid #fa070700;
+    border-radius: 30px 30px 30px 30px; 
+    background-color: #ffffff;
+    transition: box-shadow 0.3s;
+    animation-duration: 1.2s;
+    animation-fill-mode: forwards;
+    opacity: 1; /* On force l'opacité pour éviter un état invisible */
+}
 
-  
-    .etape-toggle-header {
-      font-size: 0.9em;
+/* Animation ajustée pour le premier toggle */
+.etape-toggle-container:nth-child(1) {
+    animation-name: fadeIn;
+    animation-delay: 0.0s;
+}
+
+
+/* Header de chaque étape */
+.etape-toggle-header {
+    margin: 0 auto;
+    width: 420px;
+    padding: 15px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to right, #003f5c, #6a9cb8); /* Dégradé */
+    color: #fff;
+    border-radius: 50px; /* Arrondi pour le header */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Header actif */
+.etape-toggle-header.active {
+    background: linear-gradient(to right, #002d45, #507d92); /* Couleurs plus sombres pour l'actif */
+}
+
+/* Animation au survol */
+.etape-toggle-header:hover {
+    transform: scale(1.02);
+}
+
+/* Titre dans le header */
+.etape-toggle-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Contenu des détails d'une étape */
+.etape-toggle-details {
+    margin: 0 auto;
+    width: 420px;
+    padding: 15px 20px;
+    background-color: #f7f7f7;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+    border-top: 1px solid #ddd;
+    border-radius: 0 0 50px 50px; /* Arrondi en bas pour un effet harmonieux */
+}
+
+/* Texte des détails */
+.etape-toggle-details .texte {
+    margin: 0;
+}
+
+/* Effet visuel lors du clic */
+.etape-toggle-header:active {
+    transform: scale(0.98);
+}
+
+/* Animations uniques pour chaque toggle */
+.etape-toggle-container:nth-child(3) {
+    animation-name: bounceIn;
+    animation-delay: 0s;
+}
+
+.etape-toggle-container:nth-child(2) {
+    animation-name: slideInLeft;
+    animation-delay: 0.4s;
+}
+
+.etape-toggle-container:nth-child(4) {
+    animation-name: zoomIn;
+    animation-delay: 0.8s;
+}
+
+/* .etape-toggle-container:nth-child(1) {
+    animation-name: fadeIn;
+    animation-delay: 1.2s;
+} */
+
+.etape-toggle-container:nth-child(5) {
+    animation-name: flipInY;
+    animation-delay: 1.6s;
+}
+
+/* Définition des animations */
+
+/* Bounce In */
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.3);
+        opacity: 0;
     }
-  
-    .etape-toggle-details {
-      font-size: 0.8em;
+    50% {
+        transform: scale(1.05);
+        opacity: 1;
     }
-  }
-  
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Slide In Left */
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Zoom In */
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Fade In */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Flip In Y */
+@keyframes flipInY {
+    0% {
+        transform: perspective(400px) rotateY(90deg);
+        opacity: 0;
+    }
+    100% {
+        transform: perspective(400px) rotateY(0);
+        opacity: 1;
+    }
+}

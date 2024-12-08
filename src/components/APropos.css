@@ -77,7 +77,7 @@
   /* État visible */
   .chapitre-toggle-details.show {
     opacity: 1;
-    max-height: 100px; /* Ajuster selon le contenu */
+    max-height: 150px; /* Ajuster selon le contenu */
   }
   
   /* Effets d'animation sur l'en-tête actif */
@@ -199,3 +199,6 @@
     }
   }
   
+  .texte{
+    margin:5px 10px 10px 10px;
+  }
