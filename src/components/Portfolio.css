@@ -305,7 +305,7 @@ body, html {
     overflow-x: hidden; /* Empêche horizontalement */
     margin: 0 auto;
     position: relative;
-    height: 470px;
+    height: 400px;
 }
 html, body {
     overflow-x: hidden; /* Empêche tout débordement horizontal */
