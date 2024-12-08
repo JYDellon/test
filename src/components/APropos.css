@@ -30,7 +30,8 @@
     max-width: 800px;
     margin: 0 auto;
     color: var(--couleur-primaire);
-    height: 500px;
+    height: 420px;
+    background-color: var(--hover-bg);
   }
   
   /* Chapitre Toggle Container commun */
@@ -162,7 +163,7 @@
   }
   
   /* Responsive Design */
-  @media (max-width: 768px) {
+  @media (min-width: 481px) and (max-width: 768px) {
     .apropos-container {
       padding: 15px;
     }
@@ -179,7 +180,7 @@
   
   @media (max-width: 480px) {
     .chapitre-toggle-container {
-      width: 100%;
+      width: 80%;
     }
   
     .chapitre-toggle-header {
