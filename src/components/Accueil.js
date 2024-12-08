@@ -32,7 +32,9 @@ function Accueil() {
                 </div>
 
                 <div className="cardm cardmDevis" onClick={() => navigate('/devis')}>
-                    <h2>DEMANDE DE DEVIS GRATUIT</h2>
+                   
+                   
+                    <h2>GRATUIT</h2> <h2> DEVIS</h2> <h2> DE </h2> <h2>DEMANDE</h2>
                 </div>
             </div>
 

@@ -41,10 +41,9 @@ a {
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  max-width: 1200px;
   margin: 0 auto;
   height: 400px;
-  width: 600px;
+  width: 500px;
   overflow-y: auto; /* Empêche le contenu interne de pousser les éléments voisins */
   position: relative; /* Important pour la gestion de l'espace */
 }
@@ -68,8 +67,8 @@ a {
   justify-content: center;
   align-items: center;
   background: linear-gradient(to right, #003f5c, #6a9cb8);
-  border-radius: 10px;
-  width: 470px;
+  border-radius: 50px;
+  width: 420px;
   height: 50px;
   padding: 10px;
   color: white;
@@ -187,8 +186,7 @@ a {
 
 @media screen and (max-width: 480px) {
   .service-card {
-    width: 300px;
-    height: 50px;
+    width: 300px;height:44px;
     font-size: 0.9em;  
 
   }
@@ -196,5 +194,143 @@ a {
   .info-card {
     width: 400px;
     padding: 10px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Animations spécifiques aux toggles principaux */
+.toggle-animation-1 {
+  animation: slideInLeft 0.7s ease forwards;
+}
+
+.toggle-animation-2 {
+  animation: slideInRight 0.7s ease forwards;
+}
+
+.toggle-animation-3 {
+  animation: fadeInUp 0.7s ease forwards;
+}
+
+.toggle-animation-4 {
+  animation: rotateIn 0.7s ease forwards;
+}
+
+/* Animations spécifiques aux sous-toggles */
+.sub-toggle-animation-1 {
+  animation: bounceIn 0.7s ease forwards;
+}
+
+.sub-toggle-animation-2 {
+  animation: fadeInScale 0.7s ease forwards;
+}
+
+.sub-toggle-animation-3 {
+  animation: flipInX 0.7s ease forwards;
+}
+
+.sub-toggle-animation-4 {
+  animation: zoomInRotate 0.7s ease forwards;
+}
+
+/* Définition des keyframes */
+
+/* Principales animations */
+@keyframes slideInLeft {
+  from {
+      transform: translateX(-100%);
+      opacity: 0;
+  }
+  to {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+      transform: translateX(100%);
+      opacity: 0;
+  }
+  to {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+      transform: translateY(50%);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+@keyframes rotateIn {
+  from {
+      transform: rotate(-90deg);
+      opacity: 0;
+  }
+  to {
+      transform: rotate(0);
+      opacity: 1;
+  }
+}
+
+/* Sous-catégories */
+@keyframes bounceIn {
+  from {
+      transform: scale(0.5);
+      opacity: 0;
+  }
+  to {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+      transform: scale(0.8);
+      opacity: 0;
+  }
+  to {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+
+@keyframes flipInX {
+  from {
+      transform: rotateX(90deg);
+      opacity: 0;
+  }
+  to {
+      transform: rotateX(0);
+      opacity: 1;
+  }
+}
+
+@keyframes zoomInRotate {
+  from {
+      transform: scale(0.5) rotate(-15deg);
+      opacity: 0;
+  }
+  to {
+      transform: scale(1) rotate(0);
+      opacity: 1;
   }
 }

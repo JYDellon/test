@@ -380,7 +380,7 @@
 
 @media screen and (max-width: 480px) {
     .etape-details-card {
-        width: 100%;
+    width: 300px;
         height: 300px;
     }
 
@@ -411,9 +411,8 @@
 
 /* Conteneur d'une étape */
 .etape-toggle-container {
-    width: 100%;
     border: 1px solid #6a9cb8;
-    border-radius: 8px;
+    border-radius: 50px;
     margin-bottom: 15px;
     overflow: hidden;
     background: #fff;
@@ -513,9 +512,9 @@
   
   /* Conteneur d'une étape */
   .etape-toggle-container {
-    width: 100%; /* Toujours occuper toute la largeur du parent */
+    width: 420px; /* Toujours occuper toute la largeur du parent */
     border: 1px solid #6a9cb8;
-    border-radius: 8px;
+    border-radius: 50px;
     margin-bottom: 15px;
     overflow: hidden;
     background: #ffffff;
