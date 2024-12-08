@@ -1215,7 +1215,9 @@
     margin: 0 auto;
     color: #003f5c;
     font-family: Arial, sans-serif;
-    height: 500px;
+    height: 500px; 
+    position: relative;
+    transform: none;
   }
   
   /* Conteneur d'un chapitre */
