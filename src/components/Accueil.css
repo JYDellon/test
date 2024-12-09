@@ -102,7 +102,7 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
     width: 390px;
     min-width: 150px;
-    height: 225px;
+    height: 200px;
     cursor: pointer;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
     opacity: 0; 
@@ -135,8 +135,8 @@
     padding: 10px;
     border-radius: 50%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
-    width: 225px;
-    height: 225px;
+    width: 200px;
+    height: 200px;
     cursor: pointer;
     opacity: 0;
     animation: slideAndRotateIn 3s ease-out forwards; /* Animation appliquée ici */
@@ -160,11 +160,11 @@
 }
 
 .cardm:nth-child(1) {
-    animation: slideInFromLeft 0.5s ease-out forwards;
+    animation: slideInFromLeft 1s ease-out forwards;
 }
 
 .cardm:nth-child(2) {
-    animation: slideInFromBottom 0.5s ease-out forwards;
+    animation: slideInFromBottom 1s ease-out forwards;
 }
 
 .cardm:nth-child(3) {
@@ -191,8 +191,8 @@
 
     }
     .cardmDevis {
-        width: 225px;
-        height: 225px;
+        width: 200px;
+        height: 200px;
         margin: 15px auto 15px;
 
     }
@@ -228,8 +228,8 @@
         margin: 0 auto;
     }
     .cardmDevis {
-        width: 225px;
-        height: 225px;
+        width: 200px;
+        height: 200px;
         margin-top: 20px;
         margin: 0 auto;
     }
@@ -254,8 +254,8 @@
 
     .cardmDevis  {            
         margin-top: 10px; 
-        width: 225px;
-        height: 225px;
+        width: 200px;
+        height: 200px;
     }
     .carousel-container {
         display: none;
@@ -351,8 +351,8 @@ h3{
     }
     .cardmDevis{ 
         margin-top: 10px; 
-        width: 225px;
-        height: 225px;
+        width: 200px;
+        height: 200px;
         margin: 50px auto;
     }
 
@@ -394,3 +394,66 @@ h3{
     }
 }
 
+
+/* Texte d'introduction */
+.intro-textAccueil {
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: -50px;
+    text-align: justify;
+    font-size: 1.4em;
+    line-height: 1.8;
+    color: #054461;
+    padding: 10px 30px 10px 30px;
+    max-width: 1200px;
+    border-radius: 30px;
+    background: #ffffff;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+    border: 1px solid #d7dcd8;
+    
+    /* Ajout de l'animation */
+    animation: descendreIntroduction 1s ease-out forwards;
+  }
+  
+  /* Animation d'introduction - Descente depuis le haut */
+  @keyframes descendreIntroduction {
+    0% {
+      transform: translateY(-100vh); /* Commence en dehors de la vue depuis le haut */
+      opacity: 0; /* Rend l'élément invisible au début */
+    }
+    100% {
+      transform: translateY(0); /* Position d'arrivée dans sa place normale */
+      opacity: 1; /* Restaure la visibilité */
+    }
+  }
+  
+  /* Responsivité avec des Media Queries */
+  @media (max-width: 1200px) {
+    .intro-textAccueil {
+      font-size: 18px; /* Taille légèrement réduite pour les écrans plus petits */
+      max-width: 600px; /* Ajustement de la largeur pour les écrans plus petits */
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .intro-textAccueil {
+      font-size: 16px; /* Réduction de la taille du texte pour s'adapter aux tablettes */
+      max-width: 500px; /* Réduit encore la largeur sur les tablettes */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .intro-textAccueil {
+      font-size: 14px; /* Réduit la taille du texte pour les petits écrans */
+      max-width: 400px; /* Ajustement sur les petits écrans */
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .intro-textAccueil {
+      font-size: 16px; /* Taille encore plus petite pour les téléphones */
+      max-width: 360px; /* Utilise toute la largeur disponible */
+      padding: 0 10px; /* Moins de padding pour éviter le débordement */
+    }
+  }
+  

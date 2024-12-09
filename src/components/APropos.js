@@ -1,222 +1,3 @@
-// import React, { useState } from 'react';
-// import './APropos.css';
-
-// function APropos() {
-//     const chapitres = [
-//         "Notre histoire",
-//         "Notre mission",
-//         "Nos valeurs",
-//         "Notre équipe",
-//         "Ce qui nous distingue",
-//         "Pourquoi nous choisir ?",
-//     ];
-
-//     const chapitresDetails = [
-//         "Bienvenue chez AeoniX, une agence dédiée à la création de sites web sur mesure, qu’ils soient vitrines, e-commerce ou entièrement personnalisés.",
-//         "Notre objectif est simple : créer des expériences digitales uniques pour nos clients, en mettant l’accent sur l’innovation et la personnalisation.",
-//         "Innovation : Nous restons à la pointe des technologies pour proposer des solutions modernes et efficaces. Qualité : Chaque projet est une priorité et nous nous assurons de répondre aux plus hauts standards.",
-//         "Notre équipe est composée de développeurs, designers, chefs de projet et experts techniques passionnés par la création de sites web innovants et performants.",
-//         "Ce qui nous distingue, c’est notre capacité à comprendre les besoins uniques de chaque client et à offrir des solutions personnalisées, qu’il s’agisse de sites vitrines ou de plateformes e-commerce.",
-//         "Choisir AeoniX, c’est opter pour un partenaire fiable et réactif, capable de vous offrir des solutions sur-mesure qui répondent aux exigences du marché.",
-//     ];
-
-//     const [chapitreSelectionne, setChapitreSelectionne] = useState(null);
-
-//     const toggleChapitre = (index) => {
-//         setChapitreSelectionne(chapitreSelectionne === index ? null : index);
-//     };
-
-//     return (
-//         <div className="apropos-container">
-//             {chapitres.map((chapitre, index) => (
-//                 <div key={index} className="chapitre-toggle-container">
-//                     <div
-//                         className={`chapitre-toggle-header ${chapitreSelectionne === index ? 'active' : ''}`}
-//                         onClick={() => toggleChapitre(index)}
-//                     >
-//                         <h3>{chapitre}</h3>
-
-//                     </div>
-//                     {chapitreSelectionne === index && (
-//                         <div className="chapitre-toggle-details">
-//                             <p>{chapitresDetails[index]}</p>
-//                         </div>
-//                     )}
-//                 </div>
-//             ))}
-//         </div>
-//     );
-// }
-
-// export default APropos;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React, { useState } from 'react';
-// import './APropos.css';
-
-// function APropos() {
-//     const chapitres = [
-//         "Notre histoire",
-//         "Notre mission",
-//         "Nos valeurs",
-//         "Notre équipe",
-//         "Ce qui nous distingue",
-//         "Pourquoi nous choisir ?",
-//     ];
-
-//     const chapitresDetails = [
-//         "Bienvenue chez AeoniX, une agence dédiée à la création de sites web sur mesure, qu’ils soient vitrines, e-commerce ou entièrement personnalisés.",
-//         "Notre objectif est simple : créer des expériences digitales uniques pour nos clients, en mettant l’accent sur l’innovation et la personnalisation.",
-//         "Innovation : Nous restons à la pointe des technologies pour proposer des solutions modernes et efficaces. Qualité : Chaque projet est une priorité et nous nous assurons de répondre aux plus hauts standards.",
-//         "Notre équipe est composée de développeurs, designers, chefs de projet et experts techniques passionnés par la création de sites web innovants et performants.",
-//         "Ce qui nous distingue, c’est notre capacité à comprendre les besoins uniques de chaque client et à offrir des solutions personnalisées, qu’il s’agisse de sites vitrines ou de plateformes e-commerce.",
-//         "Choisir AeoniX, c’est opter pour un partenaire fiable et réactif, capable de vous offrir des solutions sur-mesure qui répondent aux exigences du marché.",
-//     ];
-
-//     const [chapitreSelectionne, setChapitreSelectionne] = useState(null);
-
-//     const toggleChapitre = (index) => {
-//         setChapitreSelectionne(chapitreSelectionne === index ? null : index);
-//     };
-
-//     return (
-//         <div className="apropos-container">
-//             {chapitres.map((chapitre, index) => (
-//                 <div
-//                     key={index}
-//                     className={`chapitre-toggle-container ${index % 2 === 0 ? 'gauche' : 'droite'}`}
-//                     onClick={() => toggleChapitre(index)}
-//                 >
-//                     <div className="chapitre-toggle-header">
-//                         <h3>{chapitre}</h3>
-//                     </div>
-//                     {chapitreSelectionne === index && (
-//                         <div className="chapitre-toggle-details">
-//                             <p>{chapitresDetails[index]}</p>
-//                         </div>
-//                     )}
-//                 </div>
-//             ))}
-//         </div>
-//     );
-// }
-
-// export default APropos;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React, { useState } from 'react';
-// import './APropos.css';
-
-// function APropos() {
-//     const chapitres = [
-//         "Notre histoire",
-//         "Notre mission",
-//         "Nos valeurs",
-//         "Notre équipe",
-//         "Ce qui nous distingue",
-//         "Pourquoi nous choisir ?",
-//     ];
-
-//     const chapitresDetails = [
-//         "Bienvenue chez AeoniX, une agence dédiée à la création de sites web sur mesure, qu’ils soient vitrines, e-commerce ou entièrement personnalisés.",
-//         "Notre objectif est simple : créer des expériences digitales uniques pour nos clients, en mettant l’accent sur l’innovation et la personnalisation.",
-//         "Innovation : Nous restons à la pointe des technologies pour proposer des solutions modernes et efficaces. Qualité : Chaque projet est une priorité et nous nous assurons de répondre aux plus hauts standards.",
-//         "Notre équipe est composée de développeurs, designers, chefs de projet et experts techniques passionnés par la création de sites web innovants et performants.",
-//         "Ce qui nous distingue, c’est notre capacité à comprendre les besoins uniques de chaque client et à offrir des solutions personnalisées, qu’il s’agisse de sites vitrines ou de plateformes e-commerce.",
-//         "Choisir AeoniX, c’est opter pour un partenaire fiable et réactif, capable de vous offrir des solutions sur-mesure qui répondent aux exigences du marché.",
-//     ];
-
-//     const [chapitreSelectionne, setChapitreSelectionne] = useState(null);
-
-//     const toggleChapitre = (index) => {
-//         setChapitreSelectionne(chapitreSelectionne === index ? null : index);
-//     };
-
-//     return (
-//         <div className="apropos-container">
-//             {chapitres.map((chapitre, index) => (
-//                 <div
-//                     key={index}
-//                     className={`chapitre-toggle-container ${index % 2 === 0 ? 'gauche' : 'droite'}`}
-//                     style={{
-//                         animationDelay: `${index * 0.2}s`
-//                     }}
-//                     onClick={() => toggleChapitre(index)}
-//                 >
-//                     <div className="chapitre-toggle-header">
-//                         <h3>{chapitre}</h3>
-//                     </div>
-//                     {chapitreSelectionne === index && (
-//                         <div className="chapitre-toggle-details">
-//                             <p>{chapitresDetails[index]}</p>
-//                         </div>
-//                     )}
-//                 </div>
-//             ))}
-//         </div>
-//     );
-// }
-
-// export default APropos;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import React, { useState } from 'react';
 import './APropos.css';
 
@@ -231,12 +12,12 @@ function APropos() {
     ];
 
     const chapitresDetails = [
-        "Bienvenue chez AeoniX, une agence dédiée à la création de sites web sur mesure, qu’ils soient vitrines, e-commerce ou entièrement personnalisés.",
-        "Notre objectif est simple : créer des expériences digitales uniques pour nos clients, en mettant l’accent sur l’innovation et la personnalisation.",
-        "Innovation : Nous restons à la pointe des technologies pour proposer des solutions modernes et efficaces. Qualité : Chaque projet est une priorité et nous nous assurons de répondre aux plus hauts standards.",
-        "Notre équipe est composée de développeurs, designers, chefs de projet et experts techniques passionnés par la création de sites web innovants et performants.",
-        "Ce qui nous distingue, c’est notre capacité à comprendre les besoins uniques de chaque client et à offrir des solutions personnalisées, qu’il s’agisse de sites vitrines ou de plateformes e-commerce.",
-        "Choisir AeoniX, c’est opter pour un partenaire fiable et réactif, capable de vous offrir des solutions sur-mesure qui répondent aux exigences du marché.",
+        "Passionnés par le web design et les nouvelles technologies, nous avons créé cette société pour offrir des solutions web innovantes, modernes et adaptées aux besoins de chaque client",
+        "Créer des sites web intuitifs, modernes et performants, tout en proposant un suivi complet allant de la conception à l'hébergement, la maintenance et le suivi après la livraison.",
+        "🔹 Innovation : Créer des sites web modernes et performants.🔹 Écoute & Proximité : Comprendre vos besoins pour mieux vous accompagner.🔹 Qualité & Satisfaction : Votre réussite est notre priorité.",
+        "Une équipe de professionnels passionnés spécialisée en design, développement, SEO et support pour vous offrir un service complet et adapté",
+        "✅ Approche sur mesure.✅ Service clé en main : de la conception au suivi.✅ Expérience utilisateur optimale & expertise technique.",
+        "Des solutions adaptées, un suivi personnalisé et une équipe passionnée pour créer votre site web avec qualité et efficacité.",
     ];
 
     const [chapitreSelectionne, setChapitreSelectionne] = useState(null);
@@ -246,6 +27,17 @@ function APropos() {
     };
 
     return (
+        <>
+        <div className="intro-textAPropos">
+            <p>
+              À travers une approche structurée et collaborative, nous vous accompagnons à chaque étape pour garantir un site web qui reflète vos besoins, vos ambitions et l'image de votre entreprise.
+            </p>
+            <p>
+              Découvrez notre processus en 5 étapes simples et efficaces :
+            </p>
+          </div>
+        
+        
         <div className="apropos-container">
             {chapitres.map((chapitre, index) => (
                 <div
@@ -276,6 +68,7 @@ function APropos() {
                 </div>
             ))}
         </div>
+    </>
     );
 }
 

@@ -290,8 +290,11 @@ footer {
 
 
 body {
-  font-family: 'Playfair Display', 'Roboto', 'Poppins', 'Montserrat', 'Open Sans', 
-               'Lato', 'Source Sans Pro', 'Raleway', 'Merriweather', 'Orbitron', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
+  /* font-family: 'Montserrat', sans-serif; */
+  /* font-family: 'Source Sans Pro', sans-serif; */
+  font-family: 'Raleway', sans-serif;
 }
 
 

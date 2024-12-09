@@ -18,7 +18,6 @@
   body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
   }
   
   /* Conteneur principal avec propriétés réutilisables */
@@ -177,4 +176,25 @@
   
   .texte{
     margin:5px 10px 10px 10px;
+  }
+
+  .intro-textAPropos {
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: -50px;
+    text-align: justify;
+    font-size: 1.4em;
+    font-weight:bolder;
+    line-height: 1.8;
+    color: #054461;
+    padding: 10px 30px 10px 30px;
+    max-width: 1200px;
+    border-radius: 30px;
+    background: #ffffff;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+    border: 1px solid #d7dcd8;
+    margin-bottom: 5px;
+    
+    /* Ajout de l'animation */
+    animation: descendreIntroduction 1s ease-out forwards;
   }
