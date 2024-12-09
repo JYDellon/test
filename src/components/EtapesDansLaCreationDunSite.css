@@ -4,7 +4,6 @@
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    font-family: Arial, sans-serif;
     background-color: rgba(253, 3, 3, 0);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -239,12 +238,12 @@
   text-align: center;
   margin-top: 20px; /* Espacement en bas pour une meilleure lisibilité */
   font-size: 20px;
-  line-height: 1.8;
-  color: #333;
+  font-weight: bold;
+  color: #054461;
   padding: 0 10px;
   max-width: 700px;
   border-radius: 30px;
-  background: #f9f9f9;
+  background: linear-gradient(to right, #bac1bb, #9bb8bc8d);    border: 1px solid #d7dcd8;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border: 1px solid #d7dcd8;
   
@@ -292,4 +291,13 @@
     max-width: 360px; /* Utilise toute la largeur disponible */
     padding: 0 10px; /* Moins de padding pour éviter le débordement */
   }
+
+
+  .etape-toggle-header {
+   
+    width: 100%;    
+  } 
+  .etape-toggle-container {
+    width: 81%  }
+  
 }

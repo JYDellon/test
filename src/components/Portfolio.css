@@ -8,21 +8,9 @@ body, html {
     overflow-x: hidden; /* Garder uniquement si nécessaire */
 }
 
-  
-
-
-
-
-
-
-
-
-/* Conteneur global */
+  /* Conteneur global */
 .portfolio-container {
-    max-width: 1400px;
-    margin: 0 auto;
     padding: 20px;
-    /* height: 400px; */
     overflow-y: auto; 
 }
 
@@ -195,7 +183,7 @@ body, html {
 /* Section d'une étude de cas */
 .portfolio-item {
     width: 10vw;
-    min-width: 500px;
+    min-width: 90%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -298,14 +286,14 @@ body, html {
 
 .portfolio-container {
     max-width: 1800px;
-    margin: 0 auto;
     position: relative; /* Assure que rien ne déborde */
     top: 0; /* Annule tout déplacement potentiel */
     max-width: 100%; /* Ajusté pour éviter tout débordement */
     overflow-x: hidden; /* Empêche horizontalement */
     margin: 0 auto;
     position: relative;
-    height: 400px;
+    height: 600px;display: flex;
+    align-items: center;
 }
 html, body {
     overflow-x: hidden; /* Empêche tout débordement horizontal */

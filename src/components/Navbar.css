@@ -85,7 +85,7 @@
     transition: background-color 0.3s ease, color 0.3s ease;
     text-align: center;
     border-radius: 50px;
-    width: 180px;
+    width: 190px;
 }
 
 .navbar-menu ul li a.active {

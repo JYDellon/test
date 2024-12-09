@@ -46,7 +46,13 @@ function Accueil() {
                     <h3>VOTRE SITE WEB</h3>
                 </div>
 
-                <div className="carousel-container">
+
+
+                <div className=" cardmDevis" onClick={() => navigate('/devis')}>
+                    <h3>DEMANDE</h3><h3> DE </h3><h3> DEVIS</h3><h3>GRATUIT</h3>   
+                </div>
+            </div>
+            <div className="carousel-container">
                 <Slider {...settings}>
                     <div className="slide">
                         <div className="slide-content">
@@ -68,12 +74,6 @@ function Accueil() {
                     </div>
                 </Slider>
             </div>
-
-                <div className=" cardmDevis" onClick={() => navigate('/devis')}>
-                    <h3>DEMANDE</h3><h3> DE </h3><h3> DEVIS</h3><h3>GRATUIT</h3>   
-                </div>
-            </div>
-
 
 
 
