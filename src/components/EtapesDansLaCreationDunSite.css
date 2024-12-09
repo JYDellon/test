@@ -26,7 +26,7 @@
 /* Header de chaque étape */
 .etape-toggle-header {
     margin: 0 auto;
-    width: 400px;
+    width: 100%;
     padding: 15px 20px;
     cursor: pointer;
     display: flex;
@@ -169,7 +169,6 @@
     max-width: 400px;
     width: 82%;
     min-width: 70%;
-    margin: 0 auto;
     margin-bottom: 10px;
     border: 1px solid #fa070700;
     border-radius: 30px 30px 30px 30px; 
@@ -293,5 +292,24 @@
     padding: 0 10px; /* Moins de padding pour éviter le débordement */
   }
 
+  .etapes-container {
+    width: 94.1%;
+    background-color: yellowgreen;
+}
 
+/* Conteneur pour chaque étape */
+.etape-toggle-container {
+  max-width: 400px;
+  width: 82%;
+ 
+  background-color: #b51414f8;
+
+}
+
+
+
+.etape-toggle-header {
+  width: 100%;
+
+}
 }
