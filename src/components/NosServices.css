@@ -19,6 +19,19 @@ html, body {
 }
 
 
+.toggle-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin: 0 auto;
+  height: 600px;
+  width: 1000px;
+  overflow-y: auto; 
+  position: relative; 
+}
+
+
 /* ========== Textes et Titres ========== */
 h1 {
   font-size: 2rem;
@@ -35,20 +48,18 @@ a {
   text-decoration: none;
 }
 
+
+
+
+
+
+
+
+
+
+
+
 /* ========== Nos Services ========== */
-.toggle-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  margin: 0 auto;
-  height: 400px;
-  width: 500px;
-  overflow-y: auto; /* Empêche le contenu interne de pousser les éléments voisins */
-  position: relative; /* Important pour la gestion de l'espace */
-}
-
-
 .services-list {
   display: flex;
   flex-direction: column;
@@ -68,7 +79,7 @@ a {
   align-items: center;
   background: linear-gradient(to right, #003f5c, #6a9cb8);
   border-radius: 50px;
-  width: 420px;
+  width: 400px;
   height: 50px;
   padding: 10px;
   color: white;
@@ -126,16 +137,16 @@ a {
 
 /* ========== Contenu des Cartes d'Informations ========== */
 .info-cards-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Deux colonnes de largeur égale */
+  gap: 10px; /* Espacement entre les cartes */
   margin-top: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
   padding: 10px;
   border-radius: 6px;
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
   animation: fadeInUp 0.5s ease-out;
-  overflow: visible;
 }
+
 
 .info-card {
   padding: 10px 15px;
@@ -207,25 +218,53 @@ a {
 
 
 
+/* Animation depuis la gauche */
+@keyframes entrerGauche {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Animation depuis la droite */
+@keyframes entrerDroite {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
 
 
 /* Animations spécifiques aux toggles principaux */
 .toggle-animation-1 {
-  animation: slideInLeft 0.7s ease forwards;
+  animation: entrerGauche 0.3s ease forwards;
 }
 
 .toggle-animation-2 {
-  animation: slideInRight 0.7s ease forwards;
+  animation: entrerDroite 0.6s ease forwards;
 }
 
 .toggle-animation-3 {
-  animation: fadeInUp 0.7s ease forwards;
+  animation: entrerGauche 0.9s ease forwards;
 }
 
 .toggle-animation-4 {
-  animation: rotateIn 0.7s ease forwards;
+  animation: entrerDroite 1.2s ease forwards;
 }
 
+.toggle-animation-5 {
+  animation: entrerGauche 1.5s ease forwards;
+}
 /* Animations spécifiques aux sous-toggles */
 .sub-toggle-animation-1 {
   animation: bounceIn 0.7s ease forwards;
@@ -243,10 +282,11 @@ a {
   animation: zoomInRotate 0.7s ease forwards;
 }
 
+
 /* Définition des keyframes */
 
 /* Principales animations */
-@keyframes slideInLeft {
+@keyframes entrerGauche {
   from {
       transform: translateX(-100%);
       opacity: 0;
@@ -257,7 +297,7 @@ a {
   }
 }
 
-@keyframes slideInRight {
+@keyframes entrerDroite {
   from {
       transform: translateX(100%);
       opacity: 0;

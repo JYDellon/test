@@ -6,7 +6,7 @@
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  /* max-width: 420px;------------------------------------------------------------------------------------------------------------------- */
+  width: 420px;
   margin: 0 auto;
 }
 
@@ -17,6 +17,7 @@
   gap: 20px;
   justify-content: center;
   margin-top: 50px;
+  
 
 }
 
@@ -147,7 +148,7 @@
 .rgpd-content {
   width: 80%;
   max-width: 1200px;
-  background-color: #f7f7f7;
+  background-color: #8e0c0c;
   padding: 20px;
   border-radius: 8px;
   margin-top: 20px;
@@ -193,24 +194,6 @@
   visibility: hidden;
 }
 
-.modal-content1 {
-  margin-top: 50px;
-  width: 90%;
-  height: 300px;
-  padding: 20px;
-  color: white;
-  background: linear-gradient(to right, #003f5c, #6a9cb8);
-}
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -222,9 +205,9 @@
   align-items: center;
   padding: 20px;
   width: 100%;
-  max-width: 500px;
+  max-width: 420px;
   margin: 0 auto;
-  background-color: #f8f9fa00;
+  background-color: #00ff4c00;
   color: #003f5c;
 }
 
@@ -235,16 +218,18 @@
   border-radius: 8px;
   margin-bottom: 15px;
   overflow: hidden;
-  background: #fff;
+  background: #ffffff;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  
 }
 
 /* En-tête de la section */
 .rgpd-toggle-header {
+  width: 380px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 15px;
+  padding: 5px;
   cursor: pointer;
   background: linear-gradient(to right, #003f5c, #6a9cb8);
   color: white;
@@ -265,7 +250,8 @@
 /* Contenu déroulé */
 .rgpd-toggle-details {
   padding: 15px;
-  background: #f8eef4;
+  width: 400px;
+  background: #ffffff;
   color: #003f5c;
   font-size: 1em;
   line-height: 1.5;
@@ -325,9 +311,7 @@
   width: 100%;
   margin-bottom: 10px;
   border: 1px solid #6a9cb8;
-  border-radius: 5px;
-  background: white;  
-  border-radius: 30px;
+  background: rgb(255, 255, 255);  
   overflow: hidden;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease; 
@@ -336,7 +320,7 @@
 }
 
 .rgpd-toggle-container:hover {
-  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0);
 }
 
 /* En-tête */
@@ -425,22 +409,53 @@
   animation: appearSlideIn 0.5s ease-out forwards;
 }
 
-.rgpd-toggle-container.animation-1 {
-  animation-delay: 0.2s; /* Premier toggle */
+/* Animation depuis la gauche */
+@keyframes entrerGauche {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
-.rgpd-toggle-container.animation-2 {
-  animation-delay: 0.4s; /* Deuxième toggle */
+/* Animation depuis la droite */
+@keyframes entrerDroite {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
-.rgpd-toggle-container.animation-3 {
-  animation-delay: 0.6s; /* Troisième toggle */
+/* Appliquer l'animation avec la bonne classe dynamique */
+.rgpd-toggle-container.gauche {
+  animation: entrerGauche 0.4s ease-out forwards;
 }
 
-.rgpd-toggle-container.animation-4 {
-  animation-delay: 0.8s; /* Quatrième toggle */
+.rgpd-toggle-container.droite {
+  animation: entrerDroite 0.4s ease-out forwards;
 }
 
-.rgpd-toggle-container.animation-5 {
-  animation-delay: 1s; /* Cinquième toggle */
+/* Contrôler les délais */
+.rgpd-toggle-container:nth-child(1).gauche {
+  animation-delay: 0.1s;
+}
+.rgpd-toggle-container:nth-child(3).gauche {
+  animation-delay: 0.3s;
+}
+.rgpd-toggle-container:nth-child(5).gauche {
+  animation-delay: 0.5s;
+}
+
+.rgpd-toggle-container:nth-child(2).droite {
+  animation-delay: 0.2s;
+}
+.rgpd-toggle-container:nth-child(4).droite {
+  animation-delay: 0.4s;
 }

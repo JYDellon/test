@@ -81,15 +81,14 @@ function FormulaireContact() {
   const envoyerEmail = (e) => {
     e.preventDefault();
 
-    // Ajout d'un champ caché pour spécifier l'email destinataire
     const formData = new FormData(form.current);
-    formData.append("to_email", "jy.dellon@gmail.com"); // Email destinataire en dur
+    formData.append("to_email", "jy.dellon@gmail.com"); 
 
     emailjs.sendForm(
-      'service_sririnv',  // Ton SERVICE_ID
-      'template_1nyuelj',  // Ton TEMPLATE_ID
+      'service_sririnv',  //  SERVICE_ID
+      'template_ubyjgxh',  //  TEMPLATE_ID
       form.current,
-      'htn7B0VMvIGfY458U' // Ta PUBLIC_KEY
+      'htn7B0VMvIGfY458U' //  PUBLIC_KEY
     ).then(
       (result) => {
         alert('Message envoyé avec succès !');
