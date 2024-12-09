@@ -3,9 +3,9 @@ import './EtapesDansLaCreationDunSite.css';
 
 function EtapesDansLaCreationDunSite() {
     const etapes = [
-        "Compréhension de vos besoins",
-        "Proposition et maquette",
-        "Développement et intégration",
+        "La compréhension de vos besoins",
+        "Propositions et maquettes",
+        "Le développement",
         "Livraison",
         "Suivi",
     ];
@@ -25,31 +25,45 @@ function EtapesDansLaCreationDunSite() {
     };
 
     return (
-        <div className="etapes-container">
-            {etapes.map((etape, index) => (
-                <div key={index} className="etape-toggle-container">
-                    
-                    <div
-                        className={`etape-toggle-header ${
-                            etapeSelectionnee === index ? 'active' : ''
-                        }`}
-                        onClick={() => toggleEtape(index)}
-                    >
+        <>
+            <div>
+                {/* Texte d'introduction */}
+          <div className="intro-text">
+            <p>
+              À travers une approche structurée et collaborative, nous vous accompagnons à chaque étape pour garantir un site web qui reflète vos besoins, vos ambitions et l'image de votre entreprise.
+            </p>
+            <p>
+              Découvrez notre processus en 5 étapes simples et efficaces :
+            </p>
+          </div>
+            </div>
+            <div className="etapes-container">
+                
+                {etapes.map((etape, index) => (
+                    <div key={index} className="etape-toggle-container">
                         
-                        
-                        <div>
-                            <h3>{etape}</h3>
+                        <div
+                            className={`etape-toggle-header ${
+                                etapeSelectionnee === index ? 'active' : ''
+                            }`}
+                            onClick={() => toggleEtape(index)}
+                        >
+                            
+                            
+                            <div>
+                                <h3>{etape}</h3>
+                            </div>
+                            
                         </div>
-                        
+                        {etapeSelectionnee === index && (
+                            <div className="etape-toggle-details">
+                                <p className="texte">{etapesDetails[index]}</p>
+                            </div>
+                        )}
                     </div>
-                    {etapeSelectionnee === index && (
-                        <div className="etape-toggle-details">
-                            <p className="texte">{etapesDetails[index]}</p>
-                        </div>
-                    )}
-                </div>
-            ))}
-        </div>
+                ))}
+            </div>
+        </>
     );
 }
 

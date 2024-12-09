@@ -65,7 +65,7 @@
     margin: 0 auto;
     width: 400px;
     padding: 15px 20px;
-    background-color: #f7f7f7;
+    background-color: #ffffff;
     color: #333;
     font-size: 16px;
     line-height: 1.6;
@@ -175,7 +175,7 @@
     margin-bottom: 15px;
     border: 1px solid #fa070700;
     border-radius: 30px 30px 30px 30px; 
-    background-color: #ff000000;
+    background-color: #ffffff;
     transition: box-shadow 0.3s;
     animation-duration: 0.5s;
     animation-fill-mode: forwards; /* Conserve l'état final */
@@ -183,3 +183,113 @@
 }
 
 
+/* Texte d'introduction */
+
+
+/* Style pour les paragraphes de l'introduction */
+.intro-text p {
+  margin: 10px 0; /* Espacement uniforme entre chaque paragraphe */
+}
+
+
+
+
+
+
+
+/* Animation d'introduction - Descente depuis le haut */
+@keyframes descendreIntroduction {
+  0% {
+    transform: translateY(-100vh); /* Commence en dehors de la vue depuis le haut */
+    opacity: 0; /* Rend l'élément invisible au début */
+  }
+  100% {
+    transform: translateY(0); /* Position d'arrivée dans sa place normale */
+    opacity: 1; /* Restaure la visibilité */
+  }
+}
+
+/* Application de l'animation sur le texte d'introduction */
+.intro-text {
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 20px; /* Espacement en bas pour une meilleure lisibilité */
+  font-size: 20px;
+  line-height: 1.8;
+  color: #333;
+  padding: 0 10px;
+  max-width: 700px;
+  border-radius: 30px;
+  background: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #d7dcd8;
+  
+  /* Ajout de l'animation */
+  animation: descendreIntroduction 1s ease-out forwards;
+}
+
+
+
+
+
+
+/* Texte d'introduction */
+.intro-text {
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 20px; /* Espacement en bas pour une meilleure lisibilité */
+  font-size: 20px;
+  line-height: 1.8;
+  color: #333;
+  padding: 0 10px;
+  max-width: 700px;
+  border-radius: 30px;
+  background: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #d7dcd8;
+  
+  /* Ajout de l'animation */
+  animation: descendreIntroduction 1s ease-out forwards;
+}
+
+/* Animation d'introduction - Descente depuis le haut */
+@keyframes descendreIntroduction {
+  0% {
+    transform: translateY(-100vh); /* Commence en dehors de la vue depuis le haut */
+    opacity: 0; /* Rend l'élément invisible au début */
+  }
+  100% {
+    transform: translateY(0); /* Position d'arrivée dans sa place normale */
+    opacity: 1; /* Restaure la visibilité */
+  }
+}
+
+/* Responsivité avec des Media Queries */
+@media (max-width: 1200px) {
+  .intro-text {
+    font-size: 18px; /* Taille légèrement réduite pour les écrans plus petits */
+    max-width: 600px; /* Ajustement de la largeur pour les écrans plus petits */
+  }
+}
+
+@media (max-width: 992px) {
+  .intro-text {
+    font-size: 16px; /* Réduction de la taille du texte pour s'adapter aux tablettes */
+    max-width: 500px; /* Réduit encore la largeur sur les tablettes */
+  }
+}
+
+@media (max-width: 768px) {
+  .intro-text {
+    font-size: 14px; /* Réduit la taille du texte pour les petits écrans */
+    max-width: 400px; /* Ajustement sur les petits écrans */
+  }
+}
+
+@media (max-width: 576px) {
+  .intro-text {
+    font-size: 16px; /* Taille encore plus petite pour les téléphones */
+    max-width: 360px; /* Utilise toute la largeur disponible */
+    padding: 0 10px; /* Moins de padding pour éviter le débordement */
+  }
+}

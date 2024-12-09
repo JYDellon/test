@@ -28,7 +28,9 @@ function Accueil() {
         <div className='centrage'>
             <div className="accueil-container">
                 <div className="cardm" onClick={() => navigate('/etapesCreationSite')}>
-                    <h2>Donnons vie à votre site web</h2>
+                    <h3>DONNONS VIE</h3>
+                    <h3>A</h3>
+                    <h3>VOTRE SITE WEB</h3>
                 </div>
 
                 <div className=" cardmDevis" onClick={() => navigate('/devis')}>
