@@ -294,15 +294,14 @@
 
   .etapes-container {
     width: 94.1%;
-    background-color: yellowgreen;
+    background-color: rgba(169, 254, 0, 0);
 }
 
 /* Conteneur pour chaque étape */
 .etape-toggle-container {
   max-width: 400px;
-  width: 82%;
- 
-  background-color: #b51414f8;
+  width: 70%; 
+  background-color: #fffffff8;
 
 }
 
