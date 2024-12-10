@@ -30,7 +30,8 @@
     height: 500px;
     margin: 0 auto;
     color: var(--couleur-primaire);
-    height: 420px;  
+    height: 372px;  
+    overflow-y: auto;
   }
   
   /* Chapitre Toggle Container commun */
