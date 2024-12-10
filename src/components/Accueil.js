@@ -28,15 +28,7 @@ function Accueil() {
         <>
         <div className="intro-textAccueil">
                 <h1>Bienvenue chez AeoniX !</h1>
-                <p>
-                    Nous sommes spécialisés dans la création de sites web avec des services complémentaires comme l'hébergement, le référencement, la maintenance et le suivi personnalisé.
-                </p>
-                <p>
-                    Notre objectif ? Créer des sites modernes, intuitifs et adaptés à vos besoins.
-                </p>
-                <p>
-                    Faites de votre projet une réalité avec notre équipe passionnée et nos solutions clé en main.
-                </p>
+                
         </div>
         <div className='centrage'>
             <div className="accueil-container">
