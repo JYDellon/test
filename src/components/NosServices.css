@@ -176,9 +176,13 @@ a {
 /* ========== Section Détails ========== */
 .service-details {
   margin-top: 10px;
+  width:100%;
+  display: grid;gap: 10px;
+  grid-template-columns: repeat(1, 1fr);
+  
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 6px rgba(209, 150, 2, 0.88);
   animation: fadeInDown 0.5s ease-out;
 }
 
@@ -193,6 +197,8 @@ a {
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .detail-card:hover {
@@ -203,6 +209,8 @@ a {
 .detail-card.active {
   background: #005f7c;
   font-weight: bold;
+  width: 80%;
+  margin: 0 auto;
 }
 
 /* ========== Contenu des Cartes d'Informations ========== */
@@ -213,7 +221,7 @@ a {
   margin-top: 10px;
   padding: 10px;
   border-radius: 6px;
-  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 5px rgba(239, 4, 4, 0.1);
   animation: fadeInUp 0.5s ease-out;
   
 }
@@ -247,42 +255,18 @@ a {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (max-width: 1024px) {
-  .service-card {
-    width:400px;
-    height: 60px;
-    font-size: 1em;
-  }
-
-
-  .info-cards-container {
-    margin: 0 auto;
-    padding: 10px;
-    width: 100%;
-
-  }
-
-    .detail-card .detail-card.active{
-        width: 90%;
-        margin: 0 auto;
-      }
-    
-      .info-cards-container {
-        padding: 10px;
-        grid-template-columns: repeat(1, 1fr);
-        width: 100%;
-      }
-
-  .info-card {
-    font-size: 0.9em;
-    width: 100%;
-    margin: 0 auto;
-  }
-}
-
-
-/* ========== Responsive ========== */
-@media screen and (max-width: 768px) {
   .service-card {
     width:400px;
     height: 60px;
@@ -315,7 +299,60 @@ a {
   }
 }
 
-@media screen and (max-width: 480px) {
+
+/* ========== Responsive ========== */
+/* @media screen and (max-width: 768px) {
+  .service-card {
+    width:400px;
+    height: 60px;
+    font-size: 1em;
+  }
+
+
+  .info-cards-container {
+    margin: 0 auto;
+    padding: 10px;
+    width: 100%;
+
+  }
+
+    .detail-card .detail-card.active{
+        width: 50%;
+        margin: 0 auto;
+      }
+    
+      .info-cards-container {
+        padding: 10px;
+        grid-template-columns: repeat(1, 1fr);
+        width: 100%;
+      }
+
+  .info-card {
+    font-size: 0.9em;
+    width: 100%;
+    margin: 0 auto;
+  }
+} */
+
+@media screen and (max-width: 768px) {
+
+  .service-details {
+    margin-top: 10px;
+    width:400px;
+    margin: 0 auto;    
+    background-color: rgba(161, 42, 165, 0);
+    padding: 10px;
+    display: grid;gap: 10px;
+    grid-template-columns: repeat(1, 1fr);
+
+    
+    
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(209, 150, 2, 0.88);
+    animation: fadeInDown 0.5s ease-out;
+  }
+
   .service-card {
     width: 300px;height:44px;
     font-size: 0.9em;  
@@ -324,21 +361,24 @@ a {
     padding: 10px;
     grid-template-columns: repeat(1, 1fr);
     width: 100%;
+    background-color: rgba(165, 42, 42, 0);
   }
 
   .info-card {
     width: 100%;
     padding: 10px;
+    background-color: rgb(255, 255, 255);
   }
 
   .detail-card .detail-card.active{
-    width: 30%;
+    max-width: 100%;
+    width: 100%;
 
   }
   
 }
 
-@media screen and (max-width: 450px) {
+/* @media screen and (max-width: 450px) {
   .service-card {
     width:300px;
     height: 50px;
@@ -346,7 +386,7 @@ a {
   }
 
   .detail-card .detail-card.active{
-    max-width: 38%;
+    max-width: 20%;
     margin: 0 auto;
   }
 
@@ -367,7 +407,7 @@ a {
   }
 
   
-}
+} */
 
 @media screen and (max-width: 360px) {
   .service-card {
