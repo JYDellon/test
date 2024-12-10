@@ -58,7 +58,7 @@ a {
   font-weight: bold;
   line-height: 1.4;
   color: #054461;
-  width: 90%;
+  width: 420px;
   padding: 10px 30px 10px 30px;
   max-width: 1200px;
   border-radius: 30px;
@@ -79,9 +79,7 @@ a {
 @media (max-width: 992px) {
   .intro-textNosServices {
     font-size: 16px; /* Réduction de la taille du texte pour s'adapter aux tablettes */
-    /* Réduit encore la largeur sur les tablettes */
-
-    width: 75%;
+    width: 420px;
   }
 }
 
@@ -90,7 +88,7 @@ a {
     font-size: 14px; /* Réduit la taille du texte pour les petits écrans */
      /* Ajustement sur les petits écrans */
      max-width: 70%;
-    width: 50%;
+    width: 420px;
   }
   .toggle-container{
     height: 350px;
@@ -374,8 +372,8 @@ a {
 @media screen and (max-width: 360px) {
   .service-card {
     width:300px;
-    height: 60px;
-    font-size: 1em;
+    height: 50px;
+    font-size: 15px;
   }
 
   .info-cards-container {
@@ -566,3 +564,7 @@ a {
       opacity: 1;
   }
 }
+
+  h2{
+    color: #003f5c;
+  }

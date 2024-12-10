@@ -27,7 +27,7 @@ function Accueil() {
     return (
         <>
         <div className="intro-textAccueil">
-                <h1>Bienvenue chez AeoniX !</h1>
+                <h2>Bienvenue chez AeoniX !</h2>
                 
         </div>
         <div className='centrage'>

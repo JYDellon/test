@@ -133,9 +133,9 @@ const NosServices = () => {
     return (
         <>
         <div className="intro-textNosServices">
-            <h1 className="titre-intro-nos-services">
+            <h2 className="titre-intro-nos-services">
                 Une présence en ligne réussie
-            </h1>
+            </h2>
         </div>
 
         <div className="toggle-container">

@@ -225,14 +225,18 @@
 
 /* En-tête de la section */
 .rgpd-toggle-header {
-  width: 380px;
+  margin: 0 auto;
+  width: 3549.5x;
+  height: 50px;
   display: flex;
+  text-align: center;
   justify-content: center;
   align-items: center;
   padding: 5px;
   cursor: pointer;
   background: linear-gradient(to right, #003f5c, #6a9cb8);
   color: white;
+  border: 1px solid white;
   font-size: 1.2em;
   transition: background-color 0.3s ease;
 }
@@ -330,8 +334,8 @@
   padding: 15px;
   cursor: pointer;
   transition: background 0.3s ease;  border-radius: 30px;
+  font-size: 15px;text-align: center;
 
-  font-size: 1.2em;
 }
 
 .rgpd-toggle-header.active {
@@ -459,3 +463,94 @@
 .rgpd-toggle-container:nth-child(4).droite {
   animation-delay: 0.4s;
 }
+
+
+
+
+
+.intro-textRgpd{
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: justify;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.4;
+  color: #054461;
+  width: 420px;
+  padding: 10px 30px 10px 30px;
+  max-width: 1200px;
+  border-radius: 30px;
+  background: linear-gradient(to right, #bac1bb, #9bb8bc8d);
+  margin-top: 5px;
+  animation: descendreIntroduction 1s ease-out forwards;
+}
+
+/* Responsivité avec des Media Queries */
+@media (min-width: 993px) and(max-width: 1200px) {
+  .intro-textRgpd{
+    font-size: 18px; /* Taille légèrement réduite pour les écrans plus petits */
+    width: 420px; /* Ajustement de la largeur pour les écrans plus petits */
+  }
+}
+
+@media (max-width: 992px) {
+  .intro-textRgpd{
+    font-size: 16px; /* Réduction de la taille du texte pour s'adapter aux tablettes */
+    /* Réduit encore la largeur sur les tablettes */
+
+    width: 420px;
+  }
+}
+
+@media (max-width: 768px) {
+  .intro-textRgpd{
+    font-size: 14px; /* Réduit la taille du texte pour les petits écrans */
+     /* Ajustement sur les petits écrans */
+     
+  h2{
+    color: #003f5c;
+  }
+
+  }
+  .toggle-container{
+    height: 350px;
+  }
+}
+
+@media (max-width: 576px) {
+  .intro-textRgpd{
+    font-size: 16px; /* Taille encore plus petite pour les téléphones */
+    padding: 0 10px; /* Moins de padding pour éviter le débordement */
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 350px;
+height: 50px;
+    h2{
+      color: #003f5c;
+    }
+  
+  }
+  .toggle-container{
+    height: 350px;
+  }
+  
+}
+@media (max-width: 360px) {
+  .intro-textRgpd{
+    font-size: 16px; /* Taille encore plus petite pour les téléphones */
+    max-width: 300px; /* Utilise toute la largeur disponible */
+    padding: 0 10px; /* Moins de padding pour éviter le débordement */
+    width: 300px;
+    margin-bottom: 0px;
+    margin-top: -30px;
+  }
+  .toggle-container{
+    height: 350px;
+  }
+}
+
+h2{
+  color: #003f5c;
+}
+

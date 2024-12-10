@@ -299,7 +299,7 @@ h3{
     width: 90%;
     border-radius: 30px;
     background: #ffffff;
-
+    width: 420px;
     background: linear-gradient(to right, #bac1bb, #9bb8bc8d);    border: 1px solid #d7dcd8;
     
     /* Ajout de l'animation */
@@ -320,6 +320,9 @@ h3{
   
 
 
+  h2{
+    color: #003f5c;
+  }
 
 
 
@@ -412,10 +415,10 @@ h3{
         font-size: 1em;
     }
 }
-  @media (max-width: 576px) {
+  @media (max-width: 578px) {
     .intro-textAccueil {
       font-size: 16px; /* Taille encore plus petite pour les téléphones */
-      width: 60%;
+      width: 50%;
       margin-bottom: 0px;
       margin-top: -15px;
 
@@ -423,18 +426,51 @@ h3{
     .accueil-container {
         display: flex;
         flex-wrap: wrap;
-        margin-top: 150px; 
+        margin-top: 20px; 
+        margin-bottom: 0; 
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;        
+    }
+    .cardm {            
+        width: 300px;
+        height: 150px;
+    }
+
+    .cardmDevis  {          
+        width: 150px;
+        height: 150px;
+    }
+    .carousel-container {
+        display: none;
+    }
+
+   
+  }
+
+  @media (max-width: 399px) {
+    .intro-textAccueil {
+      font-size: 16px; /* Taille encore plus petite pour les téléphones */
+      width: 300px;
+      margin-bottom: 0px;
+      margin-top: -15px;
+
+    }
+    .accueil-container {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 75px; 
         margin-bottom: 0; 
         justify-content: center;        
     }
     .cardm {            
-        width: 170px;
-        height: 100px;
+        width: 300px;
+        height: 150px;
     }
 
     .cardmDevis  {          
-        width: 100px;
-        height: 100px;
+        width: 150px;
+        height: 150px;
     }
     .carousel-container {
         display: none;

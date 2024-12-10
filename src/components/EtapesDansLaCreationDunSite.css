@@ -45,11 +45,7 @@
     background: linear-gradient(to right, #002d45, #507d92); /* Couleurs plus sombres pour l'actif */
 }
 
-/* Animation au survol */
-.etape-toggle-header:hover {
-  transform: scale(1.02);
-  border: 1px solid #ffffff;
-}
+
 
 /* Titre dans le header */
 .etape-toggle-header h3 {
@@ -58,6 +54,9 @@
     font-weight: bold;
 }
 
+h2{
+  color: #003f5c;
+}
 /* Contenu des détails d'une étape */
 .etape-toggle-details {
     margin: 0 auto;
@@ -285,19 +284,19 @@
     font-size: 16px; /* Taille encore plus petite pour les téléphones */
     max-width: 360px; /* Utilise toute la largeur disponible */
     padding: 0 10px; /* Moins de padding pour éviter le débordement */
+    width: 55%;
   }
 
   .etapes-container {
     width: 94.1%;
     background-color: rgba(169, 254, 0, 0);
-    
     height: 350px;
 }
 
 /* Conteneur pour chaque étape */
 .etape-toggle-container {
-  max-width: 400px;
-  width: 70%; 
+  /* max-width: 400px; */
+  width: 300px; 
   background-color: #fffffff8;
 
 }
@@ -306,6 +305,8 @@
 
 .etape-toggle-header {
   width: 100%;
+min-width: 200px;
+border: 1px slid white;
+}
+}
 
-}
-}

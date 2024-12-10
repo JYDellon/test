@@ -29,9 +29,9 @@ function EtapesDansLaCreationDunSite() {
             <div>
                 {/* Texte d'introduction */}
           <div className="intro-text">
-            <p>
-              Nous vous accompagnons à chaque étape pour garantir un site web qui reflète vos besoins, vos ambitions et l'image de votre entreprise.
-            </p>
+            <h2>
+              Votre site web clés en main
+            </h2>
           </div>
             </div>
             <div className="etapes-container">
