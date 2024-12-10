@@ -246,8 +246,10 @@
 @media (max-width: 576px) {
   .intro-textAPropos {
     font-size: 16px; /* Taille encore plus petite pour les téléphones */
-    max-width: 90%; /* Utilise toute la largeur disponible */
+    max-width: 85%; /* Utilise toute la largeur disponible */
     padding: 0 10px; /* Moins de padding pour éviter le débordement */
+    width: 65%;
+    margin-bottom: 10px;
   }
 }
 @media (max-width: 376px) {
