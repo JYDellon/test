@@ -111,12 +111,12 @@ a {
   }
   
 }
-@media (max-width: 376px) {
+@media (max-width: 360px) {
   .intro-textNosServices {
     font-size: 16px; /* Taille encore plus petite pour les téléphones */
-    max-width: 70%; /* Utilise toute la largeur disponible */
+    max-width: 50%; /* Utilise toute la largeur disponible */
     padding: 0 10px; /* Moins de padding pour éviter le débordement */
-    width: 40%;
+    width: 30%;
     margin-bottom: 0px;
     margin-top: -30px;
   }
