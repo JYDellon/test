@@ -194,7 +194,7 @@
   .intro-textAPropos {
     margin: 0 auto;
     margin-top: -20px;
-    margin-bottom: 0px;
+    margin-bottom: -10px;
     text-align: justify;
     font-size: 20px;
     font-weight: bold;
@@ -203,12 +203,8 @@
     padding: 10px 30px 10px 30px;
     max-width: 1200px;
     border-radius: 30px;
-    background: #ffffff;
-
-    background: linear-gradient(to right, #bac1bb, #9bb8bc8d);    border: 1px solid #d7dcd8;
-    margin-bottom: 5px;
-    
-    /* Ajout de l'animation */
+    background: linear-gradient(to right, #bac1bb, #9bb8bc8d);    
+    border: 1px solid #d7dcd8;
     animation: descendreIntroduction 1s ease-out forwards;
   }
 
