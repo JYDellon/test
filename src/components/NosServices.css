@@ -103,6 +103,7 @@ a {
     max-width: 70%; /* Utilise toute la largeur disponible */
     padding: 0 10px; /* Moins de padding pour éviter le débordement */
     width: 40%;
+    margin-bottom: 10px;
   }
   .toggle-container{
     height: 350px;
@@ -113,9 +114,10 @@ a {
     font-size: 16px; /* Taille encore plus petite pour les téléphones */
     padding: 0 10px; /* Moins de padding pour éviter le débordement */
     width: 30%;
+    margin-bottom: 1px;
   }
   .toggle-container{
-    height: 350px;
+    height: 300px;
   }
 }
 
