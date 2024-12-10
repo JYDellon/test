@@ -133,12 +133,9 @@ const NosServices = () => {
     return (
         <>
         <div className="intro-textNosServices">
-        <h1 className="titre-intro-nos-services">
-            Une présence en ligne réussie
-        </h1>
-        <p>
-            Des outils modernes et efficaces pour vous démarquer dans un environnement numérique compétitif.
-        </p>
+            <h1 className="titre-intro-nos-services">
+                Une présence en ligne réussie
+            </h1>
         </div>
 
         <div className="toggle-container">
