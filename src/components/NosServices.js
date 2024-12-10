@@ -134,7 +134,7 @@ const NosServices = () => {
         <>
         <div className="intro-textNosServices">
         <h1 className="titre-intro-nos-services">
-            Vos clés pour une présence en ligne réussie
+            Une présence en ligne réussie
         </h1>
         <p>
             Des outils modernes et efficaces pour vous démarquer dans un environnement numérique compétitif.

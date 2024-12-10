@@ -268,7 +268,6 @@ a {
 
     .detail-card.detail-card.active{
         width: 50%;
-        background-color: tomato;
 
       }
     
@@ -301,8 +300,7 @@ a {
   }
 
   .detail-card.detail-card.active{
-    width: 50%;
-    background-color: rgb(77, 71, 255);
+    width: 30%;
 
   }
   
@@ -310,7 +308,7 @@ a {
 
 @media screen and (max-width: 450px) {
   .service-card {
-    width:400px;
+    width:300px;
     height: 60px;
     font-size: 1em;
   }
@@ -328,7 +326,6 @@ a {
 
     .detail-card.detail-card.active{
         width: 50%;
-        background-color: rgb(71, 255, 138);
 
       }
     
@@ -344,7 +341,40 @@ a {
   }
 }
 
+@media screen and (max-width: 360px) {
+  .service-card {
+    width:300px;
+    height: 60px;
+    font-size: 1em;
+  }
 
+  .detail-card.detail-card.active{
+    width:65%;
+    margin: 0 auto;
+  }
+  .info-cards-container {
+    margin: 0 auto;
+    padding: 10px;
+    width: 100%;
+
+  }
+
+    .detail-card.detail-card.active{
+        width: 35%;
+
+      }
+    
+      .info-cards-container {
+        padding: 10px;
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+  .info-card {
+    font-size: 0.9em;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
 
 
 
