@@ -115,8 +115,8 @@ a {
     font-size: 16px; /* Taille encore plus petite pour les téléphones */
     padding: 0 10px; /* Moins de padding pour éviter le débordement */
     width: 30%;
-    margin-bottom: 1px;
-    margin-top: -10px;
+    margin-bottom: 0px;
+    margin-top: -20px;
   }
   .toggle-container{
     height: 300px;
