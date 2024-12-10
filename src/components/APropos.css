@@ -27,11 +27,12 @@
     padding: 20px;
     gap: 10px;
     width: 420px;
-    height: 500px;
+    height: 350px;
     margin: 0 auto;
     color: var(--couleur-primaire);
     height: 372px;  
     overflow-y: auto;
+    background-color: #ff00a200;
   }
   
   /* Chapitre Toggle Container commun */
@@ -194,7 +195,7 @@
   .intro-textAPropos {
     margin: 0 auto;
     margin-top: -20px;
-    margin-bottom: -10px;
+    margin-bottom: 0px;
     text-align: justify;
     font-size: 20px;
     font-weight: bold;
