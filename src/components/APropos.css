@@ -150,9 +150,10 @@
   }
   
   /* Responsive Design */
-  @media (min-width: 481px) and (max-width: 768px) {
+  @media (min-width: 577px) and (max-width: 768px) {
     .apropos-container {
       padding: 15px;
+      margin-top: -30px;
     }
   
     .chapitre-toggle-container {
@@ -167,15 +168,21 @@
     
   }
   
-  @media (max-width: 480px) {
+  @media (max-width: 576px) {
     .chapitre-toggle-container {
       width: 80%;
     }
-  
+    .apropos-container {
+      padding: 15px;
+      margin-top: -30px;
+      height: 450px;
+    }
     .chapitre-toggle-header {
       font-size: 1rem;
     }
-  
+    .chapitre-toggle-container {
+      width: 90%;
+    }
     .chapitre-toggle-details {
       font-size: 0.9rem;
     }

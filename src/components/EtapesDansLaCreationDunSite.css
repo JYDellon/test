@@ -284,6 +284,7 @@ h2{
     font-size: 16px; /* Taille encore plus petite pour les téléphones */
     max-width: 360px; /* Utilise toute la largeur disponible */
     padding: 0 10px; /* Moins de padding pour éviter le débordement */
+    margin-top: -20px;
     width: 55%;
   }
 
