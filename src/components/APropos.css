@@ -31,6 +31,7 @@
     margin: 0 auto;
     color: var(--couleur-primaire); 
     overflow-y: auto;
+    margin-top: 120px;
   }
   
   /* Chapitre Toggle Container commun */
@@ -179,31 +180,12 @@
       font-size: 0.9rem;
     }
   }
-  .intro-textAPropos {
-    width: 70%;
-    margin-top: -20px;
 
-  }
   .texte{
     margin:0 15px 10px 10px;
   }
 
-  .intro-textAPropos {
-    margin: 0 auto;
-    margin-top: -20px;
-    margin-bottom: 0px;
-    text-align: justify;
-    font-size: 20px;
-    font-weight: bold;
-    line-height: 1.8;
-    color: #054461;
-    padding: 10px 30px 10px 30px;
-    max-width: 1200px;
-    border-radius: 30px;
-    background: linear-gradient(to right, #bac1bb, #9bb8bc8d);    
-    border: 1px solid #d7dcd8;
-    animation: descendreIntroduction 1s ease-out forwards;
-  }
+
 
 
   
@@ -219,43 +201,4 @@
   }
 }
 
-/* Responsivité avec des Media Queries */
-@media (min-width: 993px) and(max-width: 1200px) {
-  .intro-textAPropos {
-    font-size: 18px; /* Taille légèrement réduite pour les écrans plus petits */
-    max-width: 600px; /* Ajustement de la largeur pour les écrans plus petits */
-  }
 
-}
-
-@media (max-width: 992px) {
-  .intro-textAPropos {
-    font-size: 16px; /* Réduction de la taille du texte pour s'adapter aux tablettes */
-    max-width: 80%; /* Réduit encore la largeur sur les tablettes */
-
-  }
-}
-
-@media (max-width: 768px) {
-  .intro-textAPropos {
-    font-size: 14px; /* Réduit la taille du texte pour les petits écrans */
-    max-width: 80%; /* Ajustement sur les petits écrans */
-  }
-}
-
-@media (max-width: 576px) {
-  .intro-textAPropos {
-    font-size: 16px; /* Taille encore plus petite pour les téléphones */
-    max-width: 85%; /* Utilise toute la largeur disponible */
-    padding: 0 10px; /* Moins de padding pour éviter le débordement */
-    width: 65%;
-    margin-bottom: 10px;
-  }
-}
-@media (max-width: 376px) {
-  .intro-textAPropos {
-    font-size: 16px; /* Taille encore plus petite pour les téléphones */
-    max-width: 360px; /* Utilise toute la largeur disponible */
-    padding: 0 10px; /* Moins de padding pour éviter le débordement */
-  }
-}
