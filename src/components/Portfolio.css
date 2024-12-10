@@ -1,240 +1,79 @@
-/* Évite de réinitialiser tout avec * */
+/* Global */
 body, html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     width: 100%;
     height: 100%;
-    overflow-x: hidden; /* Garder uniquement si nécessaire */
+    overflow-x: hidden;
+    font-family: 'Arial', sans-serif;
 }
 
-  /* Conteneur global */
+/* Conteneur global */
 .portfolio-container {
+    margin-top: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
-    overflow-y: auto; 
-}
-
-
-/* Conteneur des éléments portfolio (alignement horizontal) */
-.portfolio-items {
-    width: 100%;margin: 0 auto;
     display: flex;
-    flex-wrap: wrap; /* Permet aux éléments de se réorganiser sur les petits écrans */
-    gap: 20px; /* Espacement entre les éléments */
-    justify-content: center; /* Centrer les éléments horizontalement */
-}
-
-/* Section d'une étude de cas */
-.portfolio-item {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    background: linear-gradient(to right, #003f5c, #6a9cb8);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    margin-bottom: 40px;
-}
-
-/* Contenu texte + image en ligne */
-.portfolio-content {
-    display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
-    gap: 20px;margin: 0 auto;
+    height: 500px;
+    overflow-y: auto;
 }
 
-/* Texte à gauche */
-.portfolio-text {
-    flex: 1;
-    color: white;
-    padding-right: 20px; /* Un peu d'espace entre le texte et l'image */
-}
-
-/* Image à droite */
-.portfolio-image {
-    flex: 1;
-    width: 400px;
-    max-width: 100%; /* Ajuste l'image en fonction de l'écran */
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
-
-.portfolio-image:hover {
-    transform: scale(1.02);
-}
-
-/* Bouton CTA au centre */
-.portfolio-cta-container {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.portfolio-cta {
-    display: inline-block;
-    padding: 12px 25px;
-    background-color: #007bff;
-    color: white;
-    font-size: 1.2em;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.portfolio-cta:hover {
-    background-color: #0056b3;
-}
-
-/* Responsive design : Tablettes et plus petites tailles d'écran */
-@media (max-width: 1024px) {
-    .portfolio-content {
-        flex-direction: column;
-        align-items: center; /* Centrer les éléments */
-    }
-
-    .portfolio-image {
-        max-width: 100%; /* S'assurer que l'image occupe toute la largeur */
-    }
-
-    .portfolio-text {
-        text-align: center; /* Centrer le texte */
-        padding-right: 0;
-    }
-
-    .portfolio-cta {
-        font-size: 1em;
-    }
-}
-
-/* Responsive design : Téléphones et très petits écrans */
-@media (max-width: 800px) {
-    .portfolio-content {
-        flex-direction: column;
-        flex-wrap: wrap;
-    }
-
-    .portfolio-image {
-        max-width: 100%; /* S'assurer que l'image occupe toute la largeur */
-    }
-
-    .portfolio-text {
-        text-align: center; /* Centrer le texte */
-    }
-
-
-
-    .portfolio-cta {
-        padding: 10px 20px; /* Réduire la taille du bouton */
-        font-size: 1em;
-    }
-    portfolio-items{
-        display: flex;
-        flex-wrap: wrap;
-    }
-}
-
-
-
-/* Animations pour les éléments portfolio-item */
-@keyframes slideFromBottom {
-    from {
-        transform: translateY(50px); /* Transforme uniquement */
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-.portfolio-item {
-    animation: slideFromBottom 1s ease-out forwards;
-    margin-top: 0; /* Assurez-vous que les marges n'affectent pas */
-}
-
-
-
-
-
-
-@keyframes slideFromRight {
-    from {
-        transform: translateX(50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-/* Conteneur des éléments portfolio (alignement horizontal) */
+/* Conteneur des éléments */
 .portfolio-items {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-    width:94vw
+    width: 100%;
 }
 
-/* Section d'une étude de cas */
+/* Carte */
 .portfolio-item {
-    width: 10vw;
-    min-width: 90%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     background: linear-gradient(to right, #003f5c, #6a9cb8);
-    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
     margin-bottom: 40px;
-    opacity: 0;  /* Initialement transparent */
-    animation: slideFromBottom 1s ease-out forwards;  /* Animation depuis le bas */
+    overflow: hidden;
+    animation: fadeIn 1s ease-out;
 }
 
-/* Animation pour le second élément */
-.portfolio-item:nth-child(2) {
-    animation: slideFromRight 1s ease-out forwards;  /* Animation depuis la droite */
-}
-
-/* Contenu texte + image en ligne */
+/* Contenu texte et image */
 .portfolio-content {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 20px;
+    width: 100%;
 }
 
-/* Texte à gauche */
 .portfolio-text {
     flex: 1;
     color: white;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    max-width: 800px;
     text-align: justify;
-    
 }
 
-/* Image à droite */
 .portfolio-image {
     flex: 1;
-    max-width: 400px;
+    max-width: 100%;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
 }
 
 .portfolio-image:hover {
-    transform: scale(1.02);
+    transform: scale(1.05);
 }
 
-/* Bouton CTA au centre */
+/* Boutons */
 .portfolio-cta-container {
     margin-top: 20px;
     text-align: center;
@@ -242,10 +81,9 @@ body, html {
 
 .portfolio-cta {
     display: inline-block;
-    padding: 12px 25px;
+    padding: 10px 20px;
     background-color: #007bff;
     color: white;
-    font-size: 1.2em;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s;
@@ -255,65 +93,66 @@ body, html {
     background-color: #0056b3;
 }
 
-/* Responsive design */
-@media (max-width: 1800px) {
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
     .portfolio-content {
         flex-direction: column;
-        flex-wrap: wrap;
+        background-color: rgb(38, 0, 255);
+    }
+
+    .portfolio-image {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+
+        .portfolio-content {
+            flex-direction: column;
+            background-color: rgb(0, 255, 68);
+        }
+
+
+    .portfolio-item {
+        padding: 15px;
+    }
+
+    .portfolio-cta {
+        font-size: 1em;
+        padding: 8px 16px;
+    }
+    .portfolio-image {
+        max-width: 70%;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .portfolio-text {
+        text-align: center;
+    }
+    .portfolio-content {
+        flex-direction: column;
+        background-color: rgb(255, 0, 128);
     }
 
     .portfolio-image {
         max-width: 100%;
     }
-}
-.portfolio-titre,.portfolio-text,.portfolio-description,.portfolio-solution{
-    color: white;
 
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-.portfolio-container {
-    max-width: 1800px;
-    position: relative; /* Assure que rien ne déborde */
-    top: 0; /* Annule tout déplacement potentiel */
-    max-width: 100%; /* Ajusté pour éviter tout débordement */
-    overflow-x: hidden; /* Empêche horizontalement */
-    margin: 0 auto;
-    position: relative;
-    height: 600px;display: flex;
-    align-items: center;
-}
-html, body {
-    overflow-x: hidden; /* Empêche tout débordement horizontal */
-}
-
-
-
-
-
-
-
-
-
-
-
-.portfolio-container {
-    max-width: 1800px; /* Largeur maximale */
-    width: 100%; /* Largeur fluide */
-    margin: 0 auto;
-    padding: 20px;
-    position: relative; /* Conserve le positionnement */
-    z-index: 1; /* Inférieur à celui de la Navbar */
+    .portfolio-item {
+        padding: 10px;
+    }
 }
