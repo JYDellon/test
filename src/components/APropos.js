@@ -30,7 +30,7 @@ function APropos() {
         <>
         <div className="intro-textAPropos">
             <p>
-              À travers une approche structurée et collaborative, nous vous accompagnons à chaque étape pour garantir un site web qui reflète vos besoins, vos ambitions et l'image de votre entreprise.
+              A travers une approche structurée et collaborative, nous vous accompagnons à chaque étape pour garantir un site web qui reflète vos besoins, vos ambitions et l'image de votre entreprise.
             </p>
             <p>
               Découvrez notre processus en 5 étapes simples et efficaces :
