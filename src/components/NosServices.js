@@ -134,13 +134,10 @@ const NosServices = () => {
         <>
         <div className="intro-textNosServices">
         <h1 className="titre-intro-nos-services">
-            Nos solutions web : votre clé pour une présence en ligne réussie
+            Vos clés pour une présence en ligne réussie
         </h1>
         <p>
-            Que vous ayez besoin d’un site vitrine pour présenter votre activité, d’une boutique en ligne performante, ou d’un service de référencement pour accroître votre visibilité, nous avons la réponse à vos besoins.
-        </p>
-        <p>
-            Découvrez nos offres adaptées à chaque étape de votre présence en ligne : de la conception de sites élégants à l’hébergement sécurisé, en passant par une gestion et maintenance personnalisée. Notre mission est de vous accompagner avec des outils modernes et efficaces pour vous démarquer dans un environnement numérique compétitif.
+            Des outils modernes et efficaces pour vous démarquer dans un environnement numérique compétitif.
         </p>
         </div>
 
