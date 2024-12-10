@@ -27,10 +27,9 @@
     flex-direction: column;
     gap: 10px;
     width: 420px;
-    height: 350px;
+    height: 280px;
     margin: 0 auto;
-    color: var(--couleur-primaire);
-    height: 372px;  
+    color: var(--couleur-primaire); 
     overflow-y: auto;
   }
   
@@ -61,9 +60,8 @@
     text-align: center;
     transition: background-color var(--transition);
     border:1px solid white;
-    margin-top: -5px;
-    margin-bottom: 0px;
-  }
+    margin-top: 0px;
+    margin-bottom: -5px;  }
   
 /* Animation au survol */
 .chapitre-toggle-header:hover {
