@@ -115,7 +115,7 @@ a {
   .intro-textNosServices {
     font-size: 16px; /* Taille encore plus petite pour les téléphones */
     padding: 0 10px; /* Moins de padding pour éviter le débordement */
-    width: 20%;
+    width: 250px;
     margin-bottom: 0px;
     margin-top: -30px;
   }
