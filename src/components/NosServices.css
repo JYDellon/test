@@ -100,9 +100,9 @@ a {
 @media (max-width: 576px) {
   .intro-textNosServices {
     font-size: 16px; /* Taille encore plus petite pour les téléphones */
-    max-width: 70%; /* Utilise toute la largeur disponible */
+    max-width: 35%; /* Utilise toute la largeur disponible */
     padding: 0 10px; /* Moins de padding pour éviter le débordement */
-    width: 40%;
+    width: 35%;
     margin-bottom: 10px;
     margin-top: -10px;
   }
