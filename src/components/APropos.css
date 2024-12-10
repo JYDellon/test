@@ -158,6 +158,8 @@
     .chapitre-toggle-details {
       font-size: 14px;
     }
+
+    
   }
   
   @media (max-width: 480px) {
@@ -173,7 +175,11 @@
       font-size: 0.9rem;
     }
   }
-  
+  .intro-textAPropos {
+    width: 70%;
+    margin-top: -20px;
+
+  }
   .texte{
     margin:5px 10px 10px 10px;
   }

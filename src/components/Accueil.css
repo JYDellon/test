@@ -418,7 +418,7 @@ h3{
       font-size: 16px; /* Taille encore plus petite pour les téléphones */
       width: 60%;
       margin-bottom: 0px;
-      margin-top: 0px;
+      margin-top: -15px;
 
     }
     .accueil-container {

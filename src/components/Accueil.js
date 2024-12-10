@@ -41,15 +41,15 @@ function Accueil() {
         <div className='centrage'>
             <div className="accueil-container">
                 <div className="cardm" onClick={() => navigate('/etapesCreationSite')}>
-                    <h3>DONNONS VIE</h3>
-                    <h3>A</h3>
-                    <h3>VOTRE SITE WEB</h3>
+                    <h3>Donnons vie</h3>
+                    <h3>à</h3>
+                    <h3>votre site web</h3>
                 </div>
 
 
 
                 <div className=" cardmDevis" onClick={() => navigate('/devis')}>
-                    <h3>DEMANDE</h3><h3> DE </h3><h3> DEVIS</h3><h3>GRATUIT</h3>   
+                    <h3> DEVIS</h3><h3>GRATUIT</h3>   
                 </div>
 
                 <div className="carousel-container">
