@@ -109,6 +109,7 @@ a {
   .toggle-container{
     height: 300px;
   }
+  
 }
 @media (max-width: 376px) {
   .intro-textNosServices {
@@ -122,6 +123,10 @@ a {
     height: 250px;
   }
 }
+
+
+
+
 
 /* ========== Nos Services ========== */
 .services-list {
@@ -211,6 +216,7 @@ a {
   border-radius: 6px;
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
   animation: fadeInUp 0.5s ease-out;
+  
 }
 
 
@@ -249,14 +255,32 @@ a {
     font-size: 1em;
   }
 
-  .info-cards-container {
-    width: 100%;
-    padding: 10px;
+  .detail-card.detail-card.active{
+    width:65%;
+    margin: 0 auto;
   }
+  .info-cards-container {
+    margin: 0 auto;
+    padding: 10px;
+    width: 100%;
+
+  }
+
+    .detail-card.detail-card.active{
+        width: 50%;
+        background-color: tomato;
+
+      }
+    
+      .info-cards-container {
+        padding: 10px;
+        grid-template-columns: repeat(1, 1fr);
+        width: 100%;
+      }
 
   .info-card {
     font-size: 0.9em;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
   }
 }
@@ -267,17 +291,58 @@ a {
     font-size: 0.9em;  
   }
   .info-cards-container {
-    width: 100%;
     padding: 10px;
     grid-template-columns: repeat(1, 1fr);
   }
 
   .info-card {
-    width: 400px;
+    width: 100%;
     padding: 10px;
   }
+
+  .detail-card.detail-card.active{
+    width: 50%;
+    background-color: rgb(77, 71, 255);
+
+  }
+  
 }
 
+@media screen and (max-width: 450px) {
+  .service-card {
+    width:400px;
+    height: 60px;
+    font-size: 1em;
+  }
+
+  .detail-card.detail-card.active{
+    width:65%;
+    margin: 0 auto;
+  }
+  .info-cards-container {
+    margin: 0 auto;
+    padding: 10px;
+    width: 100%;
+
+  }
+
+    .detail-card.detail-card.active{
+        width: 50%;
+        background-color: rgb(71, 255, 138);
+
+      }
+    
+      .info-cards-container {
+        padding: 10px;
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+  .info-card {
+    font-size: 0.9em;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
 
 
 
