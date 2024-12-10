@@ -29,7 +29,7 @@ function Accueil() {
         <div className="intro-textAccueil">
                 <h1>Bienvenue chez AeoniX !</h1>
                 <p>
-                    Nous sommes spécialisés dans la création de sites web vitrine, e-commerce et sur-mesure, avec des services complémentaires comme l'hébergement, la maintenance et le suivi personnalisé.
+                    Nous sommes spécialisés dans la création de sites web avec des services complémentaires comme l'hébergement, le référencement, la maintenance et le suivi personnalisé.
                 </p>
                 <p>
                     Notre objectif ? Créer des sites modernes, intuitifs et adaptés à vos besoins.
