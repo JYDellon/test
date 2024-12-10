@@ -20,11 +20,11 @@
     padding: 0;
   }
   
-  /* Conteneur principal avec propriétés réutilisables */
+  /* Conteneur principal */
   .apropos-container {
+    background-color: #ff00a200;
     display: flex;
     flex-direction: column;
-    padding: 20px;
     gap: 10px;
     width: 420px;
     height: 350px;
@@ -32,7 +32,6 @@
     color: var(--couleur-primaire);
     height: 372px;  
     overflow-y: auto;
-    background-color: #ff00a200;
   }
   
   /* Chapitre Toggle Container commun */
@@ -45,7 +44,6 @@
     transition: transform var(--transition);
     background-color: rgb(255, 255, 255);
     margin: 0 auto;
-
   }
   
   /* En-tête du Toggle */
@@ -56,10 +54,8 @@
     align-items: center;
     justify-content: center;
     color: white;
-    margin: 0;
     font-size: 15px;
     font-weight: bold;
-    padding: 10px;
     border-radius: 50px;
     height: 50px;
     text-align: center;
@@ -235,7 +231,7 @@
 @media (max-width: 992px) {
   .intro-textAPropos {
     font-size: 16px; /* Réduction de la taille du texte pour s'adapter aux tablettes */
-    max-width: 500px; /* Réduit encore la largeur sur les tablettes */
+    max-width: 80%; /* Réduit encore la largeur sur les tablettes */
 
   }
 }
@@ -243,11 +239,18 @@
 @media (max-width: 768px) {
   .intro-textAPropos {
     font-size: 14px; /* Réduit la taille du texte pour les petits écrans */
-    max-width: 400px; /* Ajustement sur les petits écrans */
+    max-width: 80%; /* Ajustement sur les petits écrans */
   }
 }
 
 @media (max-width: 576px) {
+  .intro-textAPropos {
+    font-size: 16px; /* Taille encore plus petite pour les téléphones */
+    max-width: 90%; /* Utilise toute la largeur disponible */
+    padding: 0 10px; /* Moins de padding pour éviter le débordement */
+  }
+}
+@media (max-width: 376px) {
   .intro-textAPropos {
     font-size: 16px; /* Taille encore plus petite pour les téléphones */
     max-width: 360px; /* Utilise toute la largeur disponible */
