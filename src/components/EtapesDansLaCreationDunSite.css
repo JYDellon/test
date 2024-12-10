@@ -290,6 +290,8 @@
   .etapes-container {
     width: 94.1%;
     background-color: rgba(169, 254, 0, 0);
+    
+    height: 450px;
 }
 
 /* Conteneur pour chaque étape */
