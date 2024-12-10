@@ -293,6 +293,7 @@ a {
   .info-cards-container {
     padding: 10px;
     grid-template-columns: repeat(1, 1fr);
+    width: 100%;
   }
 
   .info-card {
@@ -315,25 +316,18 @@ a {
   }
 
   .detail-card.detail-card.active{
-    width:65%;
+    max-width: 38%;
     margin: 0 auto;
   }
-  .info-cards-container {
-    margin: 0 auto;
-    padding: 10px;
-    width: 100%;
 
-  }
 
-    .detail-card.detail-card.active{
-        width: 50%;
-
-      }
     
       .info-cards-container {
-        padding: 10px;
+        padding: 10px;   
+        margin: 0 auto;
         grid-template-columns: repeat(1, 1fr);
-        width: 82%;
+        width: 100%;
+        border-radius: 10px;
       }
 
   .info-card {
@@ -341,6 +335,8 @@ a {
     width: 100%;
     margin: 0 auto;
   }
+
+  
 }
 
 @media screen and (max-width: 360px) {
