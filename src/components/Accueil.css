@@ -429,12 +429,12 @@ h3{
     }
     .cardm {            
         width: 170px;
-        height: 120px;
+        height: 100px;
     }
 
     .cardmDevis  {          
-        width: 120px;
-        height: 120px;
+        width: 100px;
+        height: 100px;
     }
     .carousel-container {
         display: none;
