@@ -32,9 +32,6 @@ function EtapesDansLaCreationDunSite() {
             <p>
               Nous vous accompagnons à chaque étape pour garantir un site web qui reflète vos besoins, vos ambitions et l'image de votre entreprise.
             </p>
-            <p>
-              Découvrez notre processus en 5 étapes.
-            </p>
           </div>
             </div>
             <div className="etapes-container">

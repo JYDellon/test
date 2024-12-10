@@ -36,9 +36,8 @@
   /* Chapitre Toggle Container commun */
   .chapitre-toggle-container {
     cursor: pointer;
-    margin: 10px 0;
     width: 100%;
-    border: 1px solid var(--couleur-secondaire);
+    /* border: 1px solid var(--couleur-secondaire); */
     border-radius: 30px;
     box-shadow: var(--box-shadow);
     transition: transform var(--transition);
@@ -55,14 +54,23 @@
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 1.2em;
+    margin: 0;
+    font-size: 15px;
+    font-weight: bold;
     padding: 10px;
     border-radius: 50px;
     height: 50px;
     text-align: center;
     transition: background-color var(--transition);
+    border:1px solid white
   }
   
+/* Animation au survol */
+.chapitre-toggle-header:hover {
+  transform: scale(1.02);
+  border: 1px solid #ffffff;
+}
+
   /* Contenu déroulé avec une animation */
   .chapitre-toggle-details {
     padding: 0 10px;
@@ -179,7 +187,7 @@
 
   }
   .texte{
-    margin:5px 10px 10px 10px;
+    margin:0 15px 10px 10px;
   }
 
   .intro-textAPropos {
@@ -202,3 +210,49 @@
     /* Ajout de l'animation */
     animation: descendreIntroduction 1s ease-out forwards;
   }
+
+
+  
+/* Animation d'introduction - Descente depuis le haut */
+@keyframes descendreIntroduction {
+  0% {
+    transform: translateY(-100vh); /* Commence en dehors de la vue depuis le haut */
+    opacity: 0; /* Rend l'élément invisible au début */
+  }
+  100% {
+    transform: translateY(0); /* Position d'arrivée dans sa place normale */
+    opacity: 1; /* Restaure la visibilité */
+  }
+}
+
+/* Responsivité avec des Media Queries */
+@media (min-width: 993px) and(max-width: 1200px) {
+  .intro-textAPropos {
+    font-size: 18px; /* Taille légèrement réduite pour les écrans plus petits */
+    max-width: 600px; /* Ajustement de la largeur pour les écrans plus petits */
+  }
+
+}
+
+@media (max-width: 992px) {
+  .intro-textAPropos {
+    font-size: 16px; /* Réduction de la taille du texte pour s'adapter aux tablettes */
+    max-width: 500px; /* Réduit encore la largeur sur les tablettes */
+
+  }
+}
+
+@media (max-width: 768px) {
+  .intro-textAPropos {
+    font-size: 14px; /* Réduit la taille du texte pour les petits écrans */
+    max-width: 400px; /* Ajustement sur les petits écrans */
+  }
+}
+
+@media (max-width: 576px) {
+  .intro-textAPropos {
+    font-size: 16px; /* Taille encore plus petite pour les téléphones */
+    max-width: 360px; /* Utilise toute la largeur disponible */
+    padding: 0 10px; /* Moins de padding pour éviter le débordement */
+  }
+}
