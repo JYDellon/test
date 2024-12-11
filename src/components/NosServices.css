@@ -378,37 +378,6 @@ a {
   
 }
 
-/* @media screen and (max-width: 450px) {
-  .service-card {
-    width:300px;
-    height: 50px;
-    font-size: 1em;
-  }
-
-  .detail-card .detail-card.active{
-    max-width: 20%;
-    margin: 0 auto;
-  }
-
-
-    
-      .info-cards-container {
-        padding: 10px;   
-        margin: 0 auto;
-        grid-template-columns: repeat(1, 1fr);
-        width: 100%;
-        border-radius: 10px;
-      }
-
-  .info-card {
-    font-size: 0.9em;
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  
-} */
-
 @media screen and (max-width: 360px) {
   .service-card {
     width:300px;
@@ -441,14 +410,6 @@ a {
   }
 }
 
-
-
-
-
-
-
-
-/* Animation depuis la gauche */
 @keyframes entrerGauche {
   from {
     transform: translateX(-100%);
@@ -460,7 +421,6 @@ a {
   }
 }
 
-/* Animation depuis la droite */
 @keyframes entrerDroite {
   from {
     transform: translateX(100%);
@@ -473,9 +433,6 @@ a {
 }
 
 
-
-
-/* Animations spécifiques aux toggles principaux */
 .toggle-animation-1 {
   animation: entrerGauche 0.3s ease forwards;
 }
@@ -513,9 +470,6 @@ a {
 }
 
 
-/* Définition des keyframes */
-
-/* Principales animations */
 @keyframes entrerGauche {
   from {
       transform: translateX(-100%);
@@ -560,7 +514,6 @@ a {
   }
 }
 
-/* Sous-catégories */
 @keyframes bounceIn {
   from {
       transform: scale(0.5);

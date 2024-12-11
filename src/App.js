@@ -16,7 +16,7 @@ import Footer from './components/Footer'
 
 // Importation du logo
 import logo1 from './assets/images/logo05.1.png';
-import logo2 from './assets/images/Sans titre-1.1.png';
+// import logo2 from './assets/images/Sans titre-1.1.png';
 import logo3 from './assets/images/Sans titre-2.1.png';
 
 // Importation des fonds 
@@ -103,7 +103,7 @@ function App() {
             <img src={logo1} alt="Logo" className="logo" />
             <div className='MiseEnPage02'>
               <div><img src={logo3} alt="Logo" className="logo3" /></div>
-              <div><img src={logo2} alt="Logo" className="logo2" /></div>
+              {/* <div><img src={logo2} alt="Logo" className="logo2" /></div> */}
             </div>
           </div>
         </div>
