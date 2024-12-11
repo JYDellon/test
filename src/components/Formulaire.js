@@ -166,7 +166,7 @@ return (
           {/* Si la prestation est "hébergement / nom de domaine" */}
           {prestation === 'hébergement / nom de domaine' && (
             <div>
-              <h1>Votre demande concerne un besoin en :</h1>
+              <h1>Vos besoin :</h1>
               <fieldset className="besoins-section">
                 <legend>Besoins spécifiques</legend>
                 <div className="conteneur-besoins">
