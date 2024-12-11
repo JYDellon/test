@@ -1,20 +1,41 @@
 .formulaire-devisS {
 
-  padding: 1rem;
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
   background: linear-gradient(to right, #003f5c, #6a9cb8);
   color: white;
-  border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  height: 650px;
-  margin-bottom: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+
 }
+
+
+
+
+
+.modal {
+  position: fixed; /* Permet de garder la modale au même endroit, même en scrollant */
+  top: 0;
+  left: 0;
+  width: 100%; /* Remplir toute la largeur */
+  height: 100%; /* Remplir toute la hauteur */
+  background: rgba(0, 0, 0, 0.8); /* Couleur de fond avec une opacité pour assombrir */
+  z-index: 10000; /* Priorité maximale pour s'assurer qu'elle est au-dessus de tout */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-contenu {
+  width: 90%; /* Ajuste la taille du contenu interne */
+  max-width: 900px; /* Optionnel : une taille maximum pour le contenu */
+  background: white;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+
 
 @media (min-width:600px) and (max-width:768px){
   .formulaire-devisS {
@@ -36,7 +57,7 @@
   .formulaire-devisS {
 
     padding: 1rem;
-    width: 100%;
+    width: 00%;
     max-width: 900px;
     margin: 0 auto;
     background: linear-gradient(to right, #003f5c, #6a9cb8);
@@ -51,18 +72,40 @@
 
 @media  (max-width:399px){
   .formulaire-devisS {
-
-    padding: 1rem;
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
-    background: linear-gradient(to right, #003f5c, #6a9cb8);
-    color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    height: 1000px;
-    margin-bottom: 50px;
+    width: 100%; /* Prend toute la largeur */
+    height: 100vh; /* Prend toute la hauteur de l'écran */
+    margin: 0; /* Supprime les marges externes */
+    padding: 1rem; /* Optionnel : espace intérieur */
+    background: linear-gradient(to right, #003f5c, #6a9cb8); /* Couleur de fond */
+    color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0px;
   }
+  
+  
+/* Conteneur des cartes */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 40%;
+  margin: 0 auto;
+}
+
+.card {
+  margin-top: 10px;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  text-align: center;
+  width:100%;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
 }
 
 
@@ -74,16 +117,10 @@ h1 {
 }
 
 /* Conteneur des cartes */
-.cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 40%;
-  margin: 0 auto;
-}
+
 
 /* Style des cartes */
-/* .card {
+.card {
   margin-top: 10px;
   padding: 1rem;
   border: 1px solid #ccc;
@@ -92,7 +129,7 @@ h1 {
   text-align: center;
   cursor: pointer;
   transition: all 0.3s;
-} */
+}
 
 .card {
   margin-top: 10px;
@@ -145,6 +182,11 @@ textarea {
     width: 100%;
   }
 }
+@media (max-width: 566px) {
+  .card {
+    width: 240vw;
+  }
+}
 
 /* Conteneur pour le type de projet */
 .type-projet-container {
@@ -181,7 +223,7 @@ textarea {
 /* Style de la section URL pour la refonte */
 .url-refonte-container,
 .objectifs-container {
-  margin-top: 2rem;
+  margin-top: 2px;
 }
 
 
@@ -267,6 +309,7 @@ legend {
 .etape3-container {
   display: flex;
   flex-direction: column;
+  align-items:start;
   height: 550px;
 }
 
@@ -498,6 +541,7 @@ h2 {
 legend {
   font-size: 1.4rem;
   font-weight: bold;
+  margin-top: -40px;
   margin-bottom: 0.5rem;
   color: #ffffff;
 }
@@ -524,14 +568,25 @@ legend {
   margin-bottom: -1rem;
 }
 
-textarea.tailleTextarea {
+textarea {
   width: 100%;
-  height: 150px;
+  height: 100px;
   padding: 1rem;
   border-radius: 8px;
   border: 1px solid #ccc;
   font-size: 1rem;
 }
+
+.tailleTextarea {
+  width: 100%;
+  height: 50px;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+
 
 textarea.tailleTextarea:focus {
   border-color: #007bff;
@@ -571,3 +626,163 @@ textarea.tailleTextarea:focus {
   margin: 0;
   padding: 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.formulaire-devisS {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Fond semi-transparent */
+  z-index: 1000; /* Assurez-vous qu'il est au-dessus du header */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* overflow-y: auto; */
+}
+
+.formulaire-devisS h1 {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.tailleTextarea,
+.tailleTextarea2,
+.input1 {
+  width: calc(100% - 40px);
+  max-width: 600px;
+  margin: 10px auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.boutons-containerR {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.boutonbtn {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.boutonbtn:hover {
+  background-color: #0056b3;
+}
+
+.formulaire-devisS {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Étape 3 - Fonctionnalités */
+.etape3-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  height: 90vh; 
+  padding: 10px;
+}
+
+.fonctionnalites-section {
+  flex: 1; 
+  overflow-y: auto; 
+  margin-top: 10px;
+  margin-bottom: 20px; 
+}
+
+.fonctionnalites-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: -1px;
+}
+
+.fonctionnalite-option {
+  flex: 1 1 calc(33.33% - 10px); /* 3 éléments par ligne avec espace */
+  margin-bottom: 15px;
+}
+
+.boutons-containerR {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 15px;
+}
+
+.boutonbtn {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  flex: 0 1 48%; /* Chaque bouton prend 48% de la largeur pour avoir un espace entre eux */
+}
+
+.boutonbtn:hover {
+  background-color: #0056b3;
+}
+
+
+
+
+
+
+
