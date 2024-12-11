@@ -78,11 +78,12 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
+  width: 40%;
+  margin: 0 auto;
 }
 
 /* Style des cartes */
-.card {
+/* .card {
   margin-top: 10px;
   padding: 1rem;
   border: 1px solid #ccc;
@@ -91,7 +92,20 @@ h1 {
   text-align: center;
   cursor: pointer;
   transition: all 0.3s;
+} */
+
+.card {
+  margin-top: 10px;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  text-align: center;
+  width:100%;
+  cursor: pointer;
+  transition: all 0.3s;
 }
+
+
 .card:hover {
   background-color: #007bff;
   transform: scale(1.05);
