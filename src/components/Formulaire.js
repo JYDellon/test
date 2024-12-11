@@ -90,7 +90,48 @@ const Formulaire = () => {
   };
   
 
-  const envoyerEmail = (e) => {
+  // const envoyerEmail = (e) => {
+  //   e.preventDefault();
+  //   const templateParams = {
+  //     nom,
+  //     email,
+  //     telephone,
+  //     nomEntreprise,
+  //     prestation,
+  //     descriptionBesoins,
+  //     objectifs,
+  //     urlSite: prestation === 'hébergement / nom de domaine' && urlSite.trim() !== '' ? urlSite : '-',
+  //     fonctionnalites: fonctionnalites.join(', '),
+  //     graphisme,
+  //     typeProjet: typeProjetSelectionne === 'création' ? `Création d'un site ${prestation}` : `Refonte d'un site ${prestation}`,
+  //     urlSiteRefonte: refonteChoisie ? urlSiteRefonte : '-',
+  //     besoinsHebergement: Object.entries(besoinsHébergement)
+  //       .filter(([_, checked]) => checked)
+  //       .map(([key]) => key)
+  //       .join(', ') || 'Aucun besoin spécifique',
+  //   };
+
+  //   emailjs
+  //     .send(
+  //       'service_sririnv',
+  //       'template_1nyuelj',
+  //       templateParams,
+  //       'htn7B0VMvIGfY458U'
+  //     )
+  //     .then(
+  //       (result) => {
+  //         console.log('Email envoyé avec succès :', result.text);
+  //         alert('Votre demande a été envoyée avec succès !');
+  //         navigate('/');
+  //       },
+  //       (error) => {
+  //         console.log("Échec de l’envoi de l’e-mail :", error.text);
+  //         alert("Une erreur est survenue lors de l'envoi de votre demande.");
+  //       }
+  //     );
+  // };
+
+  const envoyerEmail = async (e) => {
     e.preventDefault();
     const templateParams = {
       nom,
@@ -110,28 +151,31 @@ const Formulaire = () => {
         .map(([key]) => key)
         .join(', ') || 'Aucun besoin spécifique',
     };
-
-    emailjs
-      .send(
-        'service_sririnv',
-        'template_1nyuelj',
-        templateParams,
-        'htn7B0VMvIGfY458U'
-      )
-      .then(
-        (result) => {
-          console.log('Email envoyé avec succès :', result.text);
-          alert('Votre demande a été envoyée avec succès !');
-          navigate('/');
+  
+    try {
+      const response = await fetch('http://localhost:5000/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
         },
-        (error) => {
-          console.log("Échec de l’envoi de l’e-mail :", error.text);
-          alert("Une erreur est survenue lors de l'envoi de votre demande.");
-        }
-      );
+        body: JSON.stringify(templateParams),
+      });
+  
+      if (response.ok) {
+        console.log('Email envoyé avec succès');
+        alert('Votre demande a été envoyée avec succès !');
+        navigate('/');
+      } else {
+        const errorData = await response.json();
+        console.error('Erreur lors de l’envoi de l’email:', errorData.error);
+        alert("Une erreur est survenue lors de l'envoi de votre demande.");
+      }
+    } catch (error) {
+      console.error('Erreur réseau:', error);
+      alert("Une erreur est survenue lors de l'envoi de votre demande.");
+    }
   };
-
-
+  
 
 return (
 <div className="modal">
@@ -180,7 +224,7 @@ return (
                         { name: "migration", label: "Migration d'hébergement" }
                       ].map(({ name, label }) => (
                         <div key={name} className="besoin-option">
-                          <label>
+                          <label className='ecart'>
                             <input
                               type="checkbox"
                               name={name}
