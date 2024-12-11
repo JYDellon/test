@@ -1,98 +1,86 @@
 .formulaire-devisS {
-
   background: linear-gradient(to right, #003f5c, #6a9cb8);
   color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
-}
-
-
-
-
-
-.modal {
-  position: fixed; /* Permet de garder la modale au même endroit, même en scrollant */
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%; /* Remplir toute la largeur */
-  height: 100%; /* Remplir toute la hauteur */
-  background: rgba(0, 0, 0, 0.8); /* Couleur de fond avec une opacité pour assombrir */
-  z-index: 10000; /* Priorité maximale pour s'assurer qu'elle est au-dessus de tout */
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Fond semi-transparent */
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 10000;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .modal-contenu {
-  width: 90%; /* Ajuste la taille du contenu interne */
-  max-width: 900px; /* Optionnel : une taille maximum pour le contenu */
+  width: 90%;
+  max-width: 900px;
   background: white;
   border-radius: 10px;
   padding: 1rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-
-
-
-
-
-
-@media (min-width:600px) and (max-width:768px){
+@media (max-width: 399px) {
   .formulaire-devisS {
-
-    padding: 1rem;
     width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
-    background: linear-gradient(to right, #003f5c, #6a9cb8);
-    color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    height: 740px;
-    margin-bottom: 50px;
-  }
-}
-
-@media (min-width:450px) and (max-width:599px){
-  .formulaire-devisS {
-
+    height: 100vh;
+    margin: 0;
     padding: 1rem;
-    width: 00%;
-    max-width: 900px;
-    margin: 0 auto;
-    background: linear-gradient(to right, #003f5c, #6a9cb8);
-    color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    height: 880px;
-    margin-bottom: 50px;
-  }
-}
-
-
-@media  (max-width:399px){
-  .formulaire-devisS {
-    width: 100%; /* Prend toute la largeur */
-    height: 100vh; /* Prend toute la hauteur de l'écran */
-    margin: 0; /* Supprime les marges externes */
-    padding: 1rem; /* Optionnel : espace intérieur */
-    background: linear-gradient(to right, #003f5c, #6a9cb8); /* Couleur de fond */
-    color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 0px;
   }
-  
-  
-/* Conteneur des cartes */
+}
+
+@media (min-width: 450px) and (max-width: 599px) {
+  .formulaire-devisS {
+    height: 880px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 768px) {
+  .formulaire-devisS {
+    padding: 1rem;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    height: 740px;
+  }
+}
+
 .cards-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 40%;
-  margin: 0 auto;
+  gap: 20px;
 }
 
 .card {
@@ -101,60 +89,22 @@
   border: 1px solid #ccc;
   border-radius: 50px;
   text-align: center;
-  width:100%;
+  width: 100%;
   cursor: pointer;
   transition: all 0.3s;
 }
-
-}
-
-
-/* Style des titres */
-h1 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-/* Conteneur des cartes */
-
-
-/* Style des cartes */
-.card {
-  margin-top: 10px;
-  padding: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  width: calc(30% - 1rem);
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.card {
-  margin-top: 10px;
-  padding: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 50px;
-  text-align: center;
-  width:100%;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
 
 .card:hover {
   background-color: #007bff;
   transform: scale(1.05);
 }
+
 .selected {
   background-color: #007bff;
   color: white;
 }
 
-/* Input et textarea responsive */
-input[type="text"],
-textarea {
+input[type="text"], textarea {
   width: 100%;
   padding: 0.8rem;
   margin: 0.5rem 0;
@@ -164,7 +114,6 @@ textarea {
   box-sizing: border-box;
 }
 
-/* Boutons */
 .boutons-containerR button {
   background-color: #007bff;
   color: white;
@@ -173,22 +122,27 @@ textarea {
   border-radius: 5px;
   cursor: pointer;
   font-size: 1rem;
-  margin-top: -1em;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .card {
-    width: 100%;
-  }
-}
-@media (max-width: 566px) {
-  .card {
-    width: 240vw;
-  }
+.boutons-containerR {
+  display: flex;
+  justify-content: space-between;
 }
 
-/* Conteneur pour le type de projet */
+.boutonbtn {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.boutonbtn:hover {
+  background-color: #0056b3;
+}
+
 .type-projet-container {
   display: flex;
   flex-direction: column;
@@ -196,7 +150,6 @@ textarea {
   margin-top: 1rem;
 }
 
-/* Style des options */
 .type-projet-option {
   display: flex;
   align-items: center;
@@ -217,34 +170,12 @@ textarea {
 
 .label-text {
   font-size: 1.1rem;
-  color:white;
+  color: white;
 }
 
-/* Style de la section URL pour la refonte */
-.url-refonte-container,
-.objectifs-container {
-  margin-top: 2px;
-}
-
-
-
-/* Style général pour tous les textarea */
-textarea {
-  background-color: white;
-  color: black;
-  font-size: 1rem;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 100%;
-  box-sizing: border-box;
-  resize: vertical; /* Permet de redimensionner verticalement */
-}
-
-/* Ajout d'un style au survol et focus pour améliorer l'expérience utilisateur */
 textarea:focus {
   outline: none;
-  border-color: #007bff; /* Couleur de la bordure en focus */
+  border-color: #007bff;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
@@ -263,144 +194,23 @@ legend {
   margin-bottom: 1rem;
 }
 
-.fonctionnalites-options, 
+.fonctionnalites-options,
 .graphisme-options {
   display: flex;
   flex-direction: column;
-  gap: 1rem; /* Augmente l'espacement entre les options */
+  gap: 1rem;
 }
 
 .fonctionnalite-option, 
 .graphisme-option {
   display: flex;
   align-items: center;
-  gap: 0.5rem; /* Ajoute de l'espacement entre l'input et le texte */
+  gap: 1rem;
 }
 
-.label-text {
-  font-size: 1rem;
-}
-
-.boutons-containerR {
-  display: flex;
-  justify-content: space-between;
-}
-
-.boutonbtn {
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.boutonbtn:hover {
-  background-color: #0056b3;
-}
-
-.graphisme-section{
-  margin-bottom: -5PX;
-}
-
-
-
-.etape3-container {
-  display: flex;
-  flex-direction: column;
-  align-items:start;
-  height: 550px;
-}
-
-fieldset {
-  padding: 1rem;
-  border: 1px solid #ffffff;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-  background-color: #ffffff00;
-  color: #ffffff;
-}
-
-legend {
-  font-size: 1.3rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-.fonctionnalites-options, 
-.graphisme-options {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem; /* Augmente l'espacement entre les options */
-}
-
-.fonctionnalite-option, 
-.graphisme-option {
-  display: flex;
-  align-items: center;
-  gap: 1rem; /* Augmente l'espacement entre l'input et le texte */
-}
-
-/* Sépare davantage les checkbox et les phrases */
 .fonctionnalite-option input, 
 .graphisme-option input {
-  margin-right: 1rem; /* Espace entre le checkbox/radio et la phrase */
-}
-
-.label-text {
-  margin-left: 1rem;
-  font-size: 1rem;
-}
-
-.boutons-containerR {
-  display: flex;
-  justify-content: space-between;
-}
-
-.boutonbtn {
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.boutonbtn:hover {
-  background-color: #0056b3;
-}
-
-
-.etape3_1-container {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-fieldset {
-  padding: 1rem;
-  border: 1px solid #ffffff;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-  background-color: #ffffff00;
-  color: #ffffff;
-}
-
-legend {
-  font-size: 1.3rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-.conteneur-besoins {
-  display: flex;
-  gap: 2rem; /* Espacement entre les colonnes */
-}
-
-.colonne-gauche, .colonne-droite {
-  flex: 1;
+  margin-right: 1rem;
 }
 
 .besoins-container {
@@ -412,62 +222,13 @@ legend {
 .besoin-option {
   display: flex;
   align-items: center;
-  gap: 1rem; /* Espacement entre le checkbox et le texte */
+  gap: 0.8rem;
 }
 
-.description-container {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.tailleTextarea {
-  width: 100%;
-  padding: 1rem;
-  font-size: 1rem;
-  color: #000000;
-  background-color: #ffffff;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
-
-.boutons-containerR {
-  display: flex;
-  justify-content: space-between;
-}
-
-.boutonbtn {
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.boutonbtn:hover {
-  background-color: #0056b3;
-}
-
-.etape4-container {
+.etape3-container, .etape3_1-container {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 1rem;
-  max-width: 600px;
-  margin: 0 auto;
-  background-color: #ffffff00;
-  color: #000000;
-  border-radius: 8px;
-}
-
-h2 {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #ffffff;
-  margin-bottom: 0.2rem;
-  text-align: center;
 }
 
 .coordonnees-container {
@@ -480,13 +241,6 @@ h2 {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-}
-
-.label1 {
-  font-size: 1rem;
-  color: #ffffff;
-  margin-top: -40px;
-  margin-bottom: px;
 }
 
 .input1 {
@@ -504,31 +258,6 @@ h2 {
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-.boutons-containerR {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.boutonbtn {
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 48%;
-  text-align: center;
-}
-
-.boutonbtn:hover {
-  background-color: #0056b3;
-}
-
-
-
-
 .besoins-section {
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -536,31 +265,6 @@ h2 {
   margin-bottom: 1.5rem;
   background-color: #f9f9f900;
   color: white;
-}
-
-legend {
-  font-size: 1.4rem;
-  font-weight: bold;
-  margin-top: -40px;
-  margin-bottom: 0.5rem;
-  color: #ffffff;
-}
-
-.besoins-container {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem; /* Ajoute un espacement entre les éléments checkbox */
-}
-
-.besoin-option {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem; /* Ajoute de l'espacement entre la checkbox et le texte */
-}
-
-.label-text {
-  font-size: 1rem;
-  color: #ffffff;
 }
 
 .url-container,
@@ -586,40 +290,14 @@ textarea {
   font-size: 1rem;
 }
 
-
-
 textarea.tailleTextarea:focus {
   border-color: #007bff;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-.boutons-containerR {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
+.mep {
+  margin-bottom: 50px;
 }
-
-.boutonbtn {
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 130px;
-}
-
-.boutonbtn:hover {
-  background-color: #0056b3;
-}
-
-.mep{
-  margin-bottom:50px ;
-}
-
-
-
 
 * {
   box-sizing: border-box;
@@ -628,161 +306,6 @@ textarea.tailleTextarea:focus {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.formulaire-devisS {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8); /* Fond semi-transparent */
-  z-index: 1000; /* Assurez-vous qu'il est au-dessus du header */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  /* overflow-y: auto; */
+.formulaire-devisS h2 {
+  color: white !important;
 }
-
-.formulaire-devisS h1 {
-  color: white;
-  margin-bottom: 20px;
-}
-
-.cards-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.tailleTextarea,
-.tailleTextarea2,
-.input1 {
-  width: calc(100% - 40px);
-  max-width: 600px;
-  margin: 10px auto;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.boutons-containerR {
-  margin-top: 20px;
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-}
-
-.boutonbtn {
-  padding: 10px 20px;
-  background-color: #007BFF;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.boutonbtn:hover {
-  background-color: #0056b3;
-}
-
-.formulaire-devisS {
-  animation: fadeIn 0.3s ease-out;
-}
-
-@keyframes fadeIn {
-  from {
-      opacity: 0;
-  }
-  to {
-      opacity: 1;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Étape 3 - Fonctionnalités */
-.etape3-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; 
-  height: 90vh; 
-  padding: 10px;
-}
-
-.fonctionnalites-section {
-  flex: 1; 
-  overflow-y: auto; 
-  margin-top: 10px;
-  margin-bottom: 20px; 
-}
-
-.fonctionnalites-options {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: -1px;
-}
-
-.fonctionnalite-option {
-  flex: 1 1 calc(33.33% - 10px); /* 3 éléments par ligne avec espace */
-  margin-bottom: 15px;
-}
-
-.boutons-containerR {
-  display: flex;
-  justify-content: space-evenly;
-  padding: 15px;
-}
-
-.boutonbtn {
-  padding: 10px 20px;
-  background-color: #007BFF;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  flex: 0 1 48%; /* Chaque bouton prend 48% de la largeur pour avoir un espace entre eux */
-}
-
-.boutonbtn:hover {
-  background-color: #0056b3;
-}
-
-
-
-
-
-
-
