@@ -166,7 +166,7 @@ return (
           {/* Si la prestation est "hébergement / nom de domaine" */}
           {prestation === 'hébergement / nom de domaine' && (
             <div>
-              <h2>Votre demande concerne un besoin en :</h2>
+              <h1>Votre demande concerne un besoin en :</h1>
               <fieldset className="besoins-section">
                 <legend>Besoins spécifiques</legend>
                 <div className="conteneur-besoins">
@@ -224,7 +224,7 @@ return (
           {/* Si la prestation est autre que "hébergement / nom de domaine" */}
           {prestation !== 'hébergement / nom de domaine' && (
             <div>
-              <h2>Type de projet</h2>
+              <h1>Type de projet</h1>
               <div className="type-projet-container">
                 <div className="type-projet-option">
                   <label>
@@ -293,7 +293,6 @@ return (
         </div>
       )}
 
-      {/* Étape 3 */}
       {/* Étape 3 */}
       {etape === 3 && (
         <div className="etape3-container">
@@ -373,7 +372,6 @@ return (
       )}
 
 
-
       {/* Étape 3.1 */}
       {etape === 3.1 && (
         <div className="etape3_1-container">
@@ -427,10 +425,9 @@ return (
         </div>
       )}
 
-
       {etape === 4 && (
         <div className="etape4-container">
-          <h2>Vos coordonnées</h2>
+          <h1>Vos coordonnées</h1>
           <div className="coordonnees-container">
             <div className="input-group">
               <label className="label1">Nom :</label>

@@ -240,7 +240,7 @@ legend {
 .input-group {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0rem;
 }
 
 .input1 {
@@ -306,6 +306,7 @@ textarea.tailleTextarea:focus {
 }
 
 
-.formulaire-devisS h2 {
+.formulaire-devisS h1 {
   color: white !important;
+margin-bottom: 40px;
 }
