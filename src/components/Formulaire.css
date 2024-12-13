@@ -408,3 +408,22 @@ margin-bottom: 40px;
   border: 2px solid #ddd; /* Bordure grise autour de la barre */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère */
 }
+
+
+.footerFormulaire {
+  position: fixed;
+  bottom: 0;
+  left: 0; /* Assure que le footer commence depuis la gauche */
+  width: 100%; /* Prendre toute la largeur de l'écran */
+  background-color: #003f5c;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1rem;
+  z-index: 1100; /* Toujours visible, au-dessus du formulaire */
+}
+
+
+.footerFormulaire p {
+  margin: 0;
+}
