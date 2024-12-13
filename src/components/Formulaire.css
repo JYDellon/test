@@ -317,3 +317,94 @@ textarea.tailleTextarea:focus {
   color: white !important;
 margin-bottom: 40px;
 }
+
+
+
+
+
+
+
+
+
+
+
+.formulaire-devisS {
+  background: linear-gradient(to right, #003f5c, #6a9cb8);
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Fond semi-transparent */
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease-out;
+  padding-top: 80px; /* Espace pour le header */
+}
+
+.entete-formulaire {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background-color: #003f5c;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+  z-index: 1100; /* Le header sera toujours au-dessus du formulaire */
+}
+
+.entete-formulaire h1{
+  color: white;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-contenu {
+  width: 90%;
+  max-width: 900px;
+  background: white;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Conteneur de la barre de progression */
+.progress-container {
+  width: 100%;
+  background-color: #f3f3f3;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 20px;
+  height: 20px;
+}
+
+/* La barre de progression elle-même */
+.progress-bar {
+  height: 100%;
+  background-color: #4caf50; /* Couleur verte pour la progression */
+  width: 0%; /* La largeur sera contrôlée par l'état de la progression */
+  transition: width 0.3s ease-in-out; /* Animation fluide */
+}
+
+/* Optionnel : ajouter des bordures ou ombres autour de la barre */
+.progress-container {
+  border: 2px solid #ddd; /* Bordure grise autour de la barre */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}

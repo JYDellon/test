@@ -159,9 +159,33 @@ function Contact() {
                     </div>
                 </div>
             )}
+
+            {/* Modal pour les formulaires */}
+{isModalOpen && (
+  <div className="modal" onClick={handleModalClick}>
+    <div className="modal-contentT">
+      <span className="close" onClick={closeModal}>&times;</span>
+      {formType === 'contact' && <FormulaireContact onClose={closeModal} />} {/* Transmission de onClose */}
+      {formType === 'devis' && <Formulaire />}
+    </div>
+  </div>
+)}
+
+
         </div>
     );
 }
 
 export default Contact;
+
+
+
+
+
+
+
+
+
+
+
 
