@@ -1,62 +1,83 @@
-// import React, { useRef } from 'react';
-// import emailjs from '@emailjs/browser';
-// import { TextField, Button, Box } from '@mui/material';
-// import './FormulaireContact.css';
+// import React, { useState } from 'react';
 
-// function FormulaireContact() {
-//   const form = useRef();
+// const FormulaireContact = () => {
+//   const [nom, setNom] = useState('');
+//   const [email, setEmail] = useState('');
+//   const [telephone, setTelephone] = useState('');
+//   const [message, setMessage] = useState('');
 
-//   const envoyerEmail = (e) => {
-//     e.preventDefault();
+//   // Fonction pour envoyer le message
+//   const envoyerMessage = async (data) => {
+//     try {
+//       const response = await fetch('http://localhost:5000/api/contact', {
+//         method: 'POST',
+//         headers: {
+//           'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify(data),
+//       });
 
-//     emailjs.sendForm(
-//       'service_sririnv', // Ton SERVICE_ID
-//       'template_ubyjgxh', // Ton TEMPLATE_ID
-//       form.current,
-//       'htn7B0VMvIGfY458U' // Ta PUBLIC_KEY
-//     ).then(
-//       (result) => {
-//         alert('Message envoyé avec succès !');
-//       },
-//       (error) => {
-//         console.error('Erreur :', error.text);
-//         alert('Erreur lors de l\'envoi du message.');
+//       const result = await response.json();
+//       if (response.ok) {
+//         console.log('Message envoyé avec succès!', result);
+//         // Réinitialisation des champs ou notification à l'utilisateur
+//       } else {
+//         console.log('Erreur:', result.error);
 //       }
-//     );
+//     } catch (error) {
+//       console.error('Erreur de requête:', error);
+//     }
+//   };
+
+//   // Fonction pour gérer la soumission du formulaire
+//   const handleSubmit = (e) => {
+//     e.preventDefault(); // Empêche le rechargement de la page
+//     const data = {
+//       nom,
+//       email,
+//       telephone,
+//       message,
+//     };
+//     envoyerMessage(data); // Appel à la fonction envoyerMessage
 //   };
 
 //   return (
-//     <Box component="form" ref={form} onSubmit={envoyerEmail} className="formulaire-contact">
-//       <div className="formulaire-inner">
-//         {/* Partie gauche avec les champs */}
-//         <div className="formulaire-champs-gauche">
-//           <TextField label="Prénom" name="user_firstname" required fullWidth />
-//           <TextField label="Nom" name="user_lastname" required fullWidth />
-//           <TextField label="Nom de société" name="company_name" fullWidth />
-//           <TextField label="Téléphone" name="user_phone" type="tel" fullWidth />
-//           <TextField label="Email" name="user_email" type="email" required fullWidth />
-//         </div>
+//     <form onSubmit={handleSubmit}>
+//       <label htmlFor="nom">Nom</label>
+//       <input
+//         type="text"
+//         id="nom"
+//         value={nom}
+//         onChange={(e) => setNom(e.target.value)}
+//       />
 
-//         {/* Partie droite avec le champ message et bouton envoyer */}
-//         <div className="formulaire-champs-droit">
-//           <TextField
-//             label="Message"
-//             name="message"
-//             multiline
-//             rows={8}
-//             required
-//             fullWidth
-//             className="formulaire-message"
-//           />
-//           {/* Bouton d'envoi avec un margin-top de 100px */}
-//           <Button type="submit" variant="contained" className="formulaire-envoyer-btn" style={{ marginTop: '80px' }}>
-//             Envoyer
-//           </Button>
-//         </div>
-//       </div>
-//     </Box>
+//       <label htmlFor="email">Email</label>
+//       <input
+//         type="email"
+//         id="email"
+//         value={email}
+//         onChange={(e) => setEmail(e.target.value)}
+//       />
+
+//       <label htmlFor="telephone">Téléphone</label>
+//       <input
+//         type="text"
+//         id="telephone"
+//         value={telephone}
+//         onChange={(e) => setTelephone(e.target.value)}
+//       />
+
+//       <label htmlFor="message">Message</label>
+//       <textarea
+//         id="message"
+//         value={message}
+//         onChange={(e) => setMessage(e.target.value)}
+//       ></textarea>
+
+//       <button type="submit">Envoyer</button>
+//     </form>
 //   );
-// }
+// };
 
 // export default FormulaireContact;
 
@@ -70,69 +91,255 @@
 
 
 
-import React, { useRef } from 'react';
-import emailjs from '@emailjs/browser';
-import { TextField, Button, Box } from '@mui/material';
+
+
+
+
+
+
+
+
+
+// import './FormulaireContact.css';
+
+// import React, { useState } from 'react';
+
+// const FormulaireContact = () => {
+//   const [prenom, setPrenom] = useState('');
+//   const [nom, setNom] = useState('');
+//   const [email, setEmail] = useState('');
+//   const [telephone, setTelephone] = useState('');
+//   const [message, setMessage] = useState('');
+
+//   // Fonction pour envoyer le message
+//   const envoyerMessage = async (data) => {
+//     try {
+//       const response = await fetch('http://localhost:5000/api/contact', {
+//         method: 'POST',
+//         headers: {
+//           'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify(data),
+//       });
+
+//       const result = await response.json();
+//       if (response.ok) {
+//         console.log('Message envoyé avec succès!', result);
+//         // Réinitialisation des champs ou notification à l'utilisateur
+//       } else {
+//         console.log('Erreur:', result.error);
+//       }
+//     } catch (error) {
+//       console.error('Erreur de requête:', error);
+//     }
+//   };
+
+//   // Fonction pour gérer la soumission du formulaire
+//   const handleSubmit = (e) => {
+//     e.preventDefault(); // Empêche le rechargement de la page
+//     const data = {
+//       prenom,
+//       nom,
+//       email,
+//       telephone,
+//       message,
+//     };
+//     envoyerMessage(data); // Appel à la fonction envoyerMessage
+//   };
+
+//   return (
+//     <form onSubmit={handleSubmit} className="form-contact">
+//       {/* Ligne 1 : Prénom et Nom */}
+//       <div className="ligne1">
+//         <div>
+//           <label htmlFor="prenom">Prénom</label>
+//           <input
+//             type="text"
+//             id="prenom"
+//             value={prenom}
+//             onChange={(e) => setPrenom(e.target.value)}
+//             className='lesInputs'
+//           />
+//         </div>
+//         <div>
+//           <label htmlFor="nom">Nom</label>
+//           <input
+//             type="text"
+//             id="nom"
+//             value={nom}
+//             onChange={(e) => setNom(e.target.value)}
+//             className='lesInputs'
+//           />
+//         </div>
+//       </div>
+
+//       {/* Ligne 2 : Email et Téléphone */}
+//       <div className="ligne2">
+//         <div>
+//           <label htmlFor="email">Email</label>
+//           <input
+//             type="email"
+//             id="email"
+//             value={email}
+//             onChange={(e) => setEmail(e.target.value)}
+//             className='lesInputs'
+//           />
+//         </div>
+//         <div>
+//           <label htmlFor="telephone">Téléphone</label>
+//           <input
+//             type="text"
+//             id="telephone"
+//             value={telephone}
+//             onChange={(e) => setTelephone(e.target.value)}
+//             className='lesInputs'
+//           />
+//         </div>
+//       </div>
+
+//       {/* Ligne 3 : Message */}
+//       <div className="ligne3">
+//         <label htmlFor="message">Message</label>
+//         <textarea
+//           id="message"
+//           value={message}
+//           onChange={(e) => setMessage(e.target.value)}
+//         ></textarea>
+//       </div>
+
+//       <button type="submit">Envoyer</button>
+//     </form>
+//   );
+// };
+
+// export default FormulaireContact;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import './FormulaireContact.css';
 
-function FormulaireContact() {
-  const form = useRef();
+import React, { useState } from 'react';
 
-  const envoyerEmail = (e) => {
-    e.preventDefault();
+const FormulaireContact = () => {
+  const [prenom, setPrenom] = useState('');
+  const [nom, setNom] = useState('');
+  const [email, setEmail] = useState('');
+  const [telephone, setTelephone] = useState('');
+  const [message, setMessage] = useState('');
 
-    const formData = new FormData(form.current);
-    formData.append("to_email", "jy.dellon@gmail.com"); 
+  // Fonction pour envoyer le message
+  const envoyerMessage = async (data) => {
+    try {
+      const response = await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
 
-    emailjs.sendForm(
-      'service_sririnv',  //  SERVICE_ID
-      'template_ubyjgxh',  //  TEMPLATE_ID
-      form.current,
-      'htn7B0VMvIGfY458U' //  PUBLIC_KEY
-    ).then(
-      (result) => {
-        alert('Message envoyé avec succès !');
-      },
-      (error) => {
-        console.error('Erreur :', error.text);
-        alert('Erreur lors de l\'envoi du message.');
+      const result = await response.json();
+      if (response.ok) {
+        console.log('Message envoyé avec succès!', result);
+        // Réinitialisation des champs ou notification à l'utilisateur
+      } else {
+        console.log('Erreur:', result.error);
       }
-    );
+    } catch (error) {
+      console.error('Erreur de requête:', error);
+    }
+  };
+
+  // Fonction pour gérer la soumission du formulaire
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Empêche le rechargement de la page
+    const data = {
+      prenom,
+      nom,
+      email,
+      telephone,
+      message,
+    };
+    envoyerMessage(data); // Appel à la fonction envoyerMessage
   };
 
   return (
-    <div className='containerFormulaire'>
-    <Box component="form" ref={form} onSubmit={envoyerEmail} className="formulaire-contact">
-      <div className="formulaire-inner">
-        {/* Partie gauche avec les champs */}
-        <div className="formulaire-champs-gauche">
-          <TextField label="Prénom" name="user_firstname" required fullWidth />
-          <TextField label="Nom" name="user_lastname" required fullWidth />
-          <TextField label="Nom de société" name="company_name" fullWidth />
-          <TextField label="Téléphone" name="user_phone" type="tel" fullWidth />
-          <TextField label="Email" name="user_email" type="email" required fullWidth />
-        </div>
-
-        {/* Partie droite avec le champ message et bouton envoyer */}
-        <div className="formulaire-champs-droit">
-          <TextField
-            label="Message"
-            name="message"
-            multiline
-            rows={8}
-            required
-            fullWidth
-            className="formulaire-message"
+    <form onSubmit={handleSubmit} className="form-contact">
+      {/* Ligne 1 : Prénom et Nom */}
+      <div className="ligne1">
+        <div className="champ">
+          <label htmlFor="prenom">Prénom</label>
+          <input
+            type="text"
+            id="prenom"
+            value={prenom}
+            onChange={(e) => setPrenom(e.target.value)}
+            className='lesInputs'
           />
-          {/* Bouton d'envoi avec un margin-top de 80px */}
-          <Button type="submit" variant="contained" className="formulaire-envoyer-btn" style={{ marginTop: '80px' }}>
-            Envoyer
-          </Button>
+        </div>
+        <div className="champ">
+          <label htmlFor="nom">Nom</label>
+          <input
+            type="text"
+            id="nom"
+            value={nom}
+            onChange={(e) => setNom(e.target.value)}
+            className='lesInputs'
+          />
         </div>
       </div>
-    </Box>
-    </div>
+
+      {/* Ligne 2 : Email et Téléphone */}
+      <div className="ligne2">
+        <div className="champ">
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className='lesInputs'
+          />
+        </div>
+        <div className="champ">
+          <label htmlFor="telephone">Téléphone</label>
+          <input
+            type="text"
+            id="telephone"
+            value={telephone}
+            onChange={(e) => setTelephone(e.target.value)}
+            className='lesInputs'
+          />
+        </div>
+      </div>
+
+      {/* Ligne 3 : Message */}
+      <div className="ligne3">
+        <label htmlFor="message">Message</label>
+        <textarea
+          id="message"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+        ></textarea>
+      </div>
+
+      <button type="submit">Envoyer</button>
+    </form>
   );
-}
+};
 
 export default FormulaireContact;
+

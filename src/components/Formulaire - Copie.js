@@ -90,56 +90,8 @@ const Formulaire = () => {
   };
   
 
-  // const envoyerEmail = async (e) => {
-  //   e.preventDefault(); // Empêcher le rechargement de la page
-  //   const templateParams = {
-  //     nom,
-  //     email,
-  //     telephone,
-  //     nomEntreprise,
-  //     prestation,
-  //     descriptionBesoins,
-  //     objectifs,
-  //     urlSite: prestation === 'hébergement / nom de domaine' && urlSite.trim() !== '' ? urlSite : '-',
-  //     fonctionnalites: fonctionnalites.join(', '),
-  //     graphisme,
-  //     typeProjet: typeProjetSelectionne === 'création' ? `Création d'un site ${prestation}` : `Refonte d'un site ${prestation}`,
-  //     urlSiteRefonte: refonteChoisie ? urlSiteRefonte : '-',
-  //     besoinsHebergement: Object.entries(besoinsHébergement)
-  //       .filter(([_, checked]) => checked)
-  //       .map(([key]) => key)
-  //       .join(', ') || 'Aucun besoin spécifique',
-  //   };
-  
-  //   try {
-  //     const response = await fetch('http://localhost:5000/api/envoyer-email', {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //       body: JSON.stringify(templateParams),
-  //     });
-  
-  //     if (response.ok) {
-  //       console.log('Email envoyé avec succès');
-  //       alert('Votre demande a été envoyée avec succès !');
-  //       navigate('/');
-  //     } else {
-  //       const errorData = await response.json();
-  //       console.error('Erreur lors de l’envoi de l’email:', errorData.error);
-  //       alert("Une erreur est survenue lors de l'envoi de votre demande.");
-  //     }
-  //   } catch (error) {
-  //     console.error('Erreur réseau:', error);
-  //     alert("Une erreur est survenue lors de l'envoi de votre demande.");
-  //   }
-  // };
-  
-
-
   const envoyerEmail = async (e) => {
     e.preventDefault(); // Empêcher le rechargement de la page
-  
     const templateParams = {
       nom,
       email,
@@ -159,10 +111,8 @@ const Formulaire = () => {
         .join(', ') || 'Aucun besoin spécifique',
     };
   
-    console.log('Template Parameters:', templateParams); // Ajout du log pour inspecter les données envoyées
-  
     try {
-      const response = await fetch('http://localhost:5000/api/devis', {
+      const response = await fetch('http://localhost:5000/api/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -173,7 +123,7 @@ const Formulaire = () => {
       if (response.ok) {
         console.log('Email envoyé avec succès');
         alert('Votre demande a été envoyée avec succès !');
-        navigate('/'); // Rediriger après envoi
+        navigate('/');
       } else {
         const errorData = await response.json();
         console.error('Erreur lors de l’envoi de l’email:', errorData.error);
@@ -184,9 +134,6 @@ const Formulaire = () => {
       alert("Une erreur est survenue lors de l'envoi de votre demande.");
     }
   };
-  
-
-
   
   
 
