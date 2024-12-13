@@ -65,9 +65,28 @@ const Formulaire = () => {
   
 
 
-
   const handleSuivant = (e) => {
+    if (etape === 2) {
+      if (!typeProjetSelectionne) {
+        alert("Veuillez choisir un type de projet avant de continuer.");
+        return;
+      }
+      if (
+        typeProjetSelectionne === "refonte" &&
+        (!urlSiteRefonte.trim() || !objectifs.trim())
+      ) {
+        alert(
+          "Pour une refonte, veuillez remplir l'URL du site à refondre et vos objectifs avant de continuer."
+        );
+        return;
+      }
+    }
+  
     if (etape === 3) {
+      if (etape3Sub === 2 && !graphisme) {
+        alert("Veuillez sélectionner une option de graphisme avant de continuer.");
+        return;
+      }
       if (etape3Sub < 2) {
         setEtape3Sub(etape3Sub + 1); // Passer à la sous-étape suivante
       } else {
@@ -80,6 +99,9 @@ const Formulaire = () => {
     }
   };
   
+
+
+
   
   const handlePrecedent = () => {
     if (etape === 3) {
@@ -303,79 +325,70 @@ const Formulaire = () => {
               </div>
             )}
 
-{/* Étape 3 */}
-{etape === 3 && (
-  <div className="etape3-container">
-    {etape3Sub === 1 && (
-      <div className="fonctionnalites-container">
-        <fieldset className="fonctionnalites-section">
-          <legend>Fonctionnalités</legend>
-          <div className="fonctionnalites-options">
-            {[
-              "Formulaires d'inscription,demande de devis",
-              'Blog ',
-              'Espace privé ou privilégié (accès client/membre)',
-              'Prise de rendez-vous',
-              'Réservation',
-              'Gestion de fichiers (téléchargement)',
-              'Carte dynamique type Google Maps (localisations )'
-            ].map((fonctionnalite) => (
-              <div key={fonctionnalite} className="fonctionnalite-option">
-                <label>
-                  <input
-                    type="checkbox"
-                    value={fonctionnalite}
-                    checked={fonctionnalites.includes(fonctionnalite)}
-                    onChange={() => handleFonctionnaliteChange(fonctionnalite)}
-                  />
-                  <span className="label-text">{fonctionnalite}</span>
-                </label>
+            {/* Étape 3 */}
+            {etape === 3 && (
+              <div className="etape3-container">
+                {etape3Sub === 1 && (
+                  <div className="fonctionnalites-container">
+                    <fieldset className="fonctionnalites-section">
+                      <legend>Fonctionnalités</legend>
+                      <div className="fonctionnalites-options">
+                        {[
+                          "Formulaires d'inscription,demande de devis",
+                          'Blog ',
+                          'Espace privé ou privilégié (accès client/membre)',
+                          'Prise de rendez-vous',
+                          'Réservation',
+                          'Gestion de fichiers (téléchargement)',
+                          'Carte dynamique type Google Maps (localisations )'
+                        ].map((fonctionnalite) => (
+                          <div key={fonctionnalite} className="fonctionnalite-option">
+                            <label>
+                              <input
+                                type="checkbox"
+                                value={fonctionnalite}
+                                checked={fonctionnalites.includes(fonctionnalite)}
+                                onChange={() => handleFonctionnaliteChange(fonctionnalite)}
+                              />
+                              <span className="label-text">{fonctionnalite}</span>
+                            </label>
+                          </div>
+                        ))}
+                      </div>
+                    </fieldset>
+
+                  </div>
+                )}
+
+                {etape3Sub === 2 && (
+                  <div className="graphisme-container">
+                    <fieldset className="graphisme-section">
+                      <legend>Le graphisme</legend>
+                      <div className="graphisme-options">
+                        {[
+                          "Je n'ai aucun élément",
+                          'Je veux faire créer mon logo et ma charte graphique',
+                          'Je fournis des instructions détaillées pour le graphisme (charte graphique, zoning, maquettes...)'
+                        ].map((option) => (
+                          <div key={option} className="graphisme-option">
+                            <label>
+                              <input
+                                type="radio"
+                                name="graphisme"
+                                value={option}
+                                checked={graphisme === option}
+                                onChange={(e) => setGraphisme(e.target.value)}
+                              />
+                              <span className="label-text">{option}</span>
+                            </label>
+                          </div>
+                        ))}
+                      </div>
+                    </fieldset>
+                  </div>
+                )}
               </div>
-            ))}
-          </div>
-        </fieldset>
-
-        <div className="boutons-containerR">
-          <button onClick={handlePrecedent} className="boutonbtn">Précédent</button>
-          <button onClick={handleSuivant} className="boutonbtn">Suivant</button>
-        </div>
-      </div>
-    )}
-
-    {etape3Sub === 2 && (
-      <div className="graphisme-container">
-        <fieldset className="graphisme-section">
-          <legend>Le graphisme</legend>
-          <div className="graphisme-options">
-            {[
-              "Je n'ai aucun élément",
-              'Je veux faire créer mon logo et ma charte graphique',
-              'Je fournis des instructions détaillées pour le graphisme (charte graphique, zoning, maquettes...)'
-            ].map((option) => (
-              <div key={option} className="graphisme-option">
-                <label>
-                  <input
-                    type="radio"
-                    name="graphisme"
-                    value={option}
-                    checked={graphisme === option}
-                    onChange={(e) => setGraphisme(e.target.value)}
-                  />
-                  <span className="label-text">{option}</span>
-                </label>
-              </div>
-            ))}
-          </div>
-        </fieldset>
-
-        <div className="boutons-containerR">
-          <button onClick={handlePrecedent} className="boutonbtn">Précédent</button>
-          <button onClick={handleSuivant} className="boutonbtn">Suivant</button>
-        </div>
-      </div>
-    )}
-  </div>
-)}
+            )}
 
 
             {etape === 4 && (
@@ -422,11 +435,13 @@ const Formulaire = () => {
               </div>
             )}
           </div>
+          {etape > 1 && (
+  <div className="footerFormulaire">
+    <button onClick={handlePrecedent}>Précédent</button>
+    <button onClick={handleSuivant}>{etape === 4 ? 'Envoyer' : 'Suivant'}</button>
+  </div>
+)}
 
-          <div className="footerFormulaire">
-            <button onClick={handlePrecedent} disabled={etape === 1}>Précédent</button>
-            <button onClick={handleSuivant}>{etape === 4 ? 'Envoyer' : 'Suivant'}</button>
-          </div>
         </div>
         
       </div>

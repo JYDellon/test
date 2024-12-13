@@ -1,19 +1,21 @@
 import './FormulaireContact.css';
 import React, { useState } from 'react';
 
-const FormulaireContact = ({ onClose }) => { // Ajout de la prop onClose
+const FormulaireContact = ({ onClose }) => {
   const [prenom, setPrenom] = useState('');
   const [nom, setNom] = useState('');
   const [email, setEmail] = useState('');
   const [telephone, setTelephone] = useState('');
   const [message, setMessage] = useState('');
-
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(false);
 
   const envoyerMessage = async (data) => {
+    setIsSubmitting(true);
+    setError(null);
+    setSuccess(false);
     try {
-      // Ajout d'un log pour vérifier les données avant l'envoi
-      console.log('Données envoyées au serveur:', data);
-  
       const response = await fetch('http://localhost:5000/api/contact', {
         method: 'POST',
         headers: {
@@ -21,37 +23,31 @@ const FormulaireContact = ({ onClose }) => { // Ajout de la prop onClose
         },
         body: JSON.stringify(data),
       });
-  
+
       const result = await response.json();
       if (response.ok) {
-        console.log('Message envoyé avec succès!', result);
-        if (onClose) onClose(); // Ferme la modale après succès
+        setSuccess(true);
+        if (onClose) onClose();
       } else {
-        console.log('Erreur:', result.error);
+        setError(result.error || 'Une erreur est survenue.');
       }
     } catch (error) {
-      console.error('Erreur de requête:', error);
+      setError('Erreur de connexion au serveur.');
+    } finally {
+      setIsSubmitting(false);
     }
   };
-  
 
-  // Fonction pour gérer la soumission du formulaire
   const handleSubmit = (e) => {
-    e.preventDefault(); // Empêche le rechargement de la page
-    const data = {
-      prenom,
-      nom,
-      email,
-      telephone,
-      message,
-    };
-    envoyerMessage(data); // Appel à la fonction envoyerMessage
+    e.preventDefault();
+    const data = { prenom, nom, email, telephone, message };
+    envoyerMessage(data);
   };
 
   return (
-    <form onSubmit={handleSubmit} className="form-contact">
+    <form onSubmit={handleSubmit} className="form-contact-ui">
       {/* Ligne 1 : Prénom et Nom */}
-      <div className="ligne1">
+      <div className="ligne">
         <div className="champ">
           <label htmlFor="prenom">Prénom</label>
           <input
@@ -59,7 +55,8 @@ const FormulaireContact = ({ onClose }) => { // Ajout de la prop onClose
             id="prenom"
             value={prenom}
             onChange={(e) => setPrenom(e.target.value)}
-            className='lesInputs'
+            className={`input ${!prenom && 'input-erreur'}`}
+            placeholder="Entrez votre prénom"
           />
         </div>
         <div className="champ">
@@ -69,13 +66,14 @@ const FormulaireContact = ({ onClose }) => { // Ajout de la prop onClose
             id="nom"
             value={nom}
             onChange={(e) => setNom(e.target.value)}
-            className='lesInputs'
+            className={`input ${!nom && 'input-erreur'}`}
+            placeholder="Entrez votre nom"
           />
         </div>
       </div>
 
       {/* Ligne 2 : Email et Téléphone */}
-      <div className="ligne2">
+      <div className="ligne">
         <div className="champ">
           <label htmlFor="email">Email</label>
           <input
@@ -83,7 +81,8 @@ const FormulaireContact = ({ onClose }) => { // Ajout de la prop onClose
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className='lesInputs'
+            className={`input ${!email && 'input-erreur'}`}
+            placeholder="exemple@domaine.com"
           />
         </div>
         <div className="champ">
@@ -93,22 +92,36 @@ const FormulaireContact = ({ onClose }) => { // Ajout de la prop onClose
             id="telephone"
             value={telephone}
             onChange={(e) => setTelephone(e.target.value)}
-            className='lesInputs'
+            className="input"
+            placeholder="0123456789"
           />
         </div>
       </div>
 
       {/* Ligne 3 : Message */}
-      <div className="ligne3">
+      <div className="ligne">
         <label htmlFor="message">Message</label>
         <textarea
           id="message"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
+          className="textarea"
+          placeholder="Écrivez votre message ici..."
         ></textarea>
       </div>
 
-      <button type="submit">Envoyer</button>
+      {/* Feedback utilisateur */}
+      {error && <div className="message-erreur">{error}</div>}
+      {success && <div className="message-success">Message envoyé avec succès !</div>}
+
+      {/* Bouton */}
+      <button
+        type="submit"
+        className="bouton-envoyer"
+        disabled={!prenom || !nom || !email || !message || isSubmitting}
+      >
+        {isSubmitting ? 'Envoi en cours...' : 'Envoyer'}
+      </button>
     </form>
   );
 };
