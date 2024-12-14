@@ -40,7 +40,7 @@ function Accueil() {
 
 
 
-                <div className=" cardmDevis" onClick={() => navigate('/devis')}>
+                <div className="cardmDevis" onClick={() => navigate('/devis')}>
                     <h3> DEVIS</h3><h3>GRATUIT</h3>   
                 </div>
 

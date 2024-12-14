@@ -56,6 +56,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-top: -140px
 }
 
 .availability-card, .phone-card {
@@ -112,6 +113,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-top: -140px
 }
 
 .mail-card, .social-cardContact {
@@ -1017,14 +1019,70 @@ iframe {
 
 }
 
+.cardmDevis2 {
+  background: linear-gradient(to right, rgb(97, 53, 0), darkorange);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  opacity: 0;
+  animation: slideAndRotateIn3 3s ease-out forwards;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.cardmContact {
+  background-color: #007bff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  opacity: 0;
+  animation: slideAndRotateIn2 3s ease-out forwards; 
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
 
 
 
+@keyframes slideAndRotateIn2 {
+  0% {
+    transform: translateX(-100%) rotateY(720deg); /* Commence hors de l'écran avec rotation */
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(-10%) rotateY(180deg); /* En cours de mouvement et rotation */
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0) rotateY(0); /* Position finale avec rotation finale */
+    opacity: 1;
+  }
+}
 
-
-
-
-
-
+@keyframes slideAndRotateIn3 {
+  0% {
+    transform: translateX(100%) rotateY(720deg); /* Commence hors de l'écran avec rotation */
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(-10%) rotateY(180deg); /* En cours de mouvement et rotation */
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0) rotateY(0); /* Position finale avec rotation finale */
+    opacity: 1;
+  }
+}
 
 

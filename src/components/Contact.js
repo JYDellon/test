@@ -1,5 +1,6 @@
 import { Button } from '@mui/material';
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Contact.css'; // Importation du fichier CSS
 import FormulaireContact from './FormulaireContact'; // Import du composant formulaire de contact
 import Formulaire from './Formulaire'; // Import du composant formulaire de devis
@@ -11,7 +12,7 @@ function Contact() {
     const [showScrollToTop, setShowScrollToTop] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false); // État pour la modale
     const [formType, setFormType] = useState('contact'); // Définir le type de formulaire
-
+    const navigate = useNavigate();
     useEffect(() => {
         const handleScroll = () => {
             const position = window.scrollY;
@@ -71,13 +72,17 @@ function Contact() {
 
             {/* Section pour les formulaires */}
             <div className="form-header">
-                <Button variant="contained" color="primary" onClick={() => openModal('contact')} className="form-button">
+                {/* <Button variant="contained" color="primary" onClick={() => openModal('contact')} className="form-button">
                     <h3>Formulaire de Contact</h3>
-                </Button>
+                </Button> */}
+                <div className=" cardmContact" onClick={() => openModal('contact')}>
+                    <h3> Formulaire</h3><h3>Contact</h3>   
+                </div>
 
-                <Button variant="contained" color="primary" onClick={() => openModal('devis')} className="form-button">
-                    <h3>Demande de Devis</h3>
-                </Button>
+                <div className=" cardmDevis2" onClick={() => navigate('/devis')}>
+                    <h3> DEVIS</h3><h3>GRATUIT</h3>   
+                </div>
+
             </div>
 
             {/* Section avec trois colonnes */}

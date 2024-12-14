@@ -24,6 +24,7 @@ const Formulaire = () => {
     nomDomaine: false,
     migration: false,
   });  const [etape3Sub, setEtape3Sub] = useState(1); // Nouveau état pour gérer la sous-étape
+const [prenom, setPrenom] = useState('');
 
   const [descriptionBesoins, setDescriptionBesoins] = useState('');
   const [prestation, setPrestation] = useState('');
@@ -63,8 +64,76 @@ const Formulaire = () => {
     calcProgression(); // Calculer la progression à chaque changement d'étape ou de sous-étape
   }, [etape, etape3Sub]);
   
+  const validateNomPrenom = (value) => {
+    return /^[A-Za-zÀ-ÖØ-öø-ÿ \-]+$/.test(value); // Lettres, espaces, tirets autorisés
+  };
 
+  const validateTelephone = (value) => {
+    return /^\d{10}$/.test(value); // Exactement 10 chiffres
+  };
 
+  const handleNomChange = (e) => {
+    const value = e.target.value;
+    if (validateNomPrenom(value)) {
+      setNom(value);
+    }
+  };
+
+  const handlePrenomChange = (e) => {
+    const value = e.target.value;
+    if (validateNomPrenom(value)) {
+      setPrenom(value);
+    }
+  };
+
+  const handleTelephoneChange = (e) => {
+    const value = e.target.value.replace(/\D/g, ''); // Supprimer tout caractère non numérique
+    setTelephone(value);
+  };
+
+  const formatTelephone = () => {
+    if (validateTelephone(telephone)) {
+      const formatted = telephone.replace(/(\d{2})(?=\d)/g, '$1-'); // Ajouter un tiret tous les deux chiffres
+      setTelephone(formatted);
+    } else {
+      alert("Le numéro de téléphone doit contenir exactement 10 chiffres.");
+    }
+  };
+
+  // const handleSuivant = (e) => {
+  //   if (etape === 2) {
+  //     if (!typeProjetSelectionne) {
+  //       alert("Veuillez choisir un type de projet avant de continuer.");
+  //       return;
+  //     }
+  //     if (
+  //       typeProjetSelectionne === "refonte" &&
+  //       (!urlSiteRefonte.trim() || !objectifs.trim())
+  //     ) {
+  //       alert(
+  //         "Pour une refonte, veuillez remplir l'URL du site à refondre et vos objectifs avant de continuer."
+  //       );
+  //       return;
+  //     }
+  //   }
+  
+  //   if (etape === 3) {
+  //     if (etape3Sub === 2 && !graphisme) {
+  //       alert("Veuillez sélectionner une option de graphisme avant de continuer.");
+  //       return;
+  //     }
+  //     if (etape3Sub < 2) {
+  //       setEtape3Sub(etape3Sub + 1); // Passer à la sous-étape suivante
+  //     } else {
+  //       setEtape(etape + 1); // Passer à l'étape suivante
+  //     }
+  //   } else if (etape === 4) {
+  //     envoyerEmail(e); // Passer l'événement à envoyerEmail
+  //   } else {
+  //     setEtape(etape + 1);
+  //   }
+  // };
+  
   const handleSuivant = (e) => {
     if (etape === 2) {
       if (!typeProjetSelectionne) {
@@ -93,13 +162,38 @@ const Formulaire = () => {
         setEtape(etape + 1); // Passer à l'étape suivante
       }
     } else if (etape === 4) {
+      // Validation des champs "Vos coordonnées"
+      if (!nom.trim() || !prenom.trim()) {
+        alert("Veuillez remplir votre nom et prénom avant de continuer.");
+        return;
+      }
+      if (!email.trim() || !validateEmail(email)) {
+        alert("Veuillez saisir un email valide avant de continuer.");
+        return;
+      }
+      if (!telephone.trim() || !validatePhoneNumber(telephone)) {
+        alert("Veuillez saisir un numéro de téléphone valide avant de continuer.");
+        return;
+      }
+  
       envoyerEmail(e); // Passer l'événement à envoyerEmail
     } else {
       setEtape(etape + 1);
     }
   };
   
-
+  // Fonction de validation de l'email
+  const validateEmail = (email) => {
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailRegex.test(email);
+  };
+  
+  // Fonction de validation du téléphone
+  const validatePhoneNumber = (telephone) => {
+    const phoneRegex = /^(\+?\d{1,2}[-\s]?)?(\(?\d{1,3}\)?[-\s]?)?[\d\s-]{7,15}$/;
+    return phoneRegex.test(telephone);
+  };
+  
 
 
   
@@ -264,39 +358,40 @@ const Formulaire = () => {
 
                 {prestation !== 'hébergement / nom de domaine' && (
                   <div>
-                    <h1>Type de projet</h1>
                     <div className="type-projet-container">
-                      <div className="type-projet-option">
-                        <label>
-                          <input
-                            type="radio"
-                            name="typeProjet"
-                            value="création"
-                            checked={typeProjetSelectionne === 'création'}
-                            onChange={(e) => {
-                              setTypeProjetSelectionne(e.target.value);
-                              setRefonteChoisie(false);
-                            }}
-                          />
-                          <span className="label-text">Création d'un {prestation}</span>
-                        </label>
-                      </div>
-                      <div className="type-projet-option">
-                        <label>
-                          <input
-                            type="radio"
-                            name="typeProjet"
-                            value="refonte"
-                            checked={typeProjetSelectionne === 'refonte'}
-                            onChange={(e) => {
-                              setTypeProjetSelectionne(e.target.value);
-                              setRefonteChoisie(true);
-                            }}
-                          />
-                          <span className="label-text">Vous avez déjà un site internet que vous souhaitez refondre</span>
-                        </label>
-                      </div>
-                    </div>
+                    <fieldset className="type-projet-section">
+                      <legend>Type de projet</legend>
+                          <div className="type-projet-option">
+                            <label>
+                              <input
+                                type="radio"
+                                name="typeProjet"
+                                value="création"
+                                checked={typeProjetSelectionne === 'création'}
+                                onChange={(e) => {
+                                  setTypeProjetSelectionne(e.target.value);
+                                  setRefonteChoisie(false);
+                                }}
+                              />
+                              <span className="label-text">Création d'un {prestation}</span>
+                            </label>
+                          </div>
+                          <div className="type-projet-option">
+                            <label>
+                              <input
+                                type="radio"
+                                name="typeProjet"
+                                value="refonte"
+                                checked={typeProjetSelectionne === 'refonte'}
+                                onChange={(e) => {
+                                  setTypeProjetSelectionne(e.target.value);
+                                  setRefonteChoisie(true);
+                                }}
+                              />
+                              <span className="label-text">Vous avez déjà un site internet que vous souhaitez refondre</span>
+                            </label>
+                          </div>
+
 
                     {refonteChoisie && (
                       <div className="url-refonte-container">
@@ -310,6 +405,7 @@ const Formulaire = () => {
                       </div>
                     )}
 
+
                     <div className="objectifs-container">
                       <label htmlFor="objectifs">Vos objectifs :</label>
                       <textarea
@@ -320,12 +416,13 @@ const Formulaire = () => {
                         className="tailleTextarea2"
                       />
                     </div>
+                    </fieldset>    
+                    </div>
                   </div>
                 )}
               </div>
             )}
 
-            {/* Étape 3 */}
             {etape === 3 && (
               <div className="etape3-container">
                 {etape3Sub === 1 && (
@@ -390,50 +487,76 @@ const Formulaire = () => {
               </div>
             )}
 
-
             {etape === 4 && (
-              <div className="etape4-container">
-                <h1>Vos coordonnées</h1>
-                <div className="coordonnees-container">
-                  <div className="input-group">
-                    <label className="label1">Nom :</label>
-                    <input 
-                      type="text" 
-                      value={nom} 
-                      onChange={(e) => setNom(e.target.value)} 
-                      className="input1" 
-                    />
-                  </div>
-                  <div className="input-group">
-                    <label className="label2">Entreprise :</label>
-                    <input
-                      type="text"
-                      value={nomEntreprise}
-                      onChange={(e) => setNomEntreprise(e.target.value)}
-                      className="input2"
-                    />
-                  </div>
-                  <div className="input-group">
-                    <label className="label3">Email :</label>
-                    <input 
-                      type="email" 
-                      value={email} 
-                      onChange={(e) => setEmail(e.target.value)} 
-                      className="input3"
-                    />
-                  </div>
-                  <div className="input-group">
-                    <label className="label4">Téléphone :</label>
-                    <input
-                      type="text"
-                      value={telephone}
-                      onChange={(e) => setTelephone(e.target.value)}
-                      className="input4"
-                    />
-                  </div>
-                </div>
-              </div>
+              
+                  <div className="etape4-container">
+                  <fieldset className="coordonees-section">
+                  <legend>Vos coordonnées</legend>
+                    <div className="coordonnees-container">
+                      {/* Ligne 1 : Nom et Prénom */}
+                      <div className="input-row">
+                        <div className="input-group">
+                          <label className="label1">Nom :</label>
+                          <input
+                            type="text"
+                            value={nom}
+                            onChange={handleNomChange}
+                            className="input1"
+                          />
+                        </div>
+                        <div className="input-group">
+                          <label className="label1">Prénom :</label>
+                          <input
+                            type="text"
+                            value={prenom}
+                            onChange={handlePrenomChange}
+                            className="input1"
+                          />
+                        </div>
+                      </div>
+                      
+                      {/* Ligne 2 : Entreprise */}
+                      <div className="input-row">
+                        <div className="input-group">
+                          <label className="label2">Entreprise (facultatif) :</label>
+                          <input
+                            type="text"
+                            value={nomEntreprise}
+                            onChange={(e) => setNomEntreprise(e.target.value)}
+                            className="input2"
+                          />
+                        </div>
+                      </div>
+                      
+                      {/* Ligne 3 : Email et Téléphone */}
+                      <div className="input-row">
+                        <div className="input-group">
+                          <label className="label3">Email :</label>
+                          <input 
+                            type="email" 
+                            value={email} 
+                            onChange={(e) => setEmail(e.target.value)} 
+                            className="input3"
+                          />
+                        </div>
+                        <div className="input-group">
+                          <label className="label4">Téléphone :</label>
+                          <input
+                            type="text"
+                            value={telephone}
+                            onChange={handleTelephoneChange}
+                            onBlur={formatTelephone} // Formatage après la saisie
+                            className="input4"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    </fieldset>
+                  </div> 
             )}
+                
+
+
           </div>
           {etape > 1 && (
   <div className="footerFormulaire">
